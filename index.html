@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <link rel="stylesheet" href="/src/scss/styles.scss" />
+    <link rel="stylesheet" href="src/scss/styles.scss" />
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -16,13 +16,15 @@
   >
     <!-----------------------------Main Container--------------------------------->
 
-    <div class="container">
+    <div
+      class="container d-flex justify-content-center align-items-center min-vh-100"
+    >
       <!-----------------------------Login Container--------------------------------->
 
-      <div class="row">
+      <div class="row border rounded-5 p-3 bg-white shadow box-area">
         <!-----------------------------Left Container--------------------------------->
 
-        <div class="col-md-6">
+        <div class="col-md-6 left-box">
           <div class="featured-image">
             <img
               class="image-fluid"
@@ -31,11 +33,13 @@
               alt="Hero image."
             />
           </div>
+          <span>Be Verified</span>
+          <span>Join our platform.</span>
         </div>
 
         <!-----------------------------Right Container--------------------------------->
 
-        <div class="col-md-6"></div>
+        <div class="col-md-6 right-box"></div>
       </div>
     </div>
 
