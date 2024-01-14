@@ -1,0 +1,13 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  background-color: #003870;
+} // Your custom styles here
+
+$primary: #bb3d3d; // Change the Bootstrap primary color to a custom color
+
+// Override Bootstrap button styles
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+}
