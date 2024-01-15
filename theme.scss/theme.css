@@ -11864,4 +11864,16 @@ body {
   border-color: #bb3d3d;
 }
 
+.max-width-login {
+  max-width: 400px;
+}
+
+.white {
+  color: white;
+}
+
+.very-small {
+  font-size: 0.9em;
+}
+
 /*# sourceMappingURL=theme.css.map */

@@ -11,3 +11,13 @@ $primary: #bb3d3d; // Change the Bootstrap primary color to a custom color
   background-color: $primary;
   border-color: $primary;
 }
+
+.max-width-login {
+  max-width: 400px;
+}
+.white {
+  color: white;
+}
+.very-small {
+  font-size: 0.9em;
+}
