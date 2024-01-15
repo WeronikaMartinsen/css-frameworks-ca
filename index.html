@@ -15,6 +15,7 @@
       defer
       src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
     ></script>
+    <script defer src="js/validation.js"></script>
   </head>
   <body
     class="bg-image"
@@ -24,7 +25,7 @@
     <!-----------------------------Main Container--------------------------------->
 
     <div
-      class="container d-flex justify-content-around align-items-center min-vh-100"
+      class="container-fluid d-flex justify-content-around align-items-center min-vh-100"
     >
 
           <!-----------------------------Left Container--------------------------------->
@@ -33,14 +34,14 @@
             class="d-none d-md-block col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column p-1 max-width-login"
           
           >
-          <h1 class="white">Welcome to our community!</h1>
+          <h1 class="black">Welcome to our community!</h1>
             <div
               class="featured-image d-flex justify-content-center align-items-center"
             >
               <img
                 class="image-fluid rounded-4 m-3"
                 style="width: 250px"
-                src="images/login.jpg"
+                src="images/mobile.png"
                 alt="Hero image."
               />
             </div>
@@ -51,33 +52,42 @@
           <!-----------------------------Right Container--------------------------------->
 
           <div
-            class="col-sm-12 col-md-6"
-          >
+            class="col-sm-12 col-md-6" >
          <div class="container">
-<div class="row  d-flex justify-content-center align-items-center flex-column">
-  <div class="col bg-white  rounded-4 d-flex justify-content-center align-items-center flex-column p-5 max-width-login"> 
-    <h2>Logo</h2>
+<div class="row d-flex justify-content-center align-items-center flex-column">
+  <div class="col bg-white rounded-4 d-flex justify-content-center align-items-center flex-column p-5 max-width-login"> 
+    <h2>Sign up</h2>
     <div class="w-100">
-      <label for="exampleFormControlInput1" class="form-label"
+      <form action="/index.html" method="GET" id="formEmail">
+        <label for="exampleFormControlInput1" class="form-label"
         ></label
       >
       <input
         type="email"
         class="form-control"
-        id="exampleFormControlInput1"
         placeholder="name@example.com"
+        id="email" required
       />
+      <p id="errorMessage" hidden></p>
+      </form>
+      
     </div>
     <div class="mb-3 w-100">
-      <label for="exampleFormControlInput2" class="form-label"
+      <form action="/index.html" method="GET"  id="formPassword">
+        <label for="exampleFormControlInput2" class="form-label"
         ></label
       >
       <input
         type="password"
         class="form-control"
-        id="exampleFormControlInput1"
+        id="password"
         placeholder="Password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required
       />
+      <p id="errorMessagePassword" hidden></p>
+      </form>
+   
+      <button class="btn btn-block w-100 btn-primary mt-4" type="submit" value="SUBMIT">Log in</button>
     </div>
     <a class="very-small mb-3" href="#">Forgotten password?</a>
 
@@ -90,7 +100,6 @@
         <i class="fa-brands fa-google"></i> 
     <span class="fw-light">Log in with Google Account</span></div>
 
-      <button class="btn btn-block w-100 btn-primary" type="button">Log in</button>
 </div>
   <div class="col max-width-login"><div class="very-small d-flex justify-content-center align-items-center mt-3 w-100 gap-1 border rounded-4 p-3">
     <span class="white">Don`t have an account?</span><a href="#">Register here</a>
@@ -113,5 +122,6 @@
         </div>
       </div>
     </div>
+
   </body>
 </html>
