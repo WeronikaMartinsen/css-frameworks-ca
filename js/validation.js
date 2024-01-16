@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (errors.length > 0) {
-        e.preventDefault();
+        e.prevent();
         errorMessage.removeAttribute("hidden");
         errorMessagePassword.removeAttribute("hidden");
         errorMessage.innerHTML = errors.join(", ");
