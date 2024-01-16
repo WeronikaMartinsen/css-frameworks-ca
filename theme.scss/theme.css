@@ -11856,8 +11856,8 @@ textarea.form-control-lg {
   }
 }
 .btn-primary {
-  background-color: #972d97;
-  border-color: #972d97;
+  background-color: #d8a0c6;
+  border-color: #d8a0c6;
 }
 
 .max-width-login {
@@ -11890,28 +11890,6 @@ a:focus {
   color: inherit;
   text-decoration: none;
   transition: all 0.3s;
-}
-
-.navbar {
-  padding: 15px 10px;
-  background: #fff;
-  border: none;
-  border-radius: 0;
-  margin-bottom: 40px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-btn {
-  box-shadow: none;
-  outline: none !important;
-  border: none;
-}
-
-.line {
-  width: 100%;
-  height: 1px;
-  border-bottom: 1px dashed #ddd;
-  margin: 40px 0;
 }
 
 /* ---------------------------------------------------
