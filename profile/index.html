@@ -84,9 +84,11 @@
         >
           <div class="row justify-content-around align-items-center">
             <div class="col justify-content-around align-items-center w-100">
-              <div class="d-flex justify-content-center align-items-center">
+              <div
+                class="d-flex justify-content-center align-items-center flex-column"
+              >
                 <img
-                  class="image-fluid rounded-circle"
+                  class="image-fluid rounded-circle mb-3"
                   style="width: 200px"
                   src="/images/hero-img.jpg"
                   alt=""
@@ -96,39 +98,38 @@
 
             <!-- First column to the right -->
 
-            <div class="col" style="max-width: 600px">
+            <div class="col text-start" style="max-width: 600px">
               <div
-                class="d-flex justify-content-around align-items-center gap-4"
+                class="d-flex justify-content-start align-items-center gap-3 control-responsivness"
               >
-                <h3>Weronika Martinsen</h3>
-                <button class="btn btn-primary">Follow</button
-                ><button class="btn btn-secondary text-nowrap">
-                  Send message
-                </button>
-                <button class="btn btn-info">
-                  <i class="fa-solid fa-address-book"></i>
-                </button>
+                <div><h3 class="text-nowrap">Weronika Martinsen</h3></div>
+                <div class="d-flex flex-row gap-2">
+                  <a href="/index.html" class="btn btn-primary">Follow</a
+                  ><button class="btn btn-secondary text-nowrap">
+                    Send message
+                  </button>
+                  <button class="btn btn-info">
+                    <i class="fa-solid fa-address-book"></i>
+                  </button>
+                </div>
               </div>
 
               <!-- Second column to the right -->
 
               <div
-                class="d-flex align-items-center mt-4 gap-5"
+                class="d-flex justify-content-start mt-4 gap-4"
                 style="max-width: 800px"
               >
-                <span>Posts: <strong>4255</strong></span>
-                <span> <strong>466</strong> followers</span>
-                <span>Follow: <strong>156</strong></span>
+                <span class="text-nowrap">Posts: <strong>4255</strong></span>
+                <span class="text-nowrap"> <strong>466</strong> followers</span>
+                <span class="text-nowrap">Follow: <strong>156</strong></span>
               </div>
 
               <!-- Third column to the right -->
 
-              <div
-                class="d-flex flex-column justify-content-start align-items-start mt-3"
-              >
-                <span>@love @travel</span>
-                <span>believe in magic</span>
-                <span>my live is my art</span>
+              <div class="d-flex flex-column justify-content-start mt-3">
+                <span class="">@love @travel @believe in magic</span>
+                <span class="">@my live is my art</span>
               </div>
             </div>
           </div>
@@ -136,7 +137,7 @@
 
         <!------------------------ Second container ----------------------------->
         <div
-          class="container-fluid d-flex justify-content-center align-items-center flex-wrap gap-5 mt-5"
+          class="container-fluid d-flex justify-content-center align-items-center flex-wrap gap-5 mt-4"
         >
           <div class="d-flex flex-column">
             <img
@@ -197,6 +198,52 @@
         </div>
 
         <!------------------------ Third container ----------------------------->
+
+        <!-- Gallery -->
+        <div class="row">
+          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+            />
+
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Wintry Mountain Landscape"
+            />
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Mountains in the Clouds"
+            />
+
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+            />
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Waves at Sea"
+            />
+
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Yosemite National Park"
+            />
+          </div>
+        </div>
+        <!-- Gallery -->
       </div>
     </div>
   </body>

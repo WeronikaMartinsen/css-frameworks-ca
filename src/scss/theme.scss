@@ -17,6 +17,10 @@
   border-color: $primary;
 }
 
+.bg-ny-variant {
+  background-color: #353336;
+}
+
 .max-width-login {
   max-width: 400px;
 }
@@ -88,5 +92,10 @@ a:focus {
   }
   #sidebarCollapse span {
     display: none;
+  }
+}
+@media (max-width: 559px) {
+  .control-responsivness {
+    flex-wrap: wrap;
   }
 }
