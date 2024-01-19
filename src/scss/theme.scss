@@ -1,3 +1,8 @@
+$primary: #87ceeb;
+$secondary: #0da6a6;
+$info: #eee0df;
+$btn-dark: #223240;
+
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/_variables";
@@ -12,13 +17,56 @@
 @import "buttons";
 
 // Override Bootstrap button styles
-.btn-primary {
-  background-color: $primary;
-  border-color: $primary;
+@font-face {
+  font-family: "Arimo";
+  src: url("path/to/arimo.woff2") format("woff2"),
+    url("path/to/arimo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-.bg-ny-variant {
-  background-color: #353336;
+@font-face {
+  font-family: "Edu TAS Beginner";
+  src: url("path/to/edu-tas-beginner.woff2") format("woff2"),
+    url("path/to/edu-tas-beginner.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("path/to/montserrat.woff2") format("woff2"),
+    url("path/to/montserrat.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("path/to/open-sans.woff2") format("woff2"),
+    url("path/to/open-sans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Override Bootstrap variables
+$font-family-base: "Arimo", sans-serif;
+
+// Your additional custom styles
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span {
+  font-family: "Montserrat", sans-serif;
 }
 
 .max-width-login {
@@ -28,16 +76,22 @@
   color: white;
 }
 .very-small {
-  font-size: 0.9em;
+  font-size: 0.8em;
+}
+.img-styling {
+  width: auto;
+  height: 100vh;
 }
 
 //Profile Page
 
+.profile-img {
+  width: 200px;
+}
 #sidebar {
   min-width: 250px;
   max-width: 250px;
-  background: #7386d5;
-  color: #fff;
+  background-color: $info;
   transition: all 0.3s;
 }
 
@@ -98,4 +152,16 @@ a:focus {
   .control-responsivness {
     flex-wrap: wrap;
   }
+}
+
+/* ---------------------------------------------------
+  Feed
+----------------------------------------------------- */
+
+.bg-image-costume {
+  background-image: url("/images/mapa.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }

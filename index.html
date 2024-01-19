@@ -9,6 +9,10 @@
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="theme.scss/theme.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Edu+TAS+Beginner&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    
     <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
     <script
       defer
@@ -17,15 +21,21 @@
     <script defer src="js/validation.js"></script>
   </head>
   <body class="d-flex justify-content-center align-items-center w-100" style="height: 100vh;">
+    
+
+    <nav class="navbar fixed-top d-flex justify-content-end align-items-end">
+      <img class="navbar-brand rounded-4" src="images/lgh.png" alt="Logo of the travel web app." style="width:150px; height: auto;">
+    </nav>
+    
 
 
           <!-----------------------------Left Container--------------------------------->
 
           <div
-            class="d-none d-md-block col-md-6 card-img-overlay d-flex justify-content-center align-items-center flex-column"
+            class="col-md-6 card-img-overlay d-flex justify-content-center align-items-center flex-column"
           
           >
-          <img class="card-img opacity-75 w-100 h-100"src="images/trav.jpg" alt="">
+          <img class="img-fluid opacity-75 img-styling" src="images/travel-hero.jpg" alt="Hero image of the Maledives.">
 
           </div>
 
@@ -35,7 +45,7 @@
             class="z-3 col-sm-12 col-md-6" >
          <div class="container-fluid">
 <div class="row d-flex justify-content-center align-items-center flex-column">
-  <div class="col rounded-4 d-flex justify-content-center align-items-center flex-column p-5 max-width-login  bg-white rounded-4 border"> 
+  <div class="col rounded-4 d-flex justify-content-center align-items-center flex-column p-5 max-width-login bg-white rounded-4 border"> 
     <h2>Sign up</h2>
     <div class="w-100">
       <form action="/profile/index.html" method="GET" id="formEmail">
@@ -59,37 +69,49 @@
       >
       <input
         type="password"
-        class="form-control"
+        class="form-control mb-3"
         id="password"
         placeholder="Password"
         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required
       />
       <p id="errorMessagePassword" hidden></p>
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label text-black-50 very-small px-1" for="flexCheckDefault">
+   Save your account.
+  </label>
       </form>
    
-      <a href="profile/index.html"class="btn btn-block w-100 btn-primary mt-4" type="submit" value="SUBMIT">Log in</a>
+      <a href="profile/index.html"class="btn btn-block w-100 btn-secondary mt-3 text-white" type="submit" value="SUBMIT">Log in</a>
     </div>
-    <a class="very-small mb-3" href="#">Forgotten password?</a>
+    <a class="very-small text-black-50 mb-3" href="#">Forgotten password?</a>
 
 
-    <div class="d-flex justify-content-around align-items-center gap-2 mb-1"> 
+    <div class="d-flex justify-content-around align-items-center gap-2 mt-2"> 
       <i class="fa-brands fa-facebook"></i>
-      <span class="fw-light">Log in with Facebook</span></div>
+      <span>Log in with Facebook</span></div>
       
-      <div class="d-flex justify-content-around align-items-center gap-2 mb-4">
+      <div class="d-flex justify-content-around align-items-center gap-2">
         <i class="fa-brands fa-google"></i> 
-    <span class="fw-light">Log in with Google Account</span></div>
+    <span class="mt-1 mb-0">Log in with Google Account</span></div>
 
 </div>
-  <div class="col max-width-login"><div class="very-small d-flex justify-content-center align-items-center mt-3 w-100 gap-1 border rounded-4 p-3">
-    <span class="white">Don`t have an account?</span><a href="#">Register here</a>
+  <div class="col max-width-login"><div class="very-small d-flex justify-content-center align-items-center mt-3 w-100 gap-1 border bg-white rounded-4 p-3">
+    <span>Don`t have an account?</span><a class="text-secondary text-decoration-underline"href="#">Register here</a>
   </div></div>
   <div class="col">
     <div class="d-flex justify-content-center align-items-center flex-column mt-4 w-100">
-      <span class="white">Download our app.</span>
+      <span class="font-weight-bold">Download our app.</span>
       <div class="d-flex justify-content-center align-items-center gap-2 mt-3">
-        <button type="button" class="btn btn-primary btn-sm">Small button</button>
-<button type="button" class="btn btn-secondary btn-sm">Small button</button>
+        <button type="button" class="btn btn-dark btn-sm">
+          <i class="fa-brands fa-apple fa-lg bg-white"></i>
+          <span class="very-small">Download on the</span>
+          <span style="display: block;">App Store</span>
+        </button>
+        <button type="button" class="btn btn-dark btn-sm">
+          <i class="fa-brands fa-google-play fa-lg bg-white"></i>
+          <span class="very-small">Download on the</span>
+          <span style="display: block;">App Store</span>
+        </button>
       </div>
     </div></div>
 </div>
