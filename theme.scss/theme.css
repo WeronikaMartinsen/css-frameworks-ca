@@ -11904,6 +11904,11 @@ span {
   max-width: 400px;
 }
 
+.logo-size {
+  width: 150px;
+  height: auto;
+}
+
 .white {
   color: white;
 }
@@ -11986,12 +11991,5 @@ a:focus {
 /* ---------------------------------------------------
   Feed
 ----------------------------------------------------- */
-.bg-image-costume {
-  background-image: url("/images/mapa.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
 
 /*# sourceMappingURL=theme.css.map */
