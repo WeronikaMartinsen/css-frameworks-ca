@@ -9,121 +9,364 @@
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="theme.scss/theme.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Edu+TAS+Beginner&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    
-    <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Edu+TAS+Beginner&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/b515e79b0f.js"
+      crossorigin="anonymous"
+    ></script>
     <script
       defer
       src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
     ></script>
     <script defer src="js/validation.js"></script>
   </head>
-  <body class="d-flex justify-content-center align-items-center w-100 p-5">
-    
 
-    <nav class="navbar fixed-top d-flex justify-content-end align-items-end">
-      <img class="navbar-brand rounded-4 logo-size" src="images/lgh.png">
-    </nav>
-    
+  <body
+    class="container-fluid d-flex flex-column justify-content-between align-items-center w-100 min-vh-100 p-0"
+  >
+    <header>
+      <nav class="navbar fixed-top d-flex justify-content-end align-items-end">
+        <img class="navbar-brand rounded-4 logo-size" src="images/lgh.png" />
+      </nav>
+    </header>
 
+    <!-----------------------------Left Container--------------------------------->
 
-          <!-----------------------------Left Container--------------------------------->
+    <main
+      class="col-md-6 card-img-overlay d-flex justify-content-center align-items-center flex-column"
+    >
+      <img
+        class="img-fluid opacity-75 img-styling"
+        src="images/travel-hero.jpg"
+        alt="Hero image of the Maledives."
+      />
+    </main>
 
-          <div
-            class="col-md-6 card-img-overlay d-flex justify-content-center align-items-center flex-column"
-          
+    <!-----------------------------Right Container--------------------------------->
+
+    <div
+      class="d-flex justify-content-center align-items-center flex-column z-3 col-sm-12 col-md-6 mt-5"
+    >
+      <!--   <div
+        class="d-flex justify-content-center align-items-center gap-3 bg-white opacity-50 rounded-4 p-2"
+      >
+        <h1 class="display-4"><em>Discover</em></h1>
+        <h2 class="display-5"><strong>Share</strong></h2>
+        <h3 class="display-6"><em>Connect</em></h3>
+      </div> -->
+
+      <div
+        class="col rounded-4 d-flex justify-content-center align-items-center flex-column p-5 bg-white rounded-4 border mt-4"
+      >
+        <h2>Sign up</h2>
+        <div class="w-100">
+          <form action="/profile/index.html" method="GET" id="formEmail">
+            <label for="exampleFormControlInput1" class="form-label"></label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="name@example.com"
+              id="email"
+              required
+            />
+            <p id="errorMessage" hidden></p>
+          </form>
+        </div>
+        <div class="mb-3 w-100">
+          <form action="/profile/index.html" method="GET" id="formPassword">
+            <label for="exampleFormControlInput2" class="form-label"></label>
+            <input
+              type="password"
+              class="form-control mb-3"
+              id="password"
+              placeholder="Password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+              required
+            />
+            <p id="errorMessagePassword" hidden></p>
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label
+              class="form-check-label text-black-50 very-small px-1"
+              for="flexCheckDefault"
+            >
+              Save your account.
+            </label>
+          </form>
+
+          <a
+            href="profile/index.html"
+            class="btn btn-block w-100 btn-secondary mt-3 text-white"
+            type="submit"
+            value="SUBMIT"
+            >Log in</a
           >
-          <img class="img-fluid opacity-75 img-styling" src="images/travel-hero.jpg" alt="Hero image of the Maledives.">
+        </div>
+        <a class="very-small text-black-50 mb-3" href="#"
+          >Forgotten password?</a
+        >
 
-          </div>
+        <div
+          class="d-flex justify-content-around align-items-center gap-2 mt-2"
+        >
+          <i class="fa-brands fa-facebook"></i>
+          <span>Log in with Facebook</span>
+        </div>
 
-          <!-----------------------------Right Container--------------------------------->
-
-          <div
-            class="z-3 col-sm-12 col-md-6" >
-         <div class="container-fluid">
-<div class="row d-flex justify-content-center align-items-center flex-column">
-  <div class="col rounded-4 d-flex justify-content-center align-items-center flex-column p-5 max-width-login bg-white rounded-4 border"> 
-    <h2>Sign up</h2>
-    <div class="w-100">
-      <form action="/profile/index.html" method="GET" id="formEmail">
-        <label for="exampleFormControlInput1" class="form-label"
-        ></label
-      >
-      <input
-        type="email"
-        class="form-control"
-        placeholder="name@example.com"
-        id="email" required
-      />
-      <p id="errorMessage" hidden></p>
-      </form>
-      
-    </div>
-    <div class="mb-3 w-100">
-      <form action="/profile/index.html" method="GET"  id="formPassword">
-        <label for="exampleFormControlInput2" class="form-label"
-        ></label
-      >
-      <input
-        type="password"
-        class="form-control mb-3"
-        id="password"
-        placeholder="Password"
-        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required
-      />
-      <p id="errorMessagePassword" hidden></p>
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label text-black-50 very-small px-1" for="flexCheckDefault">
-   Save your account.
-  </label>
-      </form>
-   
-      <a href="profile/index.html"class="btn btn-block w-100 btn-secondary mt-3 text-white" type="submit" value="SUBMIT">Log in</a>
-    </div>
-    <a class="very-small text-black-50 mb-3" href="#">Forgotten password?</a>
-
-
-    <div class="d-flex justify-content-around align-items-center gap-2 mt-2"> 
-      <i class="fa-brands fa-facebook"></i>
-      <span>Log in with Facebook</span></div>
-      
-      <div class="d-flex justify-content-around align-items-center gap-2">
-        <i class="fa-brands fa-google"></i> 
-    <span class="mt-1 mb-0">Log in with Google Account</span></div>
-
-</div>
-  <div class="col max-width-login"><div class="very-small d-flex justify-content-center align-items-center mt-3 w-100 gap-1 border bg-white rounded-4 p-3">
-    <span>Don`t have an account?</span><a class="text-secondary text-decoration-underline"href="#">Register here</a>
-  </div></div>
-  <div class="col">
-    <div class="d-flex justify-content-center align-items-center flex-column mt-4 w-100">
-      <span class="font-weight-bold">Download our app.</span>
-      <div class="d-flex justify-content-center align-items-center gap-2 mt-3">
-        <button type="button" class="btn btn-dark btn-sm">
-          <i class="fa-brands fa-apple fa-lg bg-white"></i>
-          <span class="very-small">Download on the</span>
-          <span style="display: block;">App Store</span>
-        </button>
-        <button type="button" class="btn btn-dark btn-sm">
-          <i class="fa-brands fa-google-play fa-lg bg-white"></i>
-          <span class="very-small">Download on the</span>
-          <span style="display: block;">App Store</span>
-        </button>
-      </div>
-    </div></div>
-</div>
-         </div> 
-        
-              
-          </div>
-         
-          
+        <div class="d-flex justify-content-around align-items-center gap-2">
+          <i class="fa-brands fa-google"></i>
+          <span class="mt-1 mb-0">Log in with Google Account</span>
         </div>
       </div>
-    
+      <div class="col max-width-login">
+        <div
+          class="very-small d-flex justify-content-center align-items-center mt-3 w-100 gap-1 border bg-white rounded-4 p-3"
+        >
+          <span>Don`t have an account?</span
+          ><a class="text-secondary text-decoration-underline" href="#"
+            >Register here</a
+          >
+        </div>
+      </div>
+      <div class="col">
+        <div
+          class="d-flex justify-content-center align-items-center flex-column mt-4 mb-4 w-100"
+        >
+          <span class="font-weight-bold">Download our app.</span>
+          <div
+            class="d-flex justify-content-center align-items-center gap-2 mt-3"
+          >
+            <button type="button" class="btn btn-dark btn-sm">
+              <i class="fa-brands fa-apple fa-lg bg-white"></i>
+              <span class="very-small">Download on the</span>
+              <span style="display: block">App Store</span>
+            </button>
+            <button type="button" class="btn btn-dark btn-sm">
+              <i class="fa-brands fa-google-play fa-lg bg-white"></i>
+              <span class="very-small">Download on the</span>
+              <span style="display: block">Google Play</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <footer class="container-fluid d-flex flex-column bg-light text-center z-3">
+      <!-- Grid container -->
+      <div class="p-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-outline btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+
+          <!-- Twitter -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-outline btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+
+          <!-- Google -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-outline btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+
+          <!-- Instagram -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-outline btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <!-- Linkedin -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-outline btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+          <!-- Github -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-outline btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Form -->
+        <section class="">
+          <form action="">
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center">
+              <!--Grid column-->
+              <div class="col-auto">
+                <p class="pt-2">Sign up for our newsletter</p>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-5 col-12">
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input
+                    type="email"
+                    id="form5Example24"
+                    class="form-control"
+                    placeholder="Email address"
+                  />
+                </div>
+              </div>
+
+              <!--Grid column-->
+              <div class="col-auto">
+                <!-- Submit button -->
+                <button
+                  data-mdb-ripple-init
+                  type="submit"
+                  class="btn btn-secondary white mb-4"
+                >
+                  Subscribe
+                </button>
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </form>
+        </section>
+
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row mt-3">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Explore</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a class="text-body" href="#!">Destinations</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#!">Travel Stories</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#!">Culture</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#!">Events</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Connect</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a class="text-body" href="#!">Guides</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#!">Groups</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#!">Partners</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#!">Sponsors</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Share</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a class="text-body" href="#!">Plans</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#!">Experience</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#!">Pictures</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#!">Opinions</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Plan</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a class="text-body" href="#!">Hotels</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#!">Flights</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#!">Booking</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#!">Last Minute</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center p-3"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2024 Copyright:
+        <a class="text-reset fw-bold">Weronika Martinsen</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
   </body>
 </html>
