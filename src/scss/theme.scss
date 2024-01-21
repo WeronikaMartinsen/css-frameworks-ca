@@ -68,7 +68,11 @@ p,
 span {
   font-family: "Montserrat", sans-serif;
 }
-
+.custom-login-box {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
 .logo-size {
   width: 150px;
   height: auto;
@@ -88,11 +92,20 @@ span {
 
 .profile-img {
   width: 200px;
+  height: 200px;
+}
+
+.stories-width {
+  height: 50px;
+  width: 50px;
+}
+.stories-width-profile {
+  height: 30px;
+  width: 30px;
 }
 #sidebar {
   min-width: 250px;
   max-width: 250px;
-  background-color: $info;
   transition: all 0.3s;
 }
 
@@ -108,20 +121,10 @@ a:focus {
   transition: all 0.3s;
 }
 
-/* ---------------------------------------------------
-  SIDEBAR STYLE
------------------------------------------------------ */
-
 .wrapper {
   display: flex;
   width: 100%;
   align-items: stretch;
-}
-
-#sidebar {
-  min-width: 250px;
-  max-width: 250px;
-  transition: all 0.3s;
 }
 
 /* ---------------------------------------------------
@@ -138,20 +141,12 @@ a:focus {
   MEDIAQUERIES
 ----------------------------------------------------- */
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   #sidebar {
-    margin-left: -250px;
+    display: none;
   }
   #sidebar.active {
     margin-left: 0;
-  }
-  #sidebarCollapse span {
-    display: none;
-  }
-}
-@media (max-width: 559px) {
-  .control-responsivness {
-    flex-wrap: wrap;
   }
 }
 

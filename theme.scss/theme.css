@@ -20,7 +20,7 @@
   --bs-white: #fff;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
-  --bs-gray-100: #eef6f6;
+  --bs-gray-100: #f4f9f9;
   --bs-gray-200: #e9ecef;
   --bs-gray-300: #dee2e6;
   --bs-gray-400: #ced4da;
@@ -35,7 +35,7 @@
   --bs-info: #eee0df;
   --bs-warning: #ffc107;
   --bs-danger: #000000;
-  --bs-light: #eef6f6;
+  --bs-light: #f4f9f9;
   --bs-dark: #223240;
   --bs-primary-rgb: 135, 206, 235;
   --bs-secondary-rgb: 13, 166, 166;
@@ -43,7 +43,7 @@
   --bs-info-rgb: 238, 224, 223;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 0, 0, 0;
-  --bs-light-rgb: 238, 246, 246;
+  --bs-light-rgb: 244, 249, 249;
   --bs-dark-rgb: 34, 50, 64;
   --bs-primary-text-emphasis: #36525e;
   --bs-secondary-text-emphasis: #054242;
@@ -59,7 +59,7 @@
   --bs-info-bg-subtle: #fcf9f9;
   --bs-warning-bg-subtle: #fff3cd;
   --bs-danger-bg-subtle: #cccccc;
-  --bs-light-bg-subtle: #f7fbfb;
+  --bs-light-bg-subtle: #fafcfc;
   --bs-dark-bg-subtle: #ced4da;
   --bs-primary-border-subtle: #cfebf7;
   --bs-secondary-border-subtle: #9edbdb;
@@ -90,8 +90,8 @@
   --bs-secondary-bg-rgb: 233, 236, 239;
   --bs-tertiary-color: rgba(34, 50, 64, 0.5);
   --bs-tertiary-color-rgb: 34, 50, 64;
-  --bs-tertiary-bg: #eef6f6;
-  --bs-tertiary-bg-rgb: 238, 246, 246;
+  --bs-tertiary-bg: #f4f9f9;
+  --bs-tertiary-bg-rgb: 244, 249, 249;
   --bs-heading-color: inherit;
   --bs-link-color: #87ceeb;
   --bs-link-color-rgb: 135, 206, 235;
@@ -147,7 +147,7 @@
   --bs-info-text-emphasis: #f5ecec;
   --bs-warning-text-emphasis: #ffda6a;
   --bs-danger-text-emphasis: #666666;
-  --bs-light-text-emphasis: #eef6f6;
+  --bs-light-text-emphasis: #f4f9f9;
   --bs-dark-text-emphasis: #dee2e6;
   --bs-primary-bg-subtle: #1b292f;
   --bs-secondary-bg-subtle: #032121;
@@ -2014,13 +2014,13 @@ progress {
 
 .table-light {
   --bs-table-color: #000;
-  --bs-table-bg: #eef6f6;
-  --bs-table-border-color: #bec5c5;
-  --bs-table-striped-bg: #e2eaea;
+  --bs-table-bg: #f4f9f9;
+  --bs-table-border-color: #c3c7c7;
+  --bs-table-striped-bg: #e8eded;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #d6dddd;
+  --bs-table-active-bg: #dce0e0;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #dce4e4;
+  --bs-table-hover-bg: #e2e6e6;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3067,19 +3067,19 @@ textarea.form-control-lg {
 
 .btn-light {
   --bs-btn-color: #000;
-  --bs-btn-bg: #eef6f6;
-  --bs-btn-border-color: #eef6f6;
+  --bs-btn-bg: #f4f9f9;
+  --bs-btn-border-color: #f4f9f9;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #cad1d1;
-  --bs-btn-hover-border-color: #bec5c5;
-  --bs-btn-focus-shadow-rgb: 202, 209, 209;
+  --bs-btn-hover-bg: #cfd4d4;
+  --bs-btn-hover-border-color: #c3c7c7;
+  --bs-btn-focus-shadow-rgb: 207, 212, 212;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #bec5c5;
-  --bs-btn-active-border-color: #b3b9b9;
+  --bs-btn-active-bg: #c3c7c7;
+  --bs-btn-active-border-color: #b7bbbb;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #eef6f6;
-  --bs-btn-disabled-border-color: #eef6f6;
+  --bs-btn-disabled-bg: #f4f9f9;
+  --bs-btn-disabled-border-color: #f4f9f9;
 }
 
 .btn-dark {
@@ -3202,19 +3202,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-light {
-  --bs-btn-color: #eef6f6;
-  --bs-btn-border-color: #eef6f6;
+  --bs-btn-color: #f4f9f9;
+  --bs-btn-border-color: #f4f9f9;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #eef6f6;
-  --bs-btn-hover-border-color: #eef6f6;
-  --bs-btn-focus-shadow-rgb: 238, 246, 246;
+  --bs-btn-hover-bg: #f4f9f9;
+  --bs-btn-hover-border-color: #f4f9f9;
+  --bs-btn-focus-shadow-rgb: 244, 249, 249;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #eef6f6;
-  --bs-btn-active-border-color: #eef6f6;
+  --bs-btn-active-bg: #f4f9f9;
+  --bs-btn-active-border-color: #f4f9f9;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #eef6f6;
+  --bs-btn-disabled-color: #f4f9f9;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #eef6f6;
+  --bs-btn-disabled-border-color: #f4f9f9;
   --bs-gradient: none;
 }
 
@@ -6856,8 +6856,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-light-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-light:hover, .link-light:focus {
-  color: RGBA(241, 248, 248, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(241, 248, 248, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(246, 250, 250, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(246, 250, 250, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-dark {
@@ -11900,6 +11900,12 @@ span {
   font-family: "Montserrat", sans-serif;
 }
 
+.custom-login-box {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 .logo-size {
   width: 150px;
   height: auto;
@@ -11920,12 +11926,22 @@ span {
 
 .profile-img {
   width: 200px;
+  height: 200px;
+}
+
+.stories-width {
+  height: 50px;
+  width: 50px;
+}
+
+.stories-width-profile {
+  height: 30px;
+  width: 30px;
 }
 
 #sidebar {
   min-width: 250px;
   max-width: 250px;
-  background-color: #eee0df;
   transition: all 0.3s;
 }
 
@@ -11941,19 +11957,10 @@ a:focus {
   transition: all 0.3s;
 }
 
-/* ---------------------------------------------------
-  SIDEBAR STYLE
------------------------------------------------------ */
 .wrapper {
   display: flex;
   width: 100%;
   align-items: stretch;
-}
-
-#sidebar {
-  min-width: 250px;
-  max-width: 250px;
-  transition: all 0.3s;
 }
 
 /* ---------------------------------------------------
@@ -11968,20 +11975,12 @@ a:focus {
 /* ---------------------------------------------------
   MEDIAQUERIES
 ----------------------------------------------------- */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   #sidebar {
-    margin-left: -250px;
+    display: none;
   }
   #sidebar.active {
     margin-left: 0;
-  }
-  #sidebarCollapse span {
-    display: none;
-  }
-}
-@media (max-width: 559px) {
-  .control-responsivness {
-    flex-wrap: wrap;
   }
 }
 /* ---------------------------------------------------

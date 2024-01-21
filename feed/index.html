@@ -24,73 +24,304 @@
     <script defer src="js/profile.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-info">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"
-          ><img
-            class="logo-size"
-            src="/images/lgh.png"
-            alt="Logo of the travel brand."
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarScroll"
-          aria-controls="navbarScroll"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
-            <li class="nav-item">
+    <header>
+      <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav class="p-2 bg-light" id="sidebar">
+          <div class="sidebar-header">
+            <h3>Logo</h3>
+          </div>
+        
+          <ul class="list-unstyled components p-2">
+            <li class="search-bar active">
+              <form class="form-inline mt-3">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                    <span class="input-group-text w-100 h-100" id="basic-addon2"><i class="fa-solid fa-magnifying-glass"></i></span>
+                  </div>
+                </div>
+                
+              </form>
+            </li>
+            <div class="d-flex justify-content-starts align-items-center gap-2 mt-5 p-3">
+              <img
+             
+                class="rounded-circle image-fluid stories-width-profile"
+                src="/images/hero-img.jpg"
+                alt="Profile picture."
+              />
+              <a href="/profile/index.html">Profile</a>
+            </div>
+            <li class="mt-1 p-3">
+              <i class="fa-solid fa-paper-plane px-2"></i>
+              <a href="#">Notifications</a>
+            </li>
+            <li class="mt-1 p-3">
+              <i class="fa-solid fa-message px-2"></i>
               <a
-                class="nav-link active"
-                aria-current="page"
-                href="/profile/index.html"
-                >My profile</a
+                href="#pageSubmenu"
+                data-toggle="collapse"
+                aria-expanded="false"
+                class=""
+                >Messages</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Message</a>
+            <li class="mt-1 p-3">
+              <i class="fa-solid fa-video px-2"></i>
+              <a href="#">Reels</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link"> Friends </a>
-              <ul
-                class="dropdown-menu"
-                aria-labelledby="navbarScrollingDropdown"
-              >
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
+            <li class="mt-1 p-3">
+              <i class="fa-solid fa-address-book px-2"></i>
+              <a href="#">Contact</a>
             </li>
-            <li class="nav-item">
+            <li class="mt-1 p-3">
+              <i class="fa-solid fa-user-group px-2"></i>
+              <a href="#">Friends</a>
+            </li>
+            <li class="mt-1 p-3">
+              <i class="fa-solid fa-people-group px-2"></i>
+              <a href="#">Groups</a>
+            </li>
+          </ul>
+  
+          <ul class="list-unstyled CTAs p-2">
+            <li class="mt-1 p-3">
+              <i class="fa-solid fa-download px-2"></i>
               <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Link</a
+                href=""
+                class="download"
+                >Download source</a
+              >
+            </li>
+            <li class="mt-1 p-3">
+              <a
+                href="/index.html"
+                class="article"
+                >Log out</a
               >
             </li>
           </ul>
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-primary" type="submit">Search</button>
-          </form>
+        </nav>
+    </header>
+    
+
+
+      <main>
+
+
+
+
+
+
+
+      </main>
+
+      <footer class="container-fluid d-flex flex-column bg-light text-center z-3">
+        <!-- Grid container -->
+        <div class="p-4">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a
+              data-mdb-ripple-init
+              class="btn btn-outline btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+  
+            <!-- Twitter -->
+            <a
+              data-mdb-ripple-init
+              class="btn btn-outline btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-twitter"></i
+            ></a>
+  
+            <!-- Google -->
+            <a
+              data-mdb-ripple-init
+              class="btn btn-outline btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-google"></i
+            ></a>
+  
+            <!-- Instagram -->
+            <a
+              data-mdb-ripple-init
+              class="btn btn-outline btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-instagram"></i
+            ></a>
+  
+            <!-- Linkedin -->
+            <a
+              data-mdb-ripple-init
+              class="btn btn-outline btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+  
+            <!-- Github -->
+            <a
+              data-mdb-ripple-init
+              class="btn btn-outline btn-floating m-1"
+              href="#!"
+              role="button"
+              ><i class="fab fa-github"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+  
+          <!-- Section: Form -->
+          <section class="">
+            <form action="">
+              <!--Grid row-->
+              <div class="row d-flex justify-content-center">
+                <!--Grid column-->
+                <div class="col-auto">
+                  <p class="pt-2">Sign up for our newsletter</p>
+                </div>
+                <!--Grid column-->
+  
+                <!--Grid column-->
+                <div class="col-md-5 col-12">
+                  <!-- Email input -->
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input
+                      type="email"
+                      id="form5Example24"
+                      class="form-control"
+                      placeholder="Email address"
+                    />
+                  </div>
+                </div>
+  
+                <!--Grid column-->
+                <div class="col-auto">
+                  <!-- Submit button -->
+                  <button
+                    data-mdb-ripple-init
+                    type="submit"
+                    class="btn btn-secondary white mb-4"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+                <!--Grid column-->
+              </div>
+              <!--Grid row-->
+            </form>
+          </section>
+  
+          <!-- Section: Links -->
+          <section class="">
+            <!--Grid row-->
+            <div class="row mt-3">
+              <!--Grid column-->
+              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Explore</h5>
+  
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a class="text-body" href="#!">Destinations</a>
+                  </li>
+                  <li>
+                    <a class="text-body" href="#!">Travel Stories</a>
+                  </li>
+                  <li>
+                    <a class="text-body" href="#!">Culture</a>
+                  </li>
+                  <li>
+                    <a class="text-body" href="#!">Events</a>
+                  </li>
+                </ul>
+              </div>
+              <!--Grid column-->
+  
+              <!--Grid column-->
+              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Connect</h5>
+  
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a class="text-body" href="#!">Guides</a>
+                  </li>
+                  <li>
+                    <a class="text-body" href="#!">Groups</a>
+                  </li>
+                  <li>
+                    <a class="text-body" href="#!">Partners</a>
+                  </li>
+                  <li>
+                    <a class="text-body" href="#!">Sponsors</a>
+                  </li>
+                </ul>
+              </div>
+              <!--Grid column-->
+  
+              <!--Grid column-->
+              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Share</h5>
+  
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a class="text-body" href="#!">Plans</a>
+                  </li>
+                  <li>
+                    <a class="text-body" href="#!">Experience</a>
+                  </li>
+                  <li>
+                    <a class="text-body" href="#!">Pictures</a>
+                  </li>
+                  <li>
+                    <a class="text-body" href="#!">Opinions</a>
+                  </li>
+                </ul>
+              </div>
+              <!--Grid column-->
+  
+              <!--Grid column-->
+              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Plan</h5>
+  
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a class="text-body" href="#!">Hotels</a>
+                  </li>
+                  <li>
+                    <a class="text-body" href="#!">Flights</a>
+                  </li>
+                  <li>
+                    <a class="text-body" href="#!">Booking</a>
+                  </li>
+                  <li>
+                    <a class="text-body" href="#!">Last Minute</a>
+                  </li>
+                </ul>
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </section>
+          <!-- Section: Links -->
         </div>
-      </div>
-    </nav>
+        <!-- Grid container -->
+  
+        <!-- Copyright -->
+        <div
+          class="text-center p-3"
+          style="background-color: rgba(0, 0, 0, 0.05)"
+        >
+          © 2024 Copyright:
+          <a class="text-reset fw-bold">Weronika Martinsen</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
   </body>
 </html>
