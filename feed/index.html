@@ -24,15 +24,18 @@
     <script defer src="js/profile.js"></script>
   </head>
   <body>
+    <div class="container-fluid d-flex flex-column m-0">
+
     <header>
-      <div class="wrapper">
+
         <!-- Sidebar  -->
-        <nav class="p-2 bg-light" id="sidebar">
+        <div class="row h-100 fixed-top">
+          <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar p-3 bg-light" id="sidebar">
           <div class="sidebar-header">
             <h3>Logo</h3>
           </div>
-        
           <ul class="list-unstyled components p-2">
+      
             <li class="search-bar active">
               <form class="form-inline mt-3">
                 <div class="input-group mb-3">
@@ -87,14 +90,6 @@
   
           <ul class="list-unstyled CTAs p-2">
             <li class="mt-1 p-3">
-              <i class="fa-solid fa-download px-2"></i>
-              <a
-                href=""
-                class="download"
-                >Download source</a
-              >
-            </li>
-            <li class="mt-1 p-3">
               <a
                 href="/index.html"
                 class="article"
@@ -103,225 +98,235 @@
             </li>
           </ul>
         </nav>
+  
     </header>
     
+      <!-- Page Content  -->
 
-
-      <main>
-
-
-
-
-
-
-
-      </main>
-
-      <footer class="container-fluid d-flex flex-column bg-light text-center z-3">
-        <!-- Grid container -->
-        <div class="p-4">
-          <!-- Section: Social media -->
-          <section class="mb-4">
-            <!-- Facebook -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-outline btn-floating m-1"
-              href="#!"
-              role="button"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-  
-            <!-- Twitter -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-outline btn-floating m-1"
-              href="#!"
-              role="button"
-              ><i class="fab fa-twitter"></i
-            ></a>
-  
-            <!-- Google -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-outline btn-floating m-1"
-              href="#!"
-              role="button"
-              ><i class="fab fa-google"></i
-            ></a>
-  
-            <!-- Instagram -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-outline btn-floating m-1"
-              href="#!"
-              role="button"
-              ><i class="fab fa-instagram"></i
-            ></a>
-  
-            <!-- Linkedin -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-outline btn-floating m-1"
-              href="#!"
-              role="button"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-  
-            <!-- Github -->
-            <a
-              data-mdb-ripple-init
-              class="btn btn-outline btn-floating m-1"
-              href="#!"
-              role="button"
-              ><i class="fab fa-github"></i
-            ></a>
-          </section>
-          <!-- Section: Social media -->
-  
-          <!-- Section: Form -->
-          <section class="">
-            <form action="">
-              <!--Grid row-->
-              <div class="row d-flex justify-content-center">
-                <!--Grid column-->
-                <div class="col-auto">
-                  <p class="pt-2">Sign up for our newsletter</p>
-                </div>
-                <!--Grid column-->
-  
-                <!--Grid column-->
-                <div class="col-md-5 col-12">
-                  <!-- Email input -->
-                  <div data-mdb-input-init class="form-outline mb-4">
-                    <input
-                      type="email"
-                      id="form5Example24"
-                      class="form-control"
-                      placeholder="Email address"
-                    />
+      <main class="m-0 d-flex flex-column justify-content-center align-items-center ms-sm-auto col-lg-10">
+        <div class="mt-4" id="content">
+         
+        </div>
+        
+        <footer class="container-fluid d-flex flex-column bg-light text-center">
+          <!-- Grid container -->
+          <div class="p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+              <!-- Facebook -->
+              <a
+                data-mdb-ripple-init
+                class="btn btn-outline btn-floating m-1"
+                href="#!"
+                role="button"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+    
+              <!-- Twitter -->
+              <a
+                data-mdb-ripple-init
+                class="btn btn-outline btn-floating m-1"
+                href="#!"
+                role="button"
+                ><i class="fab fa-twitter"></i
+              ></a>
+    
+              <!-- Google -->
+              <a
+                data-mdb-ripple-init
+                class="btn btn-outline btn-floating m-1"
+                href="#!"
+                role="button"
+                ><i class="fab fa-google"></i
+              ></a>
+    
+              <!-- Instagram -->
+              <a
+                data-mdb-ripple-init
+                class="btn btn-outline btn-floating m-1"
+                href="#!"
+                role="button"
+                ><i class="fab fa-instagram"></i
+              ></a>
+    
+              <!-- Linkedin -->
+              <a
+                data-mdb-ripple-init
+                class="btn btn-outline btn-floating m-1"
+                href="#!"
+                role="button"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+    
+              <!-- Github -->
+              <a
+                data-mdb-ripple-init
+                class="btn btn-outline btn-floating m-1"
+                href="#!"
+                role="button"
+                ><i class="fab fa-github"></i
+              ></a>
+            </section>
+            <!-- Section: Social media -->
+    
+            <!-- Section: Form -->
+            <section class="">
+              <form action="">
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center">
+                  <!--Grid column-->
+                  <div class="col-auto">
+                    <p class="pt-2">Sign up for our newsletter</p>
                   </div>
+                  <!--Grid column-->
+    
+                  <!--Grid column-->
+                  <div class="col-md-5 col-12">
+                    <!-- Email input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                      <input
+                        type="email"
+                        id="form5Example24"
+                        class="form-control"
+                        placeholder="Email address"
+                      />
+                    </div>
+                  </div>
+    
+                  <!--Grid column-->
+                  <div class="col-auto">
+                    <!-- Submit button -->
+                    <button
+                      data-mdb-ripple-init
+                      type="submit"
+                      class="btn btn-secondary white mb-4"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                  <!--Grid column-->
                 </div>
-  
+                <!--Grid row-->
+              </form>
+            </section>
+    
+            <!-- Section: Links -->
+            <section class="">
+              <!--Grid row-->
+              <div class="row mt-3">
                 <!--Grid column-->
-                <div class="col-auto">
-                  <!-- Submit button -->
-                  <button
-                    data-mdb-ripple-init
-                    type="submit"
-                    class="btn btn-secondary white mb-4"
-                  >
-                    Subscribe
-                  </button>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                  <h5 class="text-uppercase">Explore</h5>
+    
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a class="text-body" href="#!">Destinations</a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="#!">Travel Stories</a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="#!">Culture</a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="#!">Events</a>
+                    </li>
+                  </ul>
+                </div>
+                <!--Grid column-->
+    
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                  <h5 class="text-uppercase">Connect</h5>
+    
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a class="text-body" href="#!">Guides</a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="#!">Groups</a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="#!">Partners</a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="#!">Sponsors</a>
+                    </li>
+                  </ul>
+                </div>
+                <!--Grid column-->
+    
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                  <h5 class="text-uppercase">Share</h5>
+    
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a class="text-body" href="#!">Plans</a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="#!">Experience</a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="#!">Pictures</a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="#!">Opinions</a>
+                    </li>
+                  </ul>
+                </div>
+                <!--Grid column-->
+    
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                  <h5 class="text-uppercase">Plan</h5>
+    
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a class="text-body" href="#!">Hotels</a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="#!">Flights</a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="#!">Booking</a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="#!">Last Minute</a>
+                    </li>
+                  </ul>
                 </div>
                 <!--Grid column-->
               </div>
               <!--Grid row-->
-            </form>
-          </section>
-  
-          <!-- Section: Links -->
-          <section class="">
-            <!--Grid row-->
-            <div class="row mt-3">
-              <!--Grid column-->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Explore</h5>
-  
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a class="text-body" href="#!">Destinations</a>
-                  </li>
-                  <li>
-                    <a class="text-body" href="#!">Travel Stories</a>
-                  </li>
-                  <li>
-                    <a class="text-body" href="#!">Culture</a>
-                  </li>
-                  <li>
-                    <a class="text-body" href="#!">Events</a>
-                  </li>
-                </ul>
-              </div>
-              <!--Grid column-->
-  
-              <!--Grid column-->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Connect</h5>
-  
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a class="text-body" href="#!">Guides</a>
-                  </li>
-                  <li>
-                    <a class="text-body" href="#!">Groups</a>
-                  </li>
-                  <li>
-                    <a class="text-body" href="#!">Partners</a>
-                  </li>
-                  <li>
-                    <a class="text-body" href="#!">Sponsors</a>
-                  </li>
-                </ul>
-              </div>
-              <!--Grid column-->
-  
-              <!--Grid column-->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Share</h5>
-  
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a class="text-body" href="#!">Plans</a>
-                  </li>
-                  <li>
-                    <a class="text-body" href="#!">Experience</a>
-                  </li>
-                  <li>
-                    <a class="text-body" href="#!">Pictures</a>
-                  </li>
-                  <li>
-                    <a class="text-body" href="#!">Opinions</a>
-                  </li>
-                </ul>
-              </div>
-              <!--Grid column-->
-  
-              <!--Grid column-->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Plan</h5>
-  
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a class="text-body" href="#!">Hotels</a>
-                  </li>
-                  <li>
-                    <a class="text-body" href="#!">Flights</a>
-                  </li>
-                  <li>
-                    <a class="text-body" href="#!">Booking</a>
-                  </li>
-                  <li>
-                    <a class="text-body" href="#!">Last Minute</a>
-                  </li>
-                </ul>
-              </div>
-              <!--Grid column-->
-            </div>
-            <!--Grid row-->
-          </section>
-          <!-- Section: Links -->
-        </div>
-        <!-- Grid container -->
-  
-        <!-- Copyright -->
-        <div
-          class="text-center p-3"
-          style="background-color: rgba(0, 0, 0, 0.05)"
-        >
-          © 2024 Copyright:
-          <a class="text-reset fw-bold">Weronika Martinsen</a>
-        </div>
-        <!-- Copyright -->
-      </footer>
+            </section>
+            <!-- Section: Links -->
+          </div>
+          <!-- Grid container -->
+    
+          <!-- Copyright -->
+          <div
+            class="text-center p-3"
+          
+          >
+            © 2024 Copyright:
+            <a class="text-reset fw-bold">Weronika Martinsen</a>
+          </div>
+       
+          <!-- Copyright -->
+        </footer>
+      </main>
+     
+    </div>
+   
+  </div>
+   
+</div>
+
   </body>
 </html>
+
+
+
+
+
