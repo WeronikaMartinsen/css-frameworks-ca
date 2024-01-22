@@ -11971,16 +11971,11 @@ a:focus {
 /* ---------------------------------------------------
   MEDIAQUERIES
 ----------------------------------------------------- */
-@media (max-width: 850px) {
-  #sidebar {
-    display: none;
-  }
-  .hamburger-menu {
-    display: block;
-  }
-}
 /* ---------------------------------------------------
   Feed
 ----------------------------------------------------- */
+.icon-size {
+  font-size: 12px; /* Adjust the size as needed */
+}
 
 /*# sourceMappingURL=theme.css.map */
