@@ -11945,10 +11945,6 @@ span {
   transition: all 0.3s;
 }
 
-#sidebar.active {
-  margin-left: -250px;
-}
-
 a,
 a:hover,
 a:focus {
@@ -11979,8 +11975,8 @@ a:focus {
   #sidebar {
     display: none;
   }
-  #sidebar.active {
-    margin-left: 0;
+  .hamburger-menu {
+    display: block;
   }
 }
 /* ---------------------------------------------------

@@ -1,28 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const forms = document.querySelectorAll("form");
+(function () {
+  "use strict";
 
-  forms.forEach((form) => {
-    form.addEventListener("submit", (e) => {
-      const email = form.querySelector("#email");
-      const password = form.querySelector("#password");
-      const errorMessage = form.querySelector("#errorMessage");
-      const errorMessagePassword = form.querySelector("#errorMessagePassword");
-      const errors = [];
+  var form = document.getElementById("loginForm");
 
-      if (email.value.trim() === "") {
-        errors.push("Email required");
-      }
-
-      if (password.value.length < 8) {
-        errors.push("Password must be at least 8 characters");
-      }
-
-      if (errors.length > 0) {
-        e.prevent();
-        errorMessage.removeAttribute("hidden");
-        errorMessagePassword.removeAttribute("hidden");
-        errorMessage.innerHTML = errors.join(", ");
-      }
-    });
+  form.addEventListener("input", function (event) {
+    if (event.target.validity.valid) {
+      event.target.classList.add("is-valid");
+      event.target.classList.remove("is-invalid");
+    } else {
+      event.target.classList.remove("is-valid");
+      event.target.classList.add("is-invalid");
+    }
   });
-});
+
+  form.addEventListener("submit", function (event) {
+    if (form.checkValidity()) {
+      console.log("Form submitted successfully!");
+    } else {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    form.classList.add("was-validated");
+  });
+})();

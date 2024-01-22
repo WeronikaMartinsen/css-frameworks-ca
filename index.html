@@ -66,51 +66,70 @@
       >
         <h2>Sign up</h2>
         <div class="mb-3 w-100">
-          <form action="/profile/index.html" method="GET" id="formEmail">
-            <label for="exampleFormControlInput1" class="form-label"></label>
-            <input
-              type="email"
-              class="form-control"
-              placeholder="name@example.com"
-              id="email"
-              required
-            />
-            <p id="errorMessage" hidden></p>
-          </form>
-
-          <form action="/profile/index.html" method="GET" id="formPassword">
-            <label for="exampleFormControlInput2" class="form-label"></label>
-            <input
-              type="password"
-              class="form-control mb-3"
-              id="password"
-              placeholder="Password"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-              required
-            />
-            <p id="errorMessagePassword" hidden></p>
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label
-              class="form-check-label text-black-50 very-small px-1"
-              for="flexCheckDefault"
-            >
-              Save your account.
-            </label>
-          </form>
-
-          <a
-            href="profile/index.html"
-            class="btn btn-block w-100 btn-secondary mt-3 text-white"
-            type="submit"
-            value="SUBMIT"
-            >Log in</a
+          <form
+            action="/profile/index.html"
+            method="GET"
+            id="loginForm"
+            class="needs-validation"
+            novalidate
           >
+            <!-- Email Address Input -->
+            <div class="mb-3">
+              <label for="validationServer01" class="form-label"></label>
+              <input
+                type="email"
+                placeholder="Email address"
+                class="form-control"
+                id="validationServer01"
+                required
+              />
+              <div class="valid-feedback"><span>Looks good!</span></div>
+              <div class="invalid-feedback">
+                <span>Please enter a valid email address.</span>
+              </div>
+            </div>
+
+            <!-- Password Input -->
+            <div class="mb-3">
+              <label for="password" class="form-label"></label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                pattern=".{8,}"
+                title="Password must be at least 8 characters long."
+                required
+              />
+              <div class="invalid-feedback">
+                Password must be at least 8 characters long.
+              </div>
+            </div>
+
+            <!-- Save Account Checkbox -->
+            <div class="mb-3 form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label
+                class="form-check-label text-black-50 very-small px-1"
+                for="flexCheckDefault"
+              >
+                Save your account.
+              </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              class="btn btn-block w-100 btn-secondary mt-3 text-white"
+              type="submit"
+            >
+              Log in
+            </button>
+          </form>
         </div>
         <a class="very-small text-black-50 mb-3" href="#"
           >Forgotten password?</a
