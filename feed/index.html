@@ -23,24 +23,21 @@
    
   </head>
   <body>
-    <div class="container-fluid p-0">
+    <div class="container-fluid d-flex flex-column pt-5">
       <header>
-        <nav class="navbar navbar-expand-md bg-light d-flex w-100 fixed-top p-1">
-          <!-- Left side (logo and search bar) -->
-          <div class="d-flex align-items-center">
-            <a class="navbar-brand p-0" href="#">L</a>
-            <li class="search-bar list-unstyled active">
-              <form class="form-inline mt-3">
-                <div class="input-group mb-3 w-100">
-                  <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                  <div class="input-group-append">
-                    <span class="input-group-text w-100 h-100" id="basic-addon2"><i class="fa-solid fa-magnifying-glass"></i></span>
-                  </div>
-                </div>
-              </form>
-            </li>
-          </div>
-      
+        <nav class="navbar navbar-expand-md bg-light d-flex w-100 fixed-top">
+          <li class="d-flex flex-column justify-content-center align-items-center px-3">
+
+          <img
+        
+            class="rounded-circle stories-width-profile"
+            src="/images/hero-img.jpg"
+            alt=""
+          />
+          <span class="very-small">Profile</span></li>
+
+
+
           <!-- Right side (hamburger menu and other elements) -->
           <div class="ms-auto">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,6 +46,7 @@
       
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
               <ul class="navbar-nav ml-auto navbar-show">
+          
                 <li class="d-flex flex-column text-center px-3">
                   <i class="fa-solid fa-paper-plane px-2"></i>
                   <a class="very-small" href="#">Notifications</a>
@@ -75,16 +73,48 @@
         </nav>
       </header>
       
-      
-      
-      
           <!-- Page Content  -->
 
           <main
-            class="container-fluid ,-0 p-0"
-          >
-            <div class="mt-4" id="content"></div>
+            class="container-fluid d-flex flex-column justify-content-center align-items-center mt-4">
+            <div class="row" id="content">
+              <div class="col-12 d-flex flex-column align-items-center">
+                <form class="form-inline d-flex justify-content-center align-items-center w-100">
+                  <input class="form-control" type="search" placeholder="Looking for a specifics post?" aria-label="Search">
+                  <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </form>
 
+                <div class="mt-5 p-4 w-100 w-md-50 d-flex flex-column align-items-center bg-light border rounded-4 border-secondary">
+                  <div class="col-12 w-100 d-flex justify-content-center align-items-center mb-4">
+                    <form class="d-flex flex-column flex-sm-row gap-4 align-items-center">
+                      <img class="rounded-circle stories-width mb-2 mb-sm-0" src="/images/hero-img.jpg" alt="Profile image." />
+                      <input class="form-control w-100" type="text" placeholder="Add post" aria-label="text">
+                    </form>
+                  </div>
+                  <div class="col-12 d-flex flex-column flex-sm-row justify-content-center align-items-center gap-2">
+                    <li class="d-flex text-center px-3">
+                      <i class="fa-solid fa-user-group px-2"></i>
+                      <a class="very-small" href="#">Friends</a>
+                    </li>
+                    <li class="d-flex text-center px-3">
+                      <i class="fa-solid fa-video px-2"></i>
+                      <a class="very-small" href="#">Reels</a>
+                    </li>
+                    <li class="d-flex text-center px-3">
+                      <i class="fa-solid fa-arrow-right-from-bracket px-2"></i>
+                      <a href="/index.html" class="article very-small">Log out</a>
+                    </li>
+                  </div>
+                </div>
+                
+              </div>
+     
+      
+
+
+            </div>
+        
+          </main>
             <footer
               class="d-flex flex-column bg-light text-center"
             >
@@ -291,7 +321,7 @@
 
               <!-- Copyright -->
             </footer>
-          </main>
+        
         </div>
       </div>
     </div>
