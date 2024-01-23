@@ -11911,10 +11911,6 @@ span {
   height: auto;
 }
 
-.white {
-  color: white;
-}
-
 .very-small {
   font-size: 0.8em;
 }
@@ -11974,8 +11970,12 @@ a:focus {
 /* ---------------------------------------------------
   Feed
 ----------------------------------------------------- */
-.icon-size {
-  font-size: 12px; /* Adjust the size as needed */
+.img-feed {
+  width: 600px;
+}
+
+.max-width-content {
+  max-width: 600px;
 }
 
 /*# sourceMappingURL=theme.css.map */
