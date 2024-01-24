@@ -88,6 +88,10 @@ span {
 
 //Profile Page
 
+.max-width-gallery {
+  max-width: 1200px;
+}
+
 .profile-img {
   width: 200px;
   height: 200px;
@@ -142,5 +146,5 @@ a:focus {
   width: 600px;
 }
 .max-width-content {
-  max-width: 600px;
+  max-width: 800px;
 }

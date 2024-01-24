@@ -27,65 +27,64 @@
     <header>
 
         <!-- Sidebar  -->
-        <div class="row h-100 fixed-top">
-          <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar p-3 bg-light" id="sidebar">
-          <div class="sidebar-header">
-            <h3>Logo</h3>
-          </div>
-          <ul class="list-unstyled components p-2">
-            <a class="mb-3 fs-4 px-2" href="/feed/index.html">Feed</a>
-            <li class="search-bar active">
-              <form class="form-inline mt-3">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                  <div class="input-group-append">
-                    <span class="input-group-text w-100 h-100" id="basic-addon2"><i class="fa-solid fa-magnifying-glass"></i></span>
-                  </div>
+       
+         
+    <nav class="row flex-nowrap bg-dark text-white">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-1 px-0">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-1 pt-2 min-vh-100">
+                <a href="/index.html" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline mb-3">Logo</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start gap-3" id="menu">
+                    <li class="nav-item">
+                        <a href="/feed/index.html" data-bs-toggle="collapse" class="nav-link d-flex">
+                          <i class="fa-solid fa-house px-2"></i> <span class="ms-1 d-none d-sm-inline">Feed</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link d-flex">
+                          <i class="fa-solid fa-paper-plane px-2"></i><span class="ms-1 d-none d-sm-inline">Notifications</span> </a>
+
+                    </li>
+                    <li>
+                        <a href="#" data-bs-toggle="collapse" class="nav-link d-flex">
+                          <i class="fa-solid fa-message px-2"></i> <span class="ms-1 d-none d-sm-inline">Messages</span></a>
+                    </li>
+                    <li>
+                        <a href="#" data-bs-toggle="collapse" class="nav-link d-flex">
+                          <i class="fa-solid fa-video px-2"></i> <span class="ms-1 d-none d-sm-inline">Reels</span></a>
+                     
+                    </li>
+                    <li>
+                      <a href="#" data-bs-toggle="collapse" class="nav-link d-flex">
+                        <i class="fa-solid fa-user-group px-2"></i> <span class="ms-1 d-none d-sm-inline">Friends</span></a>
+                   
+                  </li>
+                  <li>
+                    <a href="#" data-bs-toggle="collapse" class="nav-link d-flex">
+                      <i class="fa-solid fa-people-group px-2"></i> <span class="ms-1 d-none d-sm-inline">Groups</span></a>
+                 
+                </li>
+                   
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/images/hero-img.jpg" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">loser</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
                 </div>
-                
-              </form>
-            </li>
-            <li class="mt-1 p-3">
-              <i class="fa-solid fa-paper-plane px-2"></i>
-              <a href="#">Notifications</a>
-            </li>
-            <li class="mt-1 p-3">
-              <i class="fa-solid fa-message px-2"></i>
-              <a
-                href="#pageSubmenu"
-                data-toggle="collapse"
-                aria-expanded="false"
-                class=""
-                >Messages</a
-              >
-            </li>
-            <li class="mt-1 p-3">
-              <i class="fa-solid fa-video px-2"></i>
-              <a href="#">Reels</a>
-            </li>
-            <li class="mt-1 p-3">
-              <i class="fa-solid fa-address-book px-2"></i>
-              <a href="#">Contact</a>
-            </li>
-            <li class="mt-1 p-3">
-              <i class="fa-solid fa-user-group px-2"></i>
-              <a href="#">Friends</a>
-            </li>
-            <li class="mt-1 p-3">
-              <i class="fa-solid fa-people-group px-2"></i>
-              <a href="#">Groups</a>
-            </li>
-          </ul>
-  
-          <ul class="list-unstyled CTAs p-2">
-            <li class="mt-1 p-3">
-              <a
-                href="/index.html"
-                class="article"
-                >Log out</a
-              >
-            </li>
-          </ul>
+            </div>
+        </div>
         </nav>
       
     </header>
@@ -95,7 +94,7 @@
       <main class="d-flex flex-column justify-content-center align-items-center col-md-9 ms-sm-auto col-lg-10">
         <div class="mt-5" id="content">
           <div
-            class="container-fluid d-flex justify-content-center align-items-center"
+            class="container-fluid d-flex justify-content-center align-items-center m-1"
           >
             <div class="row justify-content-around align-items-center">
               <div class="col justify-content-around align-items-center">
@@ -112,9 +111,9 @@
   
               <!-- First column to the right -->
   
-              <div class="col text-start">
+              <div class="col text-center m-2">
                 <div
-                  class="d-flex justify-content-start align-items-center flex-wrap gap-3"
+                  class="d-flex justify-content-center align-items-center flex-wrap gap-3"
                 >
                   <div class=""><h3 class="text-nowrap">Weronika Martinsen</h3></div>
                   <div class="d-flex flex-row gap-2">
@@ -131,9 +130,9 @@
                 <!-- Second column to the right -->
   
                 <div
-                  class="d-flex justify-content-start flex-wrap mt-4 gap-4"
+                  class="d-flex justify-content-center flex-wrap mt-4 gap-4"
                 >
-                  <span class="text-nowrap">Posts: <strong>4255</strong></span>
+                  <span class="text-nowrap">Posts: <strong>425</strong></span>
                   <span class="text-nowrap"> <strong>466</strong> followers</span>
                   <span class="text-nowrap">Follow: <strong>156</strong></span>
                 </div>
@@ -141,8 +140,9 @@
                 <!-- Third column to the right -->
   
                 <div class="d-flex flex-column justify-content-start mt-3 m-1">
-                  <span class="">@love @travel @believe in magic</span>
-                  <span class="">@my live is my art</span>
+                  <span>@love @travel @believe in magic</span>
+                  <span>@my live is my art</span>
+                  <span>@visit Poland @Gdansk @Warsaw @Krakow</span>
                 </div>
               </div>
             </div>
@@ -156,7 +156,7 @@
               <img
              
                 class="rounded-circle image-fluid stories-width"
-                src="/images/see.jpg"
+                src="/images/gdansk.jpg"
                 alt=""
               />
               <span>Travel</span>
@@ -167,7 +167,7 @@
               <img
            
                 class="rounded-circle stories-width"
-                src="/images/bg.webp"
+                src="/images/warsaw.jpg"
                 alt=""
               />
               <span>Flights</span>
@@ -176,7 +176,7 @@
               <img
             
                 class="rounded-circle stories-width"
-                src="/images/mapa.jpg"
+                src="/images/gdansk2.jpg"
                 alt=""
               />
               <span>Visited</span>
@@ -185,7 +185,7 @@
               <img
               
                 class="rounded-circle stories-width"
-                src="/images/travel-hero.jpg"
+                src="/images/gdansk3.jpg"
                 alt=""
               />
               <span>Holidays</span>
@@ -194,7 +194,7 @@
               <img
              
                 class="rounded-circle stories-width"
-                src="/images/sleeping.jpg"
+                src="/images/mazury.jpg"
                 alt=""
               />
               <span>Relax</span>
@@ -213,37 +213,37 @@
           <!------------------------ Third container ----------------------------->
   
           <!-- Gallery -->
-          <div class="row m-3">
+          <div class="row m-3 max-width-gallery">
             <div class="col-lg-4 col-md-12">
               <img
-                src="/images/travel-hero.jpg"
+                src="/images/gdansk.jpg"
                 class="w-100 shadow-1-strong rounded mb-3"
-                alt="Coast in Costarica."
+                alt="Gdansk City."
               />
   
               <img
-                src="/images/mapa.jpg"
+                src="/images/warsaw.jpg"
                 class="w-100 shadow-1-strong rounded mb-3"
-                alt="Funny picture of map."
+                alt="Warsaw City in Poland."
               />
               <img
-              src="/images/capadocia.jpg"
+              src="/images/gdansk2.jpg"
               class="w-100 shadow-1-strong rounded mb-3"
-              alt="Capadocia in Turkey"
+              alt="Picture of Gdansk."
             />
             </div>
   
             <div class="col-lg-4 mb-4 mb-lg-0">
               <img
-                src="/images/travel.jpg"
+                src="/images/gdansk3.jpg"
                 class="w-100 shadow-1-strong rounded mb-3"
-                alt="Mountains in the Clouds"
+                alt="Gdansk."
               />
   
               <img
-                src="/images/italy.jpg"
+                src="/images/mazury.jpg"
                 class="w-100 shadow-1-strong rounded mb-3"
-                alt="Boat on Calm Water"
+                alt="Mazury in Poland."
               />
             </div>
   
