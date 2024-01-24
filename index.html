@@ -43,7 +43,10 @@
   >
     <header>
       <nav class="navbar fixed-top d-flex justify-content-end align-items-end">
-        <img class="navbar-brand rounded-4 logo-size" src="images/lgh.png" />
+        <img
+          class="navbar-brand rounded-4 logo-size"
+          src="images/logo.pack&go.png"
+        />
       </nav>
     </header>
 
@@ -64,14 +67,6 @@
     <div
       class="d-flex justify-content-center align-items-center flex-column z-3 col-sm-12 col-md-6 mt-5"
     >
-      <!--   <div
-        class="d-flex justify-content-center align-items-center gap-3 bg-white opacity-50 rounded-4 p-2"
-      >
-        <h1 class="display-4"><em>Discover</em></h1>
-        <h2 class="display-5"><strong>Share</strong></h2>
-        <h3 class="display-6"><em>Connect</em></h3>
-      </div> -->
-
       <div
         class="custom-login-box col rounded-4 d-flex justify-content-center align-items-center flex-column p-5 bg-white rounded-4 border mt-4"
       >
@@ -176,15 +171,24 @@
           <div
             class="d-flex justify-content-center align-items-center gap-2 mt-3"
           >
-            <button type="button" class="btn btn-dark btn-sm">
-              <i class="fa-brands fa-apple fa-lg bg-white"></i>
-              <span class="very-small">Download on the</span>
-              <span style="display: block">App Store</span>
-            </button>
-            <button type="button" class="btn btn-dark btn-sm">
+            <div class="d-flex flex-column">
+              <button
+                type="button"
+                class="btn btn-light btn-sm border border-secondary shadow"
+              >
+                <i class="fa-brands fa-apple fa-lg bg-white"></i>
+                <span class="very-small">Download on the</span>
+                <span class="d-block">App Store</span>
+              </button>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-light btn-sm border border-secondary shadow"
+            >
               <i class="fa-brands fa-google-play fa-lg bg-white"></i>
               <span class="very-small">Download on the</span>
-              <span style="display: block">Google Play</span>
+              <span class="d-block">Google Play</span>
             </button>
           </div>
         </div>
@@ -282,7 +286,7 @@
                 <button
                   data-mdb-ripple-init
                   type="submit"
-                  class="btn btn-secondary white mb-4"
+                  class="btn btn-secondary text-white mb-4"
                 >
                   Subscribe
                 </button>
