@@ -2,6 +2,8 @@ $primary: #87ceeb;
 $secondary: #0da6a6;
 $info: #eee0df;
 $btn-dark: #223240;
+$dark: #333333;
+$i: #333333;
 
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";
@@ -52,7 +54,6 @@ $btn-dark: #223240;
 // Override Bootstrap variables
 $font-family-base: "Arimo", sans-serif;
 
-// Your additional custom styles
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -67,6 +68,14 @@ a,
 p,
 span {
   font-family: "Montserrat", sans-serif;
+}
+
+i {
+  color: $i;
+}
+
+span {
+  color: $dark;
 }
 .custom-login-box {
   width: 100%;
@@ -147,4 +156,24 @@ a:focus {
 }
 .max-width-content {
   max-width: 800px;
+}
+.navbar {
+  transition: none;
+}
+
+.navbar-toggler {
+  transition: none;
+}
+
+.navbar-collapse {
+  transition: none;
+}
+.custom-navbar-collapse {
+  max-width: 200px;
+
+  padding: 10px; /* Set your desired padding */
+}
+
+.custom-navbar-collapse a:hover {
+  color: #007bff; /* Set your desired text color on hover */
 }

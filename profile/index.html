@@ -24,16 +24,16 @@
   <body>
     <div class="container-fluid d-flex m-0 p-0">
 
-    <header>
+    <header class="m-0 p-0">
 
         <!-- Sidebar  -->
        
          
-    <nav class="row flex-nowrap bg-dark text-white">
+    <nav class="row flex-nowrap bg-light p-2 sticky-top h-100">
         <div class="col-auto col-md-3 col-xl-2 px-sm-1 px-0">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-1 pt-2 min-vh-100">
                 <a href="/index.html" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline mb-3">Logo</span>
+                    <span class="d-none d-sm-inline mb-3">Logo</span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start gap-3" id="menu">
                     <li class="nav-item">
@@ -68,19 +68,15 @@
                    
                 </ul>
                 <hr>
-                <div class="dropdown pb-4">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="/images/hero-img.jpg" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1">loser</span>
+                <div class="dropdown dropdown-toggle d-flex justify-content-center align-items-center mb-5">
+                    <a href="/profile/index.html" class="d-flex justify-content-center align-items-center text-decoration-none" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="/images/hero-img.jpg" alt="Profile image." class="stories-width-profile rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">Profile</span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <ul class="dropdown-menu dropdown-menu bg-light text-small shadow">
+                        <li><a class="dropdown-item" href="/index.html">Sign out</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <li><a class="dropdown-item" href="#">Configuration</a></li> 
                     </ul>
                 </div>
             </div>
@@ -91,10 +87,10 @@
     
       <!-- Page Content  -->
 
-      <main class="d-flex flex-column justify-content-center align-items-center col-md-9 ms-sm-auto col-lg-10">
+      <main class="d-flex flex-column justify-content-center align-items-center col-md-9 col-lg-10">
         <div class="mt-5" id="content">
           <div
-            class="container-fluid d-flex justify-content-center align-items-center m-1"
+            class="container-fluid d-flex justify-content-center align-items-center"
           >
             <div class="row justify-content-around align-items-center">
               <div class="col justify-content-around align-items-center">
@@ -216,7 +212,7 @@
           <div class="row m-3 max-width-gallery">
             <div class="col-lg-4 col-md-12">
               <img
-                src="/images/gdansk.jpg"
+                src="/images/polish-see.jpg"
                 class="w-100 shadow-1-strong rounded mb-3"
                 alt="Gdansk City."
               />
@@ -227,7 +223,7 @@
                 alt="Warsaw City in Poland."
               />
               <img
-              src="/images/gdansk2.jpg"
+              src="/images/mountains.jpg"
               class="w-100 shadow-1-strong rounded mb-3"
               alt="Picture of Gdansk."
             />
@@ -241,24 +237,34 @@
               />
   
               <img
-                src="/images/mazury.jpg"
+                src="/images/mountains.jpg"
                 class="w-100 shadow-1-strong rounded mb-3"
-                alt="Mazury in Poland."
+                alt="Mountains in Poland."
               />
+              <img
+              src="/images/gdansk2.jpg"
+              class="w-100 shadow-1-strong rounded mb-3"
+              alt="Picture of Old Town Gdansk."
+            />
             </div>
   
             <div class="col-lg-4 mb-4 mb-lg-0">
               <img
-                src="/images/moc.jpg"
+                src="/images/poland.jpg"
                 class="w-100 shadow-1-strong rounded mb-3"
-                alt="Waves at Sea"
+                alt="Baltic See."
               />
   
               <img
-                src="/images/camel.jpg"
+                src="/images/mazury.jpg"
                 class="w-100 shadow-1-strong rounded mb-3"
-                alt="Yosemite National Park"
+                alt="Polish Mountains - Tatry"
               />
+              <img
+              src="/images/gda.jpg"
+              class="w-100 shadow-1-strong rounded mb-3"
+              alt="Polish Mountains - Tatry"
+            />
             </div>
           </div>
           <!-- Gallery -->
@@ -354,7 +360,7 @@
                     <button
                       data-mdb-ripple-init
                       type="submit"
-                      class="btn btn-secondary white mb-4"
+                      class="btn btn-secondary text-white mb-4"
                     >
                       Subscribe
                     </button>
@@ -366,7 +372,7 @@
             </section>
     
             <!-- Section: Links -->
-            <section class="">
+            <section">
               <!--Grid row-->
               <div class="row mt-3">
                 <!--Grid column-->
@@ -460,8 +466,9 @@
           <!-- Grid container -->
     
           <!-- Copyright -->
+          <hr class="bg-primary">
           <div
-            class="text-center p-3"
+            class="text-center p-3 hr-top"
           
           >
             © 2024 Copyright:

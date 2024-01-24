@@ -11900,6 +11900,14 @@ span {
   font-family: "Montserrat", sans-serif;
 }
 
+i {
+  color: #333333;
+}
+
+span {
+  color: #223240;
+}
+
 .custom-login-box {
   width: 100%;
   max-width: 500px;
@@ -11980,6 +11988,27 @@ a:focus {
 
 .max-width-content {
   max-width: 800px;
+}
+
+.navbar {
+  transition: none;
+}
+
+.navbar-toggler {
+  transition: none;
+}
+
+.navbar-collapse {
+  transition: none;
+}
+
+.custom-navbar-collapse {
+  max-width: 200px;
+  padding: 10px; /* Set your desired padding */
+}
+
+.custom-navbar-collapse a:hover {
+  color: #007bff; /* Set your desired text color on hover */
 }
 
 /*# sourceMappingURL=theme.css.map */
