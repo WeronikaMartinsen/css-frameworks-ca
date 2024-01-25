@@ -4,6 +4,7 @@ $info: #eee0df;
 $btn-dark: #223240;
 $dark: #333333;
 $i: #333333;
+$customHoverColor: $secondary;
 
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";
@@ -68,6 +69,17 @@ $font-family-base: "Arimo", sans-serif;
   }
 }
 
+a {
+  text-decoration: none;
+  border: none;
+
+  &:hover {
+    @extend a;
+    color: $customHoverColor !important;
+    border: none;
+  }
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -110,6 +122,10 @@ span {
 }
 
 //Profile Page
+
+.mt-custom {
+  margin-top: 0.6em;
+}
 
 .max-width-gallery {
   max-width: 1200px;
@@ -157,10 +173,6 @@ a:focus {
   min-height: 100vh;
   transition: all 0.3s;
 }
-
-/* ---------------------------------------------------
-  MEDIAQUERIES
------------------------------------------------------ */
 
 /* ---------------------------------------------------
   Feed
