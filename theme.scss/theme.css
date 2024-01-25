@@ -11881,6 +11881,7 @@ textarea.form-control-lg {
 }
 .btn-light:hover {
   background-color: #e4f0f0;
+  border-color: #0da6a6;
 }
 .btn-outline-secondary:hover {
   color: #f4f9f9;
@@ -11960,8 +11961,8 @@ span {
 }
 
 .stories-width {
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
 }
 
 .stories-width-profile {
@@ -12023,11 +12024,11 @@ a:focus {
 
 .custom-navbar-collapse {
   max-width: 200px;
-  padding: 10px; /* Set your desired padding */
+  padding: 10px;
 }
 
 .custom-navbar-collapse a:hover {
-  color: #007bff; /* Set your desired text color on hover */
+  color: #007bff;
 }
 
 /*# sourceMappingURL=theme.css.map */

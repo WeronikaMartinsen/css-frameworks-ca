@@ -59,6 +59,7 @@ $font-family-base: "Arimo", sans-serif;
   &-light {
     &:hover {
       background-color: darken($light, 5%);
+      border-color: $secondary;
     }
   }
   &-outline-secondary {
@@ -137,8 +138,8 @@ span {
 }
 
 .stories-width {
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
 }
 .stories-width-profile {
   height: 30px;
