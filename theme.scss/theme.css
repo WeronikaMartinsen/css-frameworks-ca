@@ -11879,6 +11879,14 @@ textarea.form-control-lg {
   font-weight: normal;
   font-style: normal;
 }
+.btn-light:hover {
+  background-color: #e4f0f0;
+}
+.btn-outline-secondary:hover {
+  color: #f4f9f9;
+  background-color: #f4f9f9;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }

@@ -54,6 +54,20 @@ $i: #333333;
 // Override Bootstrap variables
 $font-family-base: "Arimo", sans-serif;
 
+.btn {
+  &-light {
+    &:hover {
+      background-color: darken($light, 5%);
+    }
+  }
+  &-outline-secondary {
+    &:hover {
+      color: $light;
+      background-color: $light;
+    }
+  }
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }
