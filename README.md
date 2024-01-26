@@ -2,9 +2,9 @@
 
 ## "Pack & Go"
 
+![Screenshot 2](images/for-readme.1.jpg)
 ![Screenshot 1](images/for-readme.jpg)
-![Screenshot 2](images/for-readme1.jpg)
-![Screenshot 2](images/for-readme2.jpg)
+![Screenshot 2](images/for.readme2.jpgreadme2.jpg)
 
 Pack & Go is a responsive web application built with Bootstrap and custom Sass, designed to help users plan and organize their travel itineraries efficiently.
 
@@ -22,18 +22,41 @@ Pack & Go is a responsive web application built with Bootstrap and custom Sass, 
 
 - Ensure you have [Node.js](https://nodejs.org/) installed.
 
-### Installation
+## Installing
 
-1. Clone the repository: `git clone https://github.com/WeronikaMartinsen/css-frameworks-ca`
-2. Navigate to the project directory: `cd pack-and-go`
-3. Install dependencies: `npm install`
+To get started with this project, follow these steps:
+
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/WeronikaMartinsen/css-frameworks-ca/tree/css-frameworks
+   ```
+
+2. Install the dependencies:
+
+```bash
+npm install bootstrap@5.3.2
+
+```
+
+```bash
+npm install live server
+
+```
+
+## Running
+
+3. To run the app, use the following command:
+
+```bash
+npm run dev
+
+```
 
 ### Usage
 
 1. Open `index.html` in your preferred browser.
 2. Explore the application and start planning your travels!
-
-## Customization
 
 ### Custom Sass Styles
 
@@ -59,3 +82,13 @@ We welcome contributions! If you'd like to contribute to Pack & Go, please follo
 - [![Sass Logo](https://img.icons8.com/color/24/000000/sass.png)](https://sass-lang.com/) Sass for the custom styling.
 - [![HTML Logo](https://img.icons8.com/color/24/000000/html-5.png)](https://developer.mozilla.org/en-US/docs/Web/HTML) HTML for the structured web pages.
 - [![JavaScript Logo](https://img.icons8.com/color/24/000000/javascript.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) JavaScript for dynamic and interactive features.
+
+# Contact Me
+
+If you have any questions, suggestions, or just want to chat, feel free to reach out to me!
+
+**LinkedIn:** [By Email](wb3167@gmail.com)
+
+**LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/weronika-martinsen-a655a1246/)
+
+Feel free to open issues or pull requests in this repository for any project-related discussions.
