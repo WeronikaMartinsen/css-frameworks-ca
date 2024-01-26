@@ -4,7 +4,7 @@
 
 ![Screenshot 2](images/for-readme.1.jpg)
 ![Screenshot 1](images/for-readme.jpg)
-![Screenshot 2](images/for.readme2.jpgreadme2.jpg)
+![Screenshot 2](images/for.readme2.jpg)
 
 Pack & Go is a responsive web application built with Bootstrap and custom Sass, designed to help users plan and organize their travel itineraries efficiently.
 
@@ -28,9 +28,11 @@ To get started with this project, follow these steps:
 
 1. Clone the repo:
 
-   ```bash
+```bash
+
    git clone https://github.com/WeronikaMartinsen/css-frameworks-ca/tree/css-frameworks
-   ```
+
+```
 
 2. Install the dependencies:
 
