@@ -89,7 +89,7 @@ We welcome contributions! If you'd like to contribute to Pack & Go, please follo
 
 If you have any questions, suggestions, or just want to chat, feel free to reach out to me!
 
-**LinkedIn:** [By Email](wb3167@gmail.com)
+**Email:** [By Email](wb3167@gmail.com)
 
 **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/weronika-martinsen-a655a1246/)
 
