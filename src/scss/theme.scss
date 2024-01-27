@@ -125,9 +125,14 @@ span {
 //Profile Page
 
 .mt-custom {
-  margin-top: 0.6em;
+  margin-top: 1em;
 }
 
+.custom-img-hover:hover,
+.custom-img-hover:active {
+  transform: scale(1.1);
+  transition: transform 0.1s ease;
+}
 .max-width-gallery {
   max-width: 1200px;
 }
