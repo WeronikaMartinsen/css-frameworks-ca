@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Embark on a journey of wanderlust with Pack & Go, your passport to a world of captivating travel tales, stunning destinations, and unforgettable experiences. Join a vibrant community of globetrotters, share your adventures, and discover inspiration for your next voyage. Let's explore the world together, one post at a time. #TravelDreams #AdventureAwaits #ExploreTheWorld"
+    />
+    <title>Pack & Go | Authorization</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="theme.scss/theme.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Edu+TAS+Beginner&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/b515e79b0f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="js/validation.js"></script>
+  </head>
+
+  <body
+    class="container-fluid d-flex flex-column justify-content-between align-items-center w-100 min-vh-100 p-0"
+  >
+    <!-----------------------------Left Container--------------------------------->
+
+    <main
+      class="col-md-6 card-img-overlay d-flex justify-content-center align-items-center flex-column"
+    >
+      <img
+        class="img-fluid opacity-75 img-styling"
+        src="images/travel-hero.jpg"
+        alt="Hero image of the Maledives."
+      />
+    </main>
+
+    <!-----------------------------Right Container--------------------------------->
+
+    <div
+      class="d-flex justify-content-center align-items-center flex-column z-3 col-sm-12 col-md-6 mt-5 w-100"
+    >
+      <div
+        class="custom-login-box col w-100 rounded-4 d-flex justify-content-center align-items-center flex-column p-4 bg-white rounded-4 border mt-4"
+      >
+        <h1 class="fs-2">Log in</h1>
+        <div class="mb-3 w-100">
+          <form
+            action="/profile/index.html"
+            method="GET"
+            id="loginForm"
+            class="needs-validation"
+            novalidate
+          >
+            <!-- Email Address Input -->
+            <div class="mb-2">
+              <label for="validationServer01" class="form-label invisible"
+                >Email</label
+              >
+              <input
+                type="email"
+                placeholder="Email address"
+                class="form-control"
+                id="validationServer01"
+                required
+              />
+              <div class="valid-feedback"><span>Looks good!</span></div>
+              <div class="invalid-feedback">
+                <span>Please enter a valid email address.</span>
+              </div>
+            </div>
+
+            <!-- Password Input -->
+            <div class="mb-3">
+              <label for="password" class="form-label invisible"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                pattern=".{8,}"
+                title="Password must be at least 8 characters long."
+                required
+              />
+              <div class="invalid-feedback">
+                Password must be at least 8 characters long.
+              </div>
+            </div>
+
+            <!-- Save Account Checkbox -->
+            <div class="mb-3 form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label
+                class="form-check-label text-black-50 very-small px-1"
+                for="flexCheckDefault"
+              >
+                Save your account.
+              </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              class="btn btn-block w-100 btn-secondary mt-3"
+              type="submit"
+            >
+              Log in
+            </button>
+          </form>
+        </div>
+        <a class="very-small text-black-50 mb-3" href="#"
+          >Forgotten password?</a
+        >
+
+        <div
+          class="d-flex justify-content-around align-items-center gap-2 mt-2 text-start"
+        >
+          <i class="fa-brands fa-facebook"></i>
+          <span>Log in with Facebook</span>
+        </div>
+
+        <div
+          class="d-flex justify-content-around align-items-center gap-2 text-start"
+        >
+          <i class="fa-brands fa-google"></i>
+          <span class="mt-1 mb-0">Log in with Google Account</span>
+        </div>
+      </div>
+      <div class="col max-width-login">
+        <div
+          class="d-flex justify-content-center align-items-center mt-3 w-100 gap-1 border bg-white rounded-4 p-3"
+        >
+          <span>Don`t have an account?</span
+          ><a class="text-secondary text-decoration-underline" href="#"
+            >Register here</a
+          >
+        </div>
+      </div>
+      <div class="col mt-3 mb-3">
+        <div
+          class="d-flex justify-content-center align-items-center flex-column mt-4 mb-4 w-100"
+        >
+          <span class="font-weight-bold">Download our app.</span>
+          <div
+            class="d-flex justify-content-center align-items-center gap-2 mt-3"
+          >
+            <div class="d-flex flex-column">
+              <button
+                type="button"
+                class="btn btn-light btn-sm border border-secondary shadow"
+              >
+                <i class="fa-brands fa-apple fa-lg"></i>
+                <span class="very-small">Download on the</span>
+                <span class="d-block">App Store</span>
+              </button>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-light btn-sm border border-secondary shadow"
+            >
+              <i class="fa-brands fa-google-play fa-lg"></i>
+              <span class="very-small">Download on the</span>
+              <span class="d-block">Google Play</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container-fluid d-flex flex-column bg-light text-center z-3">
+      <!-- Grid container -->
+      <div class="p-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a
+            class="btn btn-outline btn-floating m-1"
+            href="https://www.facebook.com/"
+            role="button"
+            aria-label="Facebook Profile"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+
+          <!-- Twitter -->
+          <a
+            class="btn btn-outline btn-floating m-1"
+            href="https://twitter.com/"
+            role="button"
+            aria-label="Twitter Profile"
+            ><i class="fab fa-twitter"></i
+          ></a>
+
+          <!-- Google -->
+          <a
+            class="btn btn-outline btn-floating m-1"
+            href="https://www.google.com/"
+            role="button"
+            aria-label="Google Profile"
+            ><i class="fab fa-google"></i
+          ></a>
+
+          <!-- Instagram -->
+          <a
+            class="btn btn-outline btn-floating m-1"
+            href="https://www.instagram.com/weronikamartinsen/"
+            role="button"
+            aria-label="Instagram Profile"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <!-- Linkedin -->
+          <a
+            class="btn btn-outline btn-floating m-1"
+            href="https://www.linkedin.com/in/weronika-martinsen-a655a1246/"
+            role="button"
+            aria-label="LinkedIn Profile"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+          <!-- Github -->
+          <a
+            data-mdb-ripple-init
+            class="btn btn-outline btn-floating m-1"
+            href="https://github.com/WeronikaMartinsen"
+            role="button"
+            aria-label="Github Profile"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Form -->
+        <section>
+          <form>
+            <!--Grid row-->
+            <div
+              class="row d-flex justify-content-center align-items-center mb-5"
+            >
+              <!--Grid column-->
+              <div class="col-auto">
+                <p class="pt-2">Sign up for our newsletter</p>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-5 col-12">
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <label for="form5Example24" class="invisible">Email</label>
+                  <input
+                    type="email"
+                    id="form5Example24"
+                    class="form-control"
+                    placeholder="Email address"
+                  />
+                </div>
+              </div>
+
+              <!--Grid column-->
+              <div
+                class="col-auto d-flex justify-content-center align-items-center"
+              >
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-secondary">
+                  Subscribe
+                </button>
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </form>
+        </section>
+
+        <!-- Section: Links -->
+        <section>
+          <!--Grid row-->
+          <div class="row mt-3">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h2 class="text-uppercase fs-5">Explore</h2>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a class="text-body" href="#">Destinations</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#">Travel Stories</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#">Culture</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#">Events</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h2 class="text-uppercase fs-5">Connect</h2>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a class="text-body" href="#">Guides</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#">Groups</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#">Partners</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#">Sponsors</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h2 class="text-uppercase fs-5">Share</h2>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a class="text-body" href="#">Plans</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#">Experience</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#">Pictures</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#">Opinions</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h2 class="text-uppercase fs-5">Plan</h2>
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a class="text-body" href="#">Hotels</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#">Flights</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#">Booking</a>
+                </li>
+                <li>
+                  <a class="text-body" href="#">Last Minute</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <hr class="bg-primary" />
+      <div class="text-center p-3">
+        © 2024 Copyright:
+        <a class="text-reset fw-bold">Weronika Martinsen</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </body>
+</html>
