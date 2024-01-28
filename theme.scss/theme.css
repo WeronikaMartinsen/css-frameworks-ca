@@ -11929,12 +11929,12 @@ span {
 
 .custom-login-box {
   width: 100%;
-  max-width: 500px;
+  max-width: 31.25em; /* 500px / 16px */
   margin: 0 auto;
 }
 
 .logo-size {
-  width: 150px;
+  width: 9.375em; /* 150px / 16px */
   height: auto;
 }
 
@@ -11947,6 +11947,7 @@ span {
   height: 100vh;
 }
 
+/* Profile Page */
 .mt-custom {
   margin-top: 1em;
 }
@@ -11958,92 +11959,58 @@ span {
 }
 
 .max-width-gallery {
-  max-width: 1200px;
+  max-width: 75em; /* 1200px / 16px */
 }
 
 .profile-img {
-  width: 200px;
-  height: 200px;
+  width: 12.5em; /* 200px / 16px */
+  height: 12.5em; /* 200px / 16px */
 }
 
 .stories-width {
-  height: 70px;
-  width: 70px;
+  height: 4.375em; /* 70px / 16px */
+  width: 4.375em; /* 70px / 16px */
 }
 
 .stories-width-profile {
-  height: 30px;
-  width: 30px;
+  height: 1.875em; /* 30px / 16px */
+  width: 1.875em; /* 30px / 16px */
 }
 
 #sidebar {
-  min-width: 220px;
-  max-width: 220px;
+  min-width: 13.75em; /* 220px / 16px */
+  max-width: 13.75em; /* 220px / 16px */
   transition: all 0.3s;
-}
-
-a,
-a:hover,
-a:focus {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.wrapper {
-  display: flex;
-  width: 100%;
-  align-items: stretch;
 }
 
 .custom-height {
-  height: 50px;
+  height: 3.125em; /* 50px / 16px */
 }
 
-/* ---------------------------------------------------
-  CONTENT STYLE
------------------------------------------------------ */
+/* CONTENT STYLE */
 #content {
   width: 100%;
   min-height: 100vh;
   transition: all 0.3s;
 }
 
-/* ---------------------------------------------------
-  Feed
------------------------------------------------------ */
+/* Feed */
 .img-feed {
-  width: 600px;
+  width: 37.5em;
 }
 
 .max-width-content {
-  max-width: 800px;
-}
-
-.navbar {
-  transition: none;
-}
-
-.navbar-toggler {
-  transition: none;
-}
-
-.navbar-collapse {
-  transition: none;
+  max-width: 50em;
 }
 
 .custom-navbar-collapse {
-  max-width: 200px;
-  padding: 10px;
-}
-
-.custom-navbar-collapse a:hover {
-  color: #007bff;
+  max-width: 12.5em; /* 200px / 16px */
+  padding: 0.625em; /* 10px / 16px */
 }
 
 .stories-width-feed {
-  width: 50px;
-  height: 50px;
+  width: 3.125em; /* 50px / 16px */
+  height: 3.125em; /* 50px / 16px */
 }
 
 /*# sourceMappingURL=theme.css.map */
