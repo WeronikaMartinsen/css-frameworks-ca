@@ -1,6 +1,6 @@
 //---Base url---//
 
-const API_BASE_URL = "https://api/noroff.dev/api/v1";
+const API_BASE_URL = "https://api.noroff.dev/api/v1";
 
 //End-points:
 //Register: /api/v1/social/auth/register
@@ -15,7 +15,7 @@ const API_BASE_URL = "https://api/noroff.dev/api/v1";
  * ```js
  * registerUser(registerUrl, userData);
  */
-export async function registerUser(url, data) {
+async function registerUser(url, data) {
   try {
     const postData = {
       method: "POST",
@@ -24,6 +24,7 @@ export async function registerUser(url, data) {
       },
       body: JSON.stringify(data),
     };
+
     const response = await fetch(url, postData);
     console.log(response);
     const json = await response.json();
@@ -34,7 +35,16 @@ export async function registerUser(url, data) {
   }
 }
 
-registerUser(`${API_BASE_URL}/api/v1/social/auth/register`, user);
+const user = {
+  name: "wertrghfd_account_a",
+  email: "ghfunt-a@noroff.no",
+  password: "my-password",
+};
+console.log(user);
+
+const registerUserUrl = `${API_BASE_URL}/api/v1/social/auth/register`;
+
+export { registerUser };
 
 // registerUser(registerUrl, user);
 //--------------------------
@@ -51,10 +61,14 @@ export async function loginUser(url, data) {
       body: JSON.stringify(data),
     };
     const response = await fetch(url, postData);
-
     console.log(response);
     const json = await response.json();
     const accessToken = json.accessToken;
+    if (response.ok) {
+      //  if Works, return data
+    } else {
+      throw new Error(data.errors[0].message);
+    }
     localStorage.setItem("accessToken", accessToken);
     console.log(json);
     return json;
@@ -63,4 +77,4 @@ export async function loginUser(url, data) {
   }
 }
 
-loginUser(`${API_BASE_URL}/api/v1/social/auth/login`, user);
+const loginUserUrl = `${API_BASE_URL}/api/v1/social/auth/login`;
