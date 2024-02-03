@@ -1,4 +1,4 @@
-(function () {
+/* (function () {
   "use strict";
 
   var form = document.getElementById("loginForm");
@@ -24,3 +24,4 @@
     form.classList.add("was-validated");
   });
 })();
+ */

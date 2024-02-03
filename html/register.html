@@ -10,9 +10,9 @@
     <title>Pack & Go | Authorization</title>
     <link
       rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="dist/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="/dist/css/theme.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -40,14 +40,9 @@
       crossorigin="anonymous"
     ></script>
     <script
-      defer
       type="module"
-      src="js/api.registation.index.js/api.authorization.js"
-    ></script>
-    <script
       defer
-      type="module"
-      src="js/api.registation.index.js/login.js"
+      src="/js/api.registation.index.js/register.js"
     ></script>
   </head>
 
@@ -61,7 +56,7 @@
     >
       <img
         class="img-fluid opacity-75 img-styling"
-        src="images/travel-hero.jpg"
+        src="/images/travel-hero.jpg"
         alt="Hero image of the Maledives."
       />
     </main>
@@ -74,14 +69,15 @@
       <div
         class="custom-login-box col w-100 rounded-4 d-flex justify-content-center align-items-center flex-column p-4 bg-white rounded-4 border mt-4"
       >
-        <h1 class="fs-2">Log in</h1>
+        <h1 class="fs-2">Create an account</h1>
         <div class="mb-3 w-100">
           <form
             action="html/profile.html"
             method="GET"
-            id="loginForm"
+            id="registerForm"
             class="needs-validation"
           >
+            <!-- Email Address Input -->
             <div class="mb-2">
               <label for="name" class="form-label invisible">Email</label>
               <input
@@ -89,7 +85,7 @@
                 for="name"
                 placeholder="Name"
                 class="form-control"
-                id="loginName"
+                id="registerName"
                 required
               />
               <div class="valid-feedback"><span>Looks good!</span></div>
@@ -97,8 +93,6 @@
                 <span>Please enter a name.</span>
               </div>
             </div>
-
-            <!-- Email Address Input -->
             <div class="mb-2">
               <label for="email" class="form-label invisible">Email</label>
               <input
@@ -106,7 +100,7 @@
                 for="email"
                 placeholder="Email address"
                 class="form-control"
-                id="loginEmail"
+                id="registerEmail"
                 required
               />
               <div class="valid-feedback"><span>Looks good!</span></div>
@@ -123,7 +117,7 @@
               <input
                 type="password"
                 class="form-control"
-                id="loginPassword"
+                id="registerPassword"
                 for="password"
                 placeholder="Password"
                 autocomplete="current-password"
@@ -157,13 +151,10 @@
               class="btn btn-block w-100 btn-secondary mt-3"
               type="submit"
             >
-              Log in
+              Register
             </button>
           </form>
         </div>
-        <a class="very-small text-black-50 mb-3" href="#"
-          >Forgotten password?</a
-        >
 
         <div
           class="d-flex justify-content-around align-items-center gap-2 mt-2 text-start"
@@ -183,11 +174,11 @@
         <div
           class="d-flex justify-content-center align-items-center mt-3 w-100 gap-1 border bg-white rounded-4 p-3 very-small"
         >
-          <span>Don`t have an account?</span
+          <span>Already have an account?</span
           ><a
             class="text-secondary text-decoration-underline"
-            href="/html/register.html"
-            >Register here</a
+            href="/index.html"
+            >Log in here</a
           >
         </div>
       </div>
