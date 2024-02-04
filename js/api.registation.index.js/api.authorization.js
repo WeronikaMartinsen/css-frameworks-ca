@@ -1,3 +1,5 @@
+export { registerUser, loginUser, getToken };
+
 //---Base url---//
 
 const API_BASE_URL = "https://api.noroff.dev";
@@ -53,11 +55,9 @@ console.log(user);
 
 registerUser(`${API_BASE_URL}/api/v1/social/auth/register`, user);
 
-export { registerUser };
-
 ///////////-------------------------Login user------------------//////////////////////
 
-export async function loginUser(url, data) {
+async function loginUser(url, data) {
   try {
     const postData = {
       method: "POST",
@@ -83,3 +83,26 @@ export async function loginUser(url, data) {
   }
 }
 loginUser(`${API_BASE_URL}/api/v1/social/auth/login`, user);
+
+///////////////////////////////GET TOKEN/////////////////////////////////////////////
+
+async function getToken(url) {
+  try {
+    const token = localStorage.getItem("accessToken");
+    const getData = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    const response = await fetch(url, getData);
+    console.log(response);
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getToken(API_BASE_URL + "/api/v1/social/posts");
