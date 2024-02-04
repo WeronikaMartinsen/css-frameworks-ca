@@ -1,6 +1,6 @@
 //---Base url---//
 
-const API_BASE_URL = "https://api.noroff.dev/api/v1";
+const API_BASE_URL = "https://api.noroff.dev";
 
 //End-points:
 //Register: /api/v1/social/auth/register
@@ -26,6 +26,15 @@ async function registerUser(url, data) {
     };
 
     const response = await fetch(url, postData);
+    if (!response.ok) {
+      if (response.status === 400) {
+        const errorJson = await response.json();
+        const errorMessage = errorJson.message || "Bad Request";
+        throw new Error(errorMessage);
+      } else {
+        throw new Error(`HTTP error ${response.status}`);
+      }
+    }
     console.log(response);
     const json = await response.json();
     console.log(json);
@@ -42,12 +51,9 @@ const user = {
 };
 console.log(user);
 
-const registerUserUrl = `${API_BASE_URL}/api/v1/social/auth/register`;
+registerUser(`${API_BASE_URL}/api/v1/social/auth/register`, user);
 
 export { registerUser };
-
-// registerUser(registerUrl, user);
-//--------------------------
 
 ///////////-------------------------Login user------------------//////////////////////
 
@@ -76,5 +82,4 @@ export async function loginUser(url, data) {
     console.log(error);
   }
 }
-
-const loginUserUrl = `${API_BASE_URL}/api/v1/social/auth/login`;
+loginUser(`${API_BASE_URL}/api/v1/social/auth/login`, user);
