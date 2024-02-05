@@ -1,4 +1,6 @@
-import { registerUser } from "./api.authorization.js";
+import { registerUser } from "./api.registration.js";
+import { API_BASE_URL } from "./API_BASE_URL.js";
+import { user } from "./user.js";
 
 const registerForm = document.getElementById("registerForm");
 
@@ -72,15 +74,9 @@ registerForm.addEventListener("submit", async (event) => {
 
   // Only submit the form if it is valid
   if (isFormValid()) {
-    const user = {
-      name: registerName.value,
-      email: registerEmail.value,
-      password: registerPassword.value,
-    };
-
     try {
       const result = await registerUser(
-        `${API_BASE_URL}/social/auth/register`,
+        `${API_BASE_URL}/api/v1/social/auth/register`,
         user
       );
 

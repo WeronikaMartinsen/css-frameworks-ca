@@ -1,30 +1,29 @@
-function getLoginUser() {
-  const loginForm = document.getElementById("registerForm");
+import { API_BASE_URL } from "./API_BASE_URL.js";
+import { user } from "./user.js";
 
-  loginForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const userData = {
-      name: document.getElementById("loginName").value,
-      email: document.getElementById("loginEmail").value,
-      password: document.getElementById("loginPassword").value,
+export async function loginUser(url, data) {
+  try {
+    const postData = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     };
-    try {
-      const result = await getLoginUser(
-        `${API_BASE_URL}/social/auth/login`,
-        userData
-      );
-
-      if (result && result.status !== "Bad Request") {
-        console.log(result);
-        window.location.href = "/html/profile.html";
-      } else {
-        console.error("Registration failed: ", result.errors);
-        // Show error message
-      }
-    } catch (error) {
-      console.error("Registration failed:", error);
-      // Show error message
+    const response = await fetch(url, postData);
+    console.log(response);
+    const json = await response.json();
+    const accessToken = json.accessToken;
+    if (response.ok) {
+      //  if Works, return data
+    } else {
+      throw new Error(response.errors[0].message);
     }
-  });
-  return userData;
+    localStorage.setItem("accessToken", accessToken);
+    console.log(json);
+    return json;
+  } catch (error) {
+    console.log(error);
+  }
 }
+loginUser(`${API_BASE_URL}/api/v1/social/auth/login`, user);
