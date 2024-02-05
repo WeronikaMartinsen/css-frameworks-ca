@@ -1,60 +1,101 @@
-function getRegisterUser() {
-  const registerForm = document.getElementById("registerForm");
+import { registerUser } from "./api.authorization.js";
 
-  registerForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const userData = {
-      name: document.getElementById("registerName").value,
-      email: document.getElementById("registerEmail").value,
-      password: document.getElementById("registerPassword").value,
+const registerForm = document.getElementById("registerForm");
+
+const registerName = document.getElementById("registerName");
+const registerEmail = document.getElementById("registerEmail");
+const registerPassword = document.getElementById("registerPassword");
+
+const nameError = document.getElementById("nameError-register");
+const emailError = document.getElementById("emailError-register");
+const passwordError = document.getElementById("passwordError-register");
+
+const submitButton = document.getElementById("submitButton");
+
+// Add 'input' event listeners to trigger validation on user input
+
+registerName.addEventListener("input", validateForm);
+registerEmail.addEventListener("input", validateForm);
+registerPassword.addEventListener("input", validateForm);
+
+function validateForm() {
+  // Validate User Name
+  if (checkUserName(registerName.value)) {
+    nameError.style.display = "none";
+  } else {
+    nameError.style.display = "block";
+  }
+
+  // Validate User Email
+  if (validateEmail(registerEmail.value)) {
+    emailError.style.display = "none";
+  } else {
+    emailError.style.display = "block";
+  }
+
+  // Validate User Password
+  if (checkUserPassword(registerPassword.value, 8)) {
+    passwordError.style.display = "none";
+  } else {
+    passwordError.style.display = "block";
+  }
+
+  // Enable or disable the submit button based on form validity
+  submitButton.disabled = !isFormValid();
+}
+
+function validateEmail(email) {
+  const regEx = /^[a-zA-Z0-9._%+-]+@(noroff\.no|stud\.noroff\.no)$/;
+  return regEx.test(email);
+}
+
+function checkUserName(value) {
+  const regExt = /^[a-zA-Z0-9_]*$/;
+  return value.trim().length > 0 && regExt.test(value);
+}
+
+function checkUserPassword(password, minLength) {
+  return password.length >= minLength;
+}
+
+function isFormValid() {
+  return (
+    checkUserName(registerName.value) &&
+    validateEmail(registerEmail.value) &&
+    checkUserPassword(registerPassword.value, 8)
+  );
+}
+
+// Add 'submit' event listener to the form
+registerForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  // Only submit the form if it is valid
+  if (isFormValid()) {
+    const user = {
+      name: registerName.value,
+      email: registerEmail.value,
+      password: registerPassword.value,
     };
 
-    const validationResult = validateForm(userData);
-    if (validationResult !== true) {
-      displayErrors(validationResult);
-      return;
-    }
     try {
-      const result = await getRegisterUser(
+      const result = await registerUser(
         `${API_BASE_URL}/social/auth/register`,
-        userData
+        user
       );
 
-      if (!response.ok) {
-        throw new Error("HTTP error" + response.status);
+      if (!result.ok) {
+        throw new Error("HTTP error" + result.status);
       }
 
-      const json = await response.json();
-
+      const json = await result.json();
       console.log("json", json);
 
-      window.location.href = "../profile.html";
-
+      window.location.href = "./profile.html";
       return json;
     } catch (error) {
       console.error("Registration failed:", error);
       // Show error message
     }
-  });
-  return userData;
-}
-
-function validateForm(userData) {
-  const nameError = document.getElementById("nameError-register");
-  const nameErrorDuplicate = document.getElementById(
-    "nameErrorDuplicate-register"
-  );
-
-  if (checkUserNameRegistration(userData.name)) {
-    nameError.classList.add("hidden");
-    return true;
-  } else {
-    nameError.classList.remove("hidden");
-    return "Username may only contain alphanumerics and underscores.";
   }
-}
-
-function checkUserNameRegistration(value) {
-  const regExt = /^[a-zA-Z0-9_]*$/;
-  return value.trim().length > 0 && regExt.test(value);
-}
+});

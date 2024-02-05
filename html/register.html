@@ -42,12 +42,12 @@
     <script
       type="module"
       defer
-      src="/js/api.registation.index.js/api.authorization.js"
+      src="/js/api.registation.index.js/register.js"
     ></script>
     <script
       type="module"
       defer
-      src="/js/api.registation.index.js/register.js"
+      src="/js/api.registation.index.js/api.authorization.js"
     ></script>
   </head>
 
@@ -76,12 +76,7 @@
       >
         <h1 class="fs-2">Create an account</h1>
         <div class="mb-3 w-100">
-          <form
-            action="html/profile.html"
-            method="POST"
-            id="registerForm"
-            class="needs-validation"
-          >
+          <form method="POST" id="registerForm">
             <!-- Name Input -->
             <div class="mb-2">
               <label for="name" class="form-label invisible">Email</label>
@@ -91,20 +86,18 @@
                 placeholder="Name"
                 class="form-control"
                 id="registerName"
+                minlength="1"
                 required
               />
 
-              <div id="nameError-register" class="invalid-feedback hidden">
-                <span class="text-danger"
+              <div id="nameError-register" class="d-none">
+                <span
                   >Username may only contain alphanumerics and
                   underscores.</span
                 >
               </div>
-              <div
-                id="nameErrorDuplicate-register"
-                class="invalid-feedback-duplicate d-none"
-              >
-                <span class="text-danger">User is already registered.</span>
+              <div id="nameErrorDuplicate-register">
+                <span class="d-none">User is already registered.</span>
               </div>
             </div>
             <div class="mb-2">
@@ -117,11 +110,7 @@
                 id="registerEmail"
                 required
               />
-              <div class="valid-feedback"><span>Looks good!</span></div>
-              <div
-                id="emailError-register"
-                class="invalid-feedback text-danger hidden"
-              >
+              <div id="emailError-register" class="d-none">
                 <span
                   >Insure that you provide a @noroff.no or @stud.noroff.no email
                   address, please.</span
@@ -180,6 +169,7 @@
             <button
               class="btn btn-block w-100 btn-secondary mt-3"
               type="submit"
+              id="submitButton"
             >
               Register
             </button>

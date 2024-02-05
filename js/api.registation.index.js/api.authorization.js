@@ -1,5 +1,3 @@
-export { registerUser, loginUser, getToken };
-
 //---Base url---//
 
 const API_BASE_URL = "https://api.noroff.dev";
@@ -17,7 +15,7 @@ const API_BASE_URL = "https://api.noroff.dev";
  * ```js
  * registerUser(registerUrl, userData);
  */
-async function registerUser(url, data) {
+export async function registerUser(url, data) {
   try {
     const postData = {
       method: "POST",
@@ -46,18 +44,11 @@ async function registerUser(url, data) {
   }
 }
 
-const user = {
-  name: "wertrghfd_account_a",
-  email: "ghfunt-a@noroff.no",
-  password: "my-password",
-};
-console.log(user);
-
 registerUser(`${API_BASE_URL}/api/v1/social/auth/register`, user);
 
 ///////////-------------------------Login user------------------//////////////////////
 
-async function loginUser(url, data) {
+export async function loginUser(url, data) {
   try {
     const postData = {
       method: "POST",
@@ -73,7 +64,7 @@ async function loginUser(url, data) {
     if (response.ok) {
       //  if Works, return data
     } else {
-      throw new Error(data.errors[0].message);
+      throw new Error(response.errors[0].message);
     }
     localStorage.setItem("accessToken", accessToken);
     console.log(json);
@@ -84,9 +75,9 @@ async function loginUser(url, data) {
 }
 loginUser(`${API_BASE_URL}/api/v1/social/auth/login`, user);
 
-///////////////////////////////GET TOKEN/////////////////////////////////////////////
+///////////////////////////////GET TOKEN///////////////////////////
 
-async function getToken(url) {
+export async function getToken(url) {
   try {
     const token = localStorage.getItem("accessToken");
     const getData = {
