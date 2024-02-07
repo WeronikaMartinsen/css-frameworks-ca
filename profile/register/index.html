@@ -41,11 +41,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script
-      type="module"
-      defer
-      src="/js/api.registation.index.js/constants.api.js"
-    ></script>
+    <script type="module" defer src="/js/index.js"></script>
     <script defer type="module" defer src="/js/handle/register.js"></script>
   </head>
 
@@ -74,7 +70,7 @@
       >
         <h1 class="fs-2">Create an account</h1>
         <div class="mb-3 w-100">
-          <form method="POST" id="registerForm" action="/auth/register">
+          <form method="POST" id="registerForm">
             <!-- Name Input -->
             <div class="mb-2">
               <label for="name" class="form-label invisible">Email</label>
@@ -86,12 +82,10 @@
                 class="form-control"
                 pattern="^[\w]+$"
                 id="registerName"
-                title="Username must only contain lower and uppercase letter, numbers and underscore. Example: User_Name123"
+                title="Must only contain lower/ uppercase letter, numbers and
+                underscore. Example: User_Name123"
                 required
               />
-              <div class="feedback mx-2">
-                <span class="very-small">Please, fill up this field.</span>
-              </div>
             </div>
 
             <!-- Email Input -->
@@ -100,15 +94,18 @@
               <label for="email" class="form-label invisible">Email</label>
               <input
                 name="email"
-                type="email"
+                type="text"
                 for="email"
                 placeholder="Email address"
                 class="form-control"
-                pattern="^[a-zA-Z0-9._%+-]+@(noroff\.no|stud\.noroff\.no)$"
-                title="Only students with noroff email."
+                pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                title="Email address must contains endpoint @stud.noroff.no or @noroff.no."
                 id="registerEmail"
                 required
               />
+              <div class="feedback">
+                <span class="very-small mx-2">*Only for Noroff users.</span>
+              </div>
             </div>
 
             <!-- Password Input -->
@@ -118,7 +115,7 @@
               >
               <input
                 name="password"
-                type="password"
+                type="text"
                 id="registerPassword"
                 for="password"
                 placeholder="Password"
@@ -128,6 +125,11 @@
                 title="Password must be at least 8 characters long."
                 required
               />
+              <div class="feedback">
+                <span class="very-small mx-2"
+                  >* Password must contains at least 8 characters long.</span
+                >
+              </div>
             </div>
 
             <!-- Submit Button -->

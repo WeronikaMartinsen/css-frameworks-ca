@@ -39,16 +39,9 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script
-      defer
-      type="module"
-      src="js/api.registation.index.js/api.authorization.js"
-    ></script>
-    <script
-      defer
-      type="module"
-      src="js/api.registation.index.js/login.js"
-    ></script>
+    <script type="module" defer src="js/index.js"></script>
+    <script defer type="module" defer src="/js/handle/register.js"></script>
+    <script defer type="module" defer src="/js/handle/login.js"></script>
   </head>
 
   <body
@@ -76,43 +69,22 @@
       >
         <h1 class="fs-2">Log in</h1>
         <div class="mb-3 w-100">
-          <form
-            action="html/profile.html"
-            method="GET"
-            id="loginForm"
-            class="needs-validation"
-          >
-            <div class="mb-2">
-              <label for="name" class="form-label invisible">Email</label>
-              <input
-                type="name"
-                for="name"
-                placeholder="Name"
-                class="form-control"
-                id="loginName"
-                required
-              />
-              <div class="valid-feedback"><span>Looks good!</span></div>
-              <div class="invalid-feedback">
-                <span>Please enter a name.</span>
-              </div>
-            </div>
+          <form method="POST" id="loginForm">
+            <!-- Email Input -->
 
-            <!-- Email Address Input -->
             <div class="mb-2">
               <label for="email" class="form-label invisible">Email</label>
               <input
-                type="email"
+                name="email"
+                type="text"
                 for="email"
                 placeholder="Email address"
                 class="form-control"
+                pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                title="Email address must contains endpoint @stud.noroff.no or @noroff.no."
                 id="loginEmail"
                 required
               />
-              <div class="valid-feedback"><span>Looks good!</span></div>
-              <div class="invalid-feedback">
-                <span>Please enter a valid email address.</span>
-              </div>
             </div>
 
             <!-- Password Input -->
@@ -121,41 +93,24 @@
                 >Password</label
               >
               <input
-                type="password"
-                class="form-control"
+                name="password"
+                type="text"
                 id="loginPassword"
                 for="password"
                 placeholder="Password"
                 autocomplete="current-password"
-                pattern=".{8,}"
+                class="form-control"
+                minlength="8"
                 title="Password must be at least 8 characters long."
                 required
               />
-              <div class="invalid-feedback">
-                Password must be at least 8 characters long.
-              </div>
-            </div>
-
-            <!-- Save Account Checkbox -->
-            <div class="mb-3 form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-              />
-              <label
-                class="form-check-label text-black-50 very-small px-1"
-                for="flexCheckDefault"
-              >
-                Save your account.
-              </label>
             </div>
 
             <!-- Submit Button -->
             <button
               class="btn btn-block w-100 btn-secondary mt-3"
               type="submit"
+              id="loginBtn"
             >
               Log in
             </button>
