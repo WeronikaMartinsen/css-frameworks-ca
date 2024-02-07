@@ -8,6 +8,7 @@
       content="Embark on a journey of wanderlust with Pack & Go, your passport to a world of captivating travel tales, stunning destinations, and unforgettable experiences. Join a vibrant community of globetrotters, share your adventures, and discover inspiration for your next voyage. Let's explore the world together, one post at a time. #TravelDreams #AdventureAwaits #ExploreTheWorld"
     />
     <title>Pack & Go | Authorization</title>
+
     <link
       rel="stylesheet"
       href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -39,31 +40,13 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
     <script
       type="module"
       defer
-      src="/js/api.registation.index.js/API_BASE_URL.js"
+      src="/js/api.registation.index.js/constants.api.js"
     ></script>
-    <script
-      type="module"
-      defer
-      src="/js/api.registation.index.js/validation.register.js"
-    ></script>
-    <script
-      type="module"
-      defer
-      src="/js/api.registation.index.js/api.registration.js"
-    ></script>
-    <script
-      type="module"
-      defer
-      src="/js/api.registation.index.js/user.js"
-    ></script>
-    <script
-      type="module"
-      defer
-      src="/js/api.registation.index.js/getToken.js"
-    ></script>
+    <script defer type="module" defer src="/js/handle/register.js"></script>
   </head>
 
   <body
@@ -91,52 +74,41 @@
       >
         <h1 class="fs-2">Create an account</h1>
         <div class="mb-3 w-100">
-          <form method="POST" id="registerForm">
+          <form method="POST" id="registerForm" action="/auth/register">
             <!-- Name Input -->
             <div class="mb-2">
               <label for="name" class="form-label invisible">Email</label>
               <input
+                name="name"
                 type="text"
                 for="name"
                 placeholder="Name"
                 class="form-control"
+                pattern="^[\w]+$"
                 id="registerName"
-                minlength="1"
+                title="Username must only contain lower and uppercase letter, numbers and underscore. Example: User_Name123"
                 required
               />
-
-              <div id="nameError-register" class="d-none">
-                <span
-                  >Username may only contain alphanumerics and
-                  underscores.</span
-                >
-              </div>
-              <div id="nameErrorDuplicate-register">
-                <span class="d-none">User is already registered.</span>
+              <div class="feedback mx-2">
+                <span class="very-small">Please, fill up this field.</span>
               </div>
             </div>
+
+            <!-- Email Input -->
+
             <div class="mb-2">
               <label for="email" class="form-label invisible">Email</label>
               <input
+                name="email"
                 type="email"
                 for="email"
                 placeholder="Email address"
                 class="form-control"
+                pattern="^[a-zA-Z0-9._%+-]+@(noroff\.no|stud\.noroff\.no)$"
+                title="Only students with noroff email."
                 id="registerEmail"
                 required
               />
-              <div id="emailError-register" class="d-none">
-                <span
-                  >Insure that you provide a @noroff.no or @stud.noroff.no email
-                  address, please.</span
-                >
-              </div>
-              <div
-                id="emailErrorDuplicate-register"
-                class="invalid-feedback text-danger d-none"
-              >
-                <span>This email address is already in use.</span>
-              </div>
             </div>
 
             <!-- Password Input -->
@@ -145,39 +117,17 @@
                 >Password</label
               >
               <input
+                name="password"
                 type="password"
-                class="form-control"
                 id="registerPassword"
                 for="password"
                 placeholder="Password"
                 autocomplete="current-password"
-                pattern=".{8,}"
+                class="form-control"
+                minlength="8"
                 title="Password must be at least 8 characters long."
                 required
               />
-              <div
-                id="passwordError-register"
-                class="invalid-feedback text-danger d-none"
-              >
-                Password must contains at least 8 characters long.
-              </div>
-              <div class="valid-feedback"><span>Looks good!</span></div>
-            </div>
-
-            <!-- Save Account Checkbox -->
-            <div class="mb-3 form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-              />
-              <label
-                class="form-check-label text-black-50 very-small px-1"
-                for="flexCheckDefault"
-              >
-                Save your account.
-              </label>
             </div>
 
             <!-- Submit Button -->

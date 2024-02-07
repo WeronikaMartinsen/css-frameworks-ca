@@ -1,4 +1,4 @@
-import { registerUser } from "./api.registration.js";
+/* import { registerUser } from "./api.registration.js";
 import { API_BASE_URL } from "./API_BASE_URL.js";
 import { user } from "./user.js";
 
@@ -95,3 +95,4 @@ registerForm.addEventListener("submit", async (event) => {
     }
   }
 });
+ */

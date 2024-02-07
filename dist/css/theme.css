@@ -12013,4 +12013,12 @@ span {
   height: 3.125em; /* 50px / 16px */
 }
 
+.feedback {
+  display: none;
+}
+
+input:invalid + .feedback {
+  display: block;
+}
+
 /*# sourceMappingURL=theme.css.map */

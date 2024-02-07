@@ -192,3 +192,13 @@ span {
   width: 3.125em; /* 50px / 16px */
   height: 3.125em; /* 50px / 16px */
 }
+
+////////////////Register///////////
+
+.feedback {
+  display: none;
+}
+
+input:invalid + .feedback {
+  display: block;
+}
