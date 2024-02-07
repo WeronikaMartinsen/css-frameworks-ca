@@ -1,7 +1,7 @@
 import { login } from "../api/login.js";
 
 export function loginFormListener() {
-  //This function grab the user form the form
+  //This function grab the user from the form
 
   const loginForm = document.querySelector("#loginForm");
 
@@ -13,8 +13,6 @@ export function loginFormListener() {
 
       const profile = Object.fromEntries(loginFormData.entries());
       console.log(profile);
-
-      // Now sent the user it to the API
 
       login(profile);
     });
