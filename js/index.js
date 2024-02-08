@@ -2,7 +2,7 @@ import { registerFormListener } from "./handle/register.js";
 
 import { loginFormListener } from "./handle/login.js";
 
-import { createPost } from "./api/post/create.js";
+import * as post from "./api/post/index.js";
 
 const path = location.pathname;
 
@@ -12,7 +12,9 @@ if (path === "/index.html") {
   registerFormListener();
 }
 
-createPost({
-  title: "weronika",
-  body: "martinsen",
-});
+/* post.createPost();
+post.updatePost();
+post.getPost();
+post.removePost(); */
+/* post.getPosts().then(console.log); */
+post.getPost(10159).then(console.log);
