@@ -11995,6 +11995,14 @@ span {
 }
 
 /* Feed */
+.post {
+  border: 1px solid #0da6a6;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+  text-align: center;
+}
+
 .img-feed {
   width: 37.5em;
 }

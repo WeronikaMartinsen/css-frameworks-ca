@@ -175,6 +175,14 @@ span {
 
 /* Feed */
 
+.post {
+  border: 1px solid $secondary;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+  text-align: center;
+}
+
 .img-feed {
   width: 37.5em;
 }

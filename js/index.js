@@ -16,13 +16,11 @@ if (path === "/index.html") {
   registerFormListener();
 }
 
-/* post.createPost();
+post.createPost();
 post.getPost();
 post.getPosts();
 post.removePost();
-post.updatePost(); */
-
-post.getPost(64).then(console.log);
+post.updatePost();
 
 async function testTemplate() {
   const posts = await postMethods.getPosts();
