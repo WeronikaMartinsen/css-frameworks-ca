@@ -4,6 +4,10 @@ import { loginFormListener } from "./handle/login.js";
 
 import * as post from "./api/post/index.js";
 
+import * as templates from "./templates/index.js";
+
+import * as postMethods from "./api/post/index.js";
+
 const path = location.pathname;
 
 if (path === "/index.html") {
@@ -13,8 +17,16 @@ if (path === "/index.html") {
 }
 
 /* post.createPost();
-post.updatePost();
 post.getPost();
-post.removePost(); */
-/* post.getPosts().then(console.log); */
-post.getPost(10159).then(console.log);
+post.getPosts();
+post.removePost();
+post.updatePost(); */
+
+post.getPost(64).then(console.log);
+
+async function testTemplate() {
+  const posts = await postMethods.getPosts();
+  const container = document.querySelector("#post");
+  templates.renderPostTemplates(posts, container);
+}
+testTemplate();
