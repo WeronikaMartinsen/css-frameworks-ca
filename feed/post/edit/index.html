@@ -52,7 +52,26 @@
         </nav>
       </header>
       
-
+      <div class="bg-light rounded-5 mb-3 max-width-content mt-3 p-4 w-100 ">
+        <div class="d-flex flex-column align-items-center w-100 mw-50 no-shrink d-flex justify-content-center align-items-center mb-1">
+          <h2>Create Post</h2>  
+          <form id="updatePost"class="w-100 d-flex flex-column align-items-center flex-nowrap mb-2">
+              <div class="form-group w-100">
+                <label for="">Title</label>
+                <input type="text" name="title" class="form-control mb-0" required>
+                <label class="mt-0" for="post"></label>
+                <textarea class="form-control mt-0" name="post" type="text" placeholder="Write your post here.." aria-label="text" required></textarea>
+                <label for="">Tags</label>
+                <input type="text" name="tags" class="form-control mb-0">
+               
+                <label for="">Media</label>
+                <input type="url" name="media" class="form-control mb-0">
+              </div>    
+              <div class="mb-3 mt-3 w-100">
+                <button class="input-group-text btn btn-secondary rounder-5 w-100">Create post</button>
+              </div>
+              </form>
+        </div>
       <main
       class="container-fluid d-flex flex-column justify-content-center align-items-center mt-custom p-0 max-width-content">
       
