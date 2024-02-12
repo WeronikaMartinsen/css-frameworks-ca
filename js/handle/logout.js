@@ -1,16 +1,23 @@
 import { logout } from "../api/logout.js";
 
 export function logoutFormListener() {
-  const logoutButton = document.getElementById("logoutButton");
+  console.log("Logout form listener initialized");
 
-  if (logoutButton) {
-    logoutButton.addEventListener("click", async () => {
-      try {
-        // Call the logout function from logout.js
+  const logoutLinks = document.querySelectorAll(".logoutButton");
+
+  if (logoutLinks.length > 0) {
+    console.log(`${logoutLinks.length} logout links found`);
+
+    logoutLinks.forEach((link) => {
+      console.log("Adding click event listener to link");
+
+      link.addEventListener("click", async (event) => {
+        console.log("Logout link clicked");
+        event.preventDefault(); // Prevent the default anchor behavior
         await logout();
-      } catch (error) {
-        console.error("Error during logout form submission:", error.message);
-      }
+      });
     });
+  } else {
+    console.log("No logout links found");
   }
 }

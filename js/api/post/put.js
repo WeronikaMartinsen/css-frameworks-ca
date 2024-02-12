@@ -7,16 +7,14 @@ const method = "put";
 
 export async function updatePost(postData) {
   if (!postData.id) {
-    console.error("Missing ID in postData");
-    return;
+    throw new Error("Update requires a postID");
   }
 
-  const updatePostURL = `${API_SOCIAL_URL}${action}${postData.id}`;
+  const updatePostURL = `${API_SOCIAL_URL}${action}/${postData.id}`;
 
   const response = await authFetch(updatePostURL, {
     method,
     body: JSON.stringify(postData),
   });
-  const post = await response.json();
-  console.log(post);
+  return await response.json();
 }

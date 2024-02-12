@@ -21,6 +21,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="module" defer src="/js/index.js"></script>
   </head>
   <body>
     <div class="container-fluid d-flex m-0 p-0">
@@ -42,7 +43,7 @@
                     </li>
                         <li class="nav-item d-flex justify-content-center align-items-center">
                           <i class="fa-solid fa-arrow-right-from-bracket text-center"></i>
-                          <a class="nav-link text-center px-2" id="logoutButton">Log out</a></li>
+                          <a class="nav-link text-center px-2 logoutButton">Log out</a></li>
                           <li class="nav-item">
                             <a class="nav-link" href="profile.html"> <img src="/images/me.jpg" alt="Profile image." class="stories-width-profile rounded-circle"></a>
                           </li>
@@ -54,30 +55,39 @@
       <!-- Page Content  -->
 
       <main class="col-md-9 col-lg-10 d-flex flex-column justify-content-center align-items-center flex-grow-1">
-        <div class="mt-5 d-flex flex-column justify-content-center align-items-center" id="content">
-          <div
-            class="container-fluid d-flex justify-content-center align-items-center"
-          >
-            <div class="row justify-content-around align-items-center">
-              <div class="col justify-content-around align-items-center">
-                <div
-                  class="d-flex justify-content-center align-items-center flex-column"
-                >
-                  <img
-                    class="image-fluid rounded-circle mb-3 profile-img border border-light border-5"
-                    src="/images/me.jpg"
-                    alt="Profile picture of myself."
-                  />
-                </div>
-              </div>
+
   
               <!-- First column to the right -->
   
-              <div class="col text-center m-2">
+              <form id="editProfile" class="col text-center m-2">
+
+                <div class="form-group mb-3">
+                  <label for="">Name</label>
+                  <input type="text" class="form-control" name="name">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="">Email</label>
+                  <input type="text" class="form-control" name="email">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="">Banner</label>
+                  <input type="text" class="form-control" name="banner">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="">Avatar</label>
+                  <input type="text" class="form-control" name="avatar">
+                </div>
+                <div><button class="btn btn-secondary">Update Profile</button></div>
+                
+         <!--        <img
+                class="image-fluid rounded-circle mb-3 profile-img border border-light border-5"
+                src=""
+                alt="Profile picture of myself."
+              />
                 <div
                   class="d-flex justify-content-center align-items-center flex-wrap gap-3 w-100"
                 >
-                  <div><h1 class="text-nowrap fs-2">Weronika Martinsen</h1></div>
+                  <div><h1 class="text-nowrap fs-2">Name: <span id="profileName"></span></h1></div>
                   <div class="d-flex flex-row gap-2">
                     <button href="/index.html" class="btn btn-secondary">Follow</button>
                     <button href="/feed/index.html" class="btn btn-light text-nowrap">
@@ -87,26 +97,26 @@
                       <i class="fa-solid fa-address-book"></i>
                     </button>
                   </div>
-                </div>
+                </div> -->
   
                 <!-- Second column to the right -->
   
                 <div
                   class="d-flex justify-content-center flex-wrap mt-4 gap-4"
                 >
-                  <span class="text-nowrap">Posts: <strong>425</strong></span>
-                  <span class="text-nowrap">Followers: <strong>466</strong></span>
-                  <span class="text-nowrap">Follow: <strong>156</strong></span>
+                  <span class="text-nowrap">Posts: <strong></strong></span>
+                  <span class="text-nowrap">Followers: <strong></strong></span>
+                  <span class="text-nowrap">Follow: <strong></strong></span>
                 </div>
   
                 <!-- Third column to the right -->
   
                 <div class="d-flex flex-column justify-content-start mt-3 m-1">
-                  <span>@love @travel @believe in magic</span>
-                  <span>@my live is my art</span>
-                  <span>@visit Poland @Gdansk @Warsaw @Krakow</span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
   

@@ -1,4 +1,4 @@
-import { remove } from "../api/getToken";
+import { remove } from "../api/getToken.js";
 
 export async function logout() {
   try {
