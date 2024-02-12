@@ -1,40 +1,37 @@
 import { getPost, updatePost } from "../api/post/index.js";
 
 export async function updateFormListener() {
-  const updateForm = document.querySelector("#updatePost");
+  const form = document.querySelector("#updatePost");
 
-  const urlSearchParams = new URLSearchParams(window.location.search);
-  const params = Object.fromEntries(urlSearchParams.entries());
-  const id = params.id;
+  const url = new URL(location.href);
+  const id = url.searchParams.get("id");
 
   if (!id) {
     console.error("ID not found in URL");
+    // Handle the absence of ID, show an error message, or redirect, etc.
     return;
   }
 
-  if (updateForm) {
-    const button = updateForm.querySelector("button");
+  if (form) {
+    const button = form.querySelector("button");
     button.disabled = true; // Corrected property name
 
-    try {
-      const post = await getPost(id);
+    const post = await getPost(id);
 
-      updateForm.title.value = post.title;
-      updateForm.body.value = post.body;
-      updateForm.media.value = post.media;
+    form.title.value = post.title;
+    form.body.value = post.body;
+    form.media.value = post.media;
 
-      button.disabled = false;
+    button.disabled = false;
 
-      updateForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        const updateFormData = new FormData(updateForm);
-        const updatedPost = Object.fromEntries(updateFormData.entries());
-        updatedPost.id = id;
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+      const post = Object.fromEntries(formData.entries());
+      post.id = id;
 
-        await updatePost(updatedPost);
-      });
-    } catch (error) {
-      console.error("Error fetching post:", error.message);
-    }
+      updatePost(post);
+    });
   }
 }

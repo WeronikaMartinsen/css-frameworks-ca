@@ -11,6 +11,12 @@ export async function createPost(postData) {
     method,
     body: JSON.stringify(postData),
   });
+  if (!response.ok) {
+    throw new Error(`Failed to create post: ${response.statusText}`);
+  }
 
-  return await response.json();
+  const createdPost = await response.json();
+
+  // Return the ID of the created post
+  return createdPost.id;
 }
