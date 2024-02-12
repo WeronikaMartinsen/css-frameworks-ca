@@ -142,7 +142,14 @@ span {
 
 /* Feed */
 
+.post-image {
+  height: 200px;
+}
 .post {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
   border: 1px solid $secondary;
   padding: 1em;
   margin: 1em;

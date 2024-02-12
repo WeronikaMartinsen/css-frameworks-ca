@@ -6,7 +6,12 @@ const action = "/posts";
 const method = "put";
 
 export async function updatePost(postData) {
-  const updatePostURL = `${API_SOCIAL_URL}${action}/${postData.id}`;
+  if (!postData.id) {
+    console.error("Missing ID in postData");
+    return;
+  }
+
+  const updatePostURL = `${API_SOCIAL_URL}${action}${postData.id}`;
 
   const response = await authFetch(updatePostURL, {
     method,

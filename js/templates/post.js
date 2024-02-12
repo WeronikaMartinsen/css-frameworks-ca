@@ -6,7 +6,24 @@ export function postTemplateA(postData) {
 export function postTemplateB(postData) {
   const post = document.createElement("div");
   post.classList.add("post");
-  post.innerText = postData.title;
+  const titlePost = document.createElement("h5");
+  titlePost.innerHTML = postData.title;
+  titlePost.classList.add("post-title");
+  const bodyPost = document.createElement("span");
+  bodyPost.innerHTML = postData.body;
+  post.append(titlePost);
+  post.append(bodyPost);
+
+  if (postData.media) {
+    const imgContainer = document.createElement("imgContainer");
+    imgContainer.classList.add("imgContainer");
+    const img = document.createElement("img");
+    img.src = postData.media;
+    img.alt = `Image from ${postData.title}`;
+    img.classList.add("post-image");
+    post.append(imgContainer);
+    imgContainer.append(img);
+  }
   return post;
 }
 

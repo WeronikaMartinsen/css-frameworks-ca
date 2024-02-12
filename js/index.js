@@ -15,7 +15,7 @@ if (path === "/index.html") {
 } else if (path === "/feed/post/edit/index.html") {
   listeners.updateFormListener();
 }
-/* 
+
 async function displayPosts() {
   const posts = await postMethods.getPosts();
   const container = document.querySelector("#post");
@@ -25,4 +25,11 @@ async function displayPosts() {
 document.addEventListener("DOMContentLoaded", () => {
   displayPosts();
 });
+
+/* async function displayPost() {
+  const post = await postMethods.getPost();
+  const singlePost = document.querySelector("#singlePost");
+  templates.renderPostTemplate(post, singlePost);
+}
+displayPost();
  */
