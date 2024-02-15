@@ -21,9 +21,12 @@ export async function updateProfileFormListener() {
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      const form = new FormData(form);
+      const form = event.target;
+      const formData = new FormData(form);
       const profile = Object.fromEntries(formData.entries());
 
+      profile.name = name;
+      profile.email = email;
       updateProfile(profile);
     });
   }
