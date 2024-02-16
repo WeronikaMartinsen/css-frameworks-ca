@@ -1,18 +1,29 @@
-export function postTemplateA(postData) {
-  return `<div class="post" id=${postData.id}>${postData.title}</div>`;
-}
+import { load } from "../api/getToken.js";
 
-// Function to create a post element using template B
-export function postTemplateB(postData) {
-  const post = document.createElement("div");
-  post.classList.add("post");
+const currentUser = load("profile");
+
+console.log("CurrentUser:", currentUser);
+
+export function postTemplateB(postData, currentUser) {
+  const singlePost = document.createElement("div");
+  singlePost.classList.add("singlePost");
+
+  singlePost.id = `post-${postData.id}`;
+
   const titlePost = document.createElement("h5");
   titlePost.innerHTML = postData.title;
   titlePost.classList.add("post-title");
   const bodyPost = document.createElement("span");
   bodyPost.innerHTML = postData.body;
-  post.append(titlePost);
-  post.append(bodyPost);
+  singlePost.append(titlePost);
+  singlePost.append(bodyPost);
+
+  singlePost.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    // Redirect first
+    window.location.href = `/feed/singlePost.html?id=${postData.id}&title=${postData.title}`;
+  });
 
   if (postData.media) {
     const imgContainer = document.createElement("imgContainer");
@@ -21,10 +32,11 @@ export function postTemplateB(postData) {
     img.src = postData.media;
     img.alt = `Image from ${postData.title}`;
     img.classList.add("post-image");
-    post.append(imgContainer);
+    singlePost.append(imgContainer);
     imgContainer.append(img);
   }
-  return post;
+
+  return singlePost;
 }
 
 // Function to render a single post template B into a parent element

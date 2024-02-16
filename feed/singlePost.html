@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Pack & Go - Dive into a world of travel wonders with our vibrant feed. Discover captivating stories, breathtaking photos, and travel inspiration from fellow explorers around the globe. Join the adventure and share your own travel tales! #ExploreTogether #TravelCommunity #WanderlustFeed">
 </head>
-    <title>Pack & Go | Feed /Posts</title>
+    <title>Pack & Go | Feed / Posts / Post ID</title>
     <link
       rel="stylesheet"
       href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -56,150 +56,8 @@
 
           <main
             class="container-fluid d-flex flex-column justify-content-center align-items-center mt-custom p-0 max-width-content">
-            <div class="row" id="content">
-              <div class="col-12 w-100 mw-50 no-shrink d-flex flex-column align-items-center p-0 m-1">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control rounder-5 border border-light border-2" placeholder="Where next?" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                  <div class="input-group-append">
-                    <button class="input-group-text btn btn-light border border-secondary text-dark" id="basic-addon2">Search</button>
-                  </div>
-                </div>
-
-                
-
-          <!-- Add post  -->
-
-
-          <div class="bg-light rounded-5 mb-3 max-width-content mt-3 p-4 w-100 ">
-            <div class="d-flex flex-column align-items-center w-100 mw-50 no-shrink d-flex justify-content-center align-items-center mb-1">
-              <h2>Create Post</h2>  
-              <form id="createPost"class="w-100 d-flex flex-column align-items-center flex-nowrap mb-2">
-                  <div class="form-group w-100">
-                    <label for="">Title</label>
-                    <input type="text" name="title" class="form-control mb-0" required>
-                    <label class="mt-0" for="post"></label>
-                    <textarea class="form-control mt-0" name="body" type="text" placeholder="Write your post here.." aria-label="text" required></textarea>
-        <!--     
-                    <label for=""></label>
-                    <input type="text" name="tags" id="tagsInput" class="form-control mb-0" placeholder="Tags"> -->
-                    <label for=""></label>
-                    <input type="url" name="media" class="form-control mb-0"  placeholder="Media">
-                   
-                  </div>    
-                  <div class="mb-3 mt-3 w-100">
-                    <button type="submit" class="input-group-text btn btn-secondary rounder-5 w-100">Create post</button>
-                  </div>
-                  </form>
-                  <a class="btn" href="/feed/post/edit/index.html">to jest url do edit</a>
-                 
-            </div>
-
-<!-- 
-                <div
-            class="container-fluid d-flex justify-content-center align-items-center flex-wrap gap-3 gap-sm-5 mt-3 mb-0"
-          >
-            <div class="d-flex flex-column justify-content-center align-items-center">
-              <img
-             
-                class="rounded-circle image-fluid stories-width-feed border border-light border-5 custom-img-hover"
-                src="/images/travel-hero.jpg"
-                alt="Picture of the beach in Maledives."
-              />
-              <span class="very-small">Travel</span>
-            </div>
-            <div
-              class="d-flex flex-column justify-content-center align-items-center"
-            >
-              <img
-           
-                class="rounded-circle stories-width-feed border border-light border-5 custom-img-hover"
-                src="/images/mapa.jpg"
-                alt="Image of funny map."
-              />
-              <span class="very-small">Flights</span>
-            </div>
-            <div class="d-flex flex-column justify-content-center align-items-center">
-              <img
-            
-                class="rounded-circle stories-width-feed border border-light border-5 custom-img-hover"
-                src="/images/see.jpg"
-                alt="Image of sunset on Dominicana."
-              />
-              <span class="very-small">Visited</span>
-            </div>
-            <div class="d-flex flex-column justify-content-center align-items-center">
-              <img
-              
-                class="rounded-circle stories-width-feed border border-light border-5 custom-img-hover"
-                src="/images/italy.jpg"
-                alt="Image of old buildings in Italy."
-              />
-              <span class="very-small">Holidays</span>
-            </div>
-            <div class="d-flex flex-column justify-content-center align-items-center">
-              <img
-             
-                class="rounded-circle stories-width-feed border border-light border-5 custom-img-hover"
-                src="/images/mazury.jpg"
-                alt="Image of lake in Poland."
-              />
-              <span class="very-small">Relax</span>
-            </div>
-            <div class="d-flex flex-column justify-content-center align-items-center">
-              <img
-          
-                class="rounded-circle stories-width-feed border border-light border-5 custom-img-hover"
-                src="/images/picture.png"
-                alt="Image of mother with her child."
-              />
-              <span class="very-small">With Kids</span>
-            </div>
-          </div>
-
-              <div class="container-fluid mb-3 mt-4 w-100">
-                <div class="d-flex flex-row justify-content-center align-items-center w-100 gap-2">
-                  
-                <div class="dropdown bg-light">
-                  
-                  <button class="btn btn-light text-dark dropdown-toggle very-small" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Airport
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Oslo Gardermoen</a>
-                    <a class="dropdown-item" href="#">Bergen Flesland</a>
-                    <a class="dropdown-item" href="#">Stavanger Sola</a>
-                    <a class="dropdown-item" href="#">Haugesund</a>
-                    <a class="dropdown-item" href="#">Torp Sandefjord</a>
-                    <a class="dropdown-item" href="#">Trondheim Varnes</a>
-                  </div>
-                </div>
-                <div class="dropdown bg-light">
-                  <button class="btn btn-light text-dark dropdown-toggle very-small" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Destination
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Norway</a>
-                    <a class="dropdown-item" href="#">Spain</a>
-                    <a class="dropdown-item" href="#">South Africa</a>
-                    <a class="dropdown-item" href="#">Poland</a>
-                    <a class="dropdown-item" href="#">USA</a>
-                    <a class="dropdown-item" href="#">Japan</a>
-                  </div>
-                </div>
-                <div class="dropdown bg-light">
-                  <button class="btn btn-light text-dark dropdown-toggle very-small" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Date
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">2024</a>
-                    <a class="dropdown-item" href="#">2025</a>
-                    <a class="dropdown-item" href="#">2026</a>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-                
-                <div id="post">
+     
+                <div id="singlePostId">
                   
                 </div>
                   <!--------------------------- Content (All posts)  ----------------------->

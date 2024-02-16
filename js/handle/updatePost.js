@@ -19,10 +19,11 @@ export async function updateFormListener() {
     const post = await getPost(id);
 
     form.title.value = post.title;
-    form.body.value = post.body;
-    form.media.value = post.media;
 
     button.disabled = false;
+
+    form.body.value = post.body;
+    form.media.value = post.media;
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();

@@ -33,3 +33,21 @@ async function displayPosts() {
 document.addEventListener("DOMContentLoaded", () => {
   displayPosts();
 });
+
+async function displayPost() {
+  const postId = new URLSearchParams(window.location.search).get("id");
+
+  if (postId) {
+    try {
+      const post = await postMethods.getPost(postId);
+      const container = document.querySelector("#singlePostId");
+      templates.renderPostTemplate(post, container);
+    } catch (error) {
+      console.error("Error fetching post details:", error);
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  displayPost();
+});

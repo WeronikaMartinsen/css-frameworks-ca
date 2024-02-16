@@ -11975,7 +11975,7 @@ span {
   height: 200px;
 }
 
-.post {
+.singlePost {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
