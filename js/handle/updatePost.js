@@ -14,7 +14,7 @@ export async function updateFormListener() {
 
   if (form) {
     const button = form.querySelector("button");
-    button.disabled = true; // Corrected property name
+    button.disabled = true;
 
     const post = await getPost(id);
 

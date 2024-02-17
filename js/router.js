@@ -27,7 +27,11 @@ export default function router() {
 async function displayPosts() {
   const posts = await postMethods.getPosts();
   const container = document.querySelector("#post");
-  templates.renderPostTemplates(posts, container);
+
+  // Check if the container exists before rendering post templates
+  if (container) {
+    templates.renderPostTemplates(posts, container);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,7 +45,11 @@ async function displayPost() {
     try {
       const post = await postMethods.getPost(postId);
       const container = document.querySelector("#singlePostId");
-      templates.renderPostTemplate(post, container);
+
+      // Check if the container exists before rendering the post template
+      if (container) {
+        templates.renderPostTemplate(post, container);
+      }
     } catch (error) {
       console.error("Error fetching post details:", error);
     }

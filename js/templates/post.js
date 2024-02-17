@@ -1,13 +1,8 @@
 import { load } from "../api/getToken.js";
 
-const currentUser = load("profile");
-
-console.log("CurrentUser:", currentUser);
-
-export function postTemplateB(postData, currentUser) {
+export function postTemplateB(postData) {
   const singlePost = document.createElement("div");
   singlePost.classList.add("singlePost");
-
   singlePost.id = `post-${postData.id}`;
 
   const titlePost = document.createElement("h5");

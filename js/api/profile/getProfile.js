@@ -1,11 +1,11 @@
-import { API_SOCIAL_URL } from "../constants.js";
+import { API_SOCIAL_URL, authorName } from "../constants.js";
 
 import { authFetch } from "../authorizationFetch.js";
 
 const action = "/profiles";
 
 export async function getProfiles() {
-  const updateProfileURL = `${API_SOCIAL_URL}${action}`;
+  const updateProfileURL = `${API_SOCIAL_URL}${action}/${authorName}`;
 
   const response = await authFetch(updateProfileURL);
 
