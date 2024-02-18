@@ -1,6 +1,7 @@
 import * as listeners from "./handle/index.js";
 import * as templates from "./templates/index.js";
 import * as postMethods from "./api/post/index.js";
+import * as get from "./api/profile/index.js";
 
 export default function router() {
   const path = location.pathname;
@@ -63,15 +64,24 @@ document.addEventListener("DOMContentLoaded", () => {
 export async function displayUserPost() {
   const userName = new URLSearchParams(window.location.search).get("name");
 
+  console.log("userName:", userName); // Check if userName is retrieved correctly
+
   if (userName) {
     try {
-      const posts = await postMethods.getUserPost(userName);
-      const userPostContainer = document.querySelector("#userPost");
+      const posts = await get.getUserPost(userName);
+      console.log("User posts:", posts); // Check if posts are retrieved correctly
 
-      // Check if the container exists before rendering the post template
-      if (userPostContainer) {
-        templates.renderPostTemplates(posts, userPostContainer);
-      }
+      const userPostContainer = document.getElementById("userPost");
+
+      // Assuming you want to display each post in a separate card
+      posts.forEach((post) => {
+        const userPostCard = document.createElement("div");
+        const title = document.createElement("h4");
+        title.textContent = post.title; // Assign post title to the h4 element
+
+        userPostCard.appendChild(title);
+        userPostContainer.appendChild(userPostCard);
+      });
     } catch (error) {
       console.error("Error fetching user posts:", error);
     }
