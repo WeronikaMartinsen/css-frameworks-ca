@@ -1,5 +1,3 @@
-import { load } from "../api/getToken.js";
-
 export function postTemplateB(postData) {
   const singlePost = document.createElement("div");
   singlePost.classList.add("singlePost");

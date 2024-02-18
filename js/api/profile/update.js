@@ -20,7 +20,7 @@ export async function updateProfile(profileData) {
 
   if (!response.ok) {
     console.error(`Request failed with status ${response.status}`);
-    return; // Handle the error accordingly
+    return;
   }
 
   return await response.json();

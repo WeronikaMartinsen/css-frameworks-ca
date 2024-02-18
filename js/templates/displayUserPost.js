@@ -1,42 +1,24 @@
-import { getUserPost } from "../api/profile/getUserPost.js";
+/* import { getUserPost } from "../api/profile/getUserPost.js";
 import { authorName } from "../api/constants.js";
+import { renderPostTemplates } from "../templates/index.js";
 
 export async function displayUserPost() {
-  console.log("displayUserPost called");
   try {
+    console.log("Fetching user posts...");
     const posts = await getUserPost();
+    console.log("User posts:", posts);
 
-    const userPost = new Set();
+    // Filter posts based on the author's name
+    const userPosts = posts.filter((post) => post.author === authorName);
+    console.log("User posts by author:", userPosts);
+
     const getPost = document.getElementById("userPost");
 
-    posts.forEach((post) => {
-      if (post.title && post.body && post.media) {
-        const postContent = `${post.title}${post.body}`;
-        if (!userPost.has(postContent)) {
-          userPost.add(postContent);
-
-          getPost.append(
-            postCard(
-              post.media,
-              post.title,
-              authorName,
-              post.created,
-              post.body,
-              post.id
-            )
-          );
-
-          const getDeleteBtn = document.getElementById(`${post.id}`);
-          if (getDeleteBtn) {
-            getDeleteBtn.addEventListener("click", () => {
-              removePost(post.id);
-              userFeedback(`Post deleted!`);
-            });
-          }
-        }
-      }
-    });
+    // Use the existing logic to render the filtered user posts
+    renderPostTemplates(userPosts, getPost);
+    console.log("User posts rendered successfully.");
   } catch (error) {
-    console.error(error);
+    console.error("Error fetching or rendering user posts:", error);
   }
 }
+ */

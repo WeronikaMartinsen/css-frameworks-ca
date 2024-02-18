@@ -59,3 +59,25 @@ async function displayPost() {
 document.addEventListener("DOMContentLoaded", () => {
   displayPost();
 });
+
+export async function displayUserPost() {
+  const userName = new URLSearchParams(window.location.search).get("name");
+
+  if (userName) {
+    try {
+      const posts = await postMethods.getUserPost(userName);
+      const userPostContainer = document.querySelector("#userPost");
+
+      // Check if the container exists before rendering the post template
+      if (userPostContainer) {
+        templates.renderPostTemplates(posts, userPostContainer);
+      }
+    } catch (error) {
+      console.error("Error fetching user posts:", error);
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  displayUserPost();
+});

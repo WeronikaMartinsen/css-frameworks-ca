@@ -26,6 +26,6 @@ export async function authFetch(url, options = {}) {
     return response;
   } catch (error) {
     console.error("Error in authFetch:", error.message);
-    throw new Error(`Request to ${url} failed with status ${response.status}`);
+    throw new Error(`Request to ${url} failed: ${error.message}`);
   }
 }
