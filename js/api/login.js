@@ -21,5 +21,6 @@ export async function login(profile) {
   storage.save("token", accessToken);
   storage.save("profile", user);
 
+  window.location.href = `profile/index.html`;
   alert("You are now logged in!");
 }
