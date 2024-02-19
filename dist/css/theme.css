@@ -11855,30 +11855,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-@font-face {
-  font-family: "Arimo";
-  src: url("path/to/arimo.woff2") format("woff2"), url("path/to/arimo.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Edu TAS Beginner";
-  src: url("path/to/edu-tas-beginner.woff2") format("woff2"), url("path/to/edu-tas-beginner.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("path/to/montserrat.woff2") format("woff2"), url("path/to/montserrat.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Open Sans";
-  src: url("path/to/open-sans.woff2") format("woff2"), url("path/to/open-sans.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
 .btn-light:hover {
   background-color: #e4f0f0;
   border-color: #0da6a6;
@@ -11995,6 +11971,22 @@ span {
 }
 
 /* Feed */
+.post-image {
+  height: 200px;
+}
+
+.singlePost {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  border: 1px solid #0da6a6;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+  text-align: center;
+}
+
 .img-feed {
   width: 37.5em;
 }
@@ -12011,6 +12003,18 @@ span {
 .stories-width-feed {
   width: 3.125em; /* 50px / 16px */
   height: 3.125em; /* 50px / 16px */
+}
+
+.input-custom-height {
+  height: 7em;
+}
+
+.feedback {
+  display: none;
+}
+
+input:invalid + .feedback {
+  display: block;
 }
 
 /*# sourceMappingURL=theme.css.map */
