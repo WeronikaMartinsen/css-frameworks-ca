@@ -13,4 +13,4 @@ const params = new URLSearchParams(queryString);
 
 export const id = params.get("id");
 
-export const name = params.get("name");
+export const author = params.get("author");

@@ -1,5 +1,5 @@
 import { createPost } from "../api/post/create.js";
-import { name } from "../api/constants.js";
+import { author } from "../api/constants.js";
 
 export function createPostListener() {
   const createPostForm = document.querySelector("#createPost");
@@ -12,7 +12,7 @@ export function createPostListener() {
 
       const post = Object.fromEntries(createPostData.entries());
 
-      post.name = name; // Assuming `name` is the user's name
+      post.author = author; // Assuming `name` is the user's name
 
       try {
         // Call createPost and get the ID of the created post

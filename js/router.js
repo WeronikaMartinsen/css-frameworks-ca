@@ -64,20 +64,19 @@ document.addEventListener("DOMContentLoaded", () => {
 export async function displayUserPost() {
   const userName = new URLSearchParams(window.location.search).get("name");
 
-  console.log("userName:", userName); // Check if userName is retrieved correctly
+  console.log("userName:", userName);
 
   if (userName) {
     try {
-      const posts = await get.getUserPost(userName);
-      console.log("User posts:", posts); // Check if posts are retrieved correctly
+      const posts = await getMethod.getUserPost(userName);
+      console.log("User posts:", posts);
 
-      const userPostContainer = document.getElementById("userPost");
+      const userPostContainer = document.getElementById("user-post");
 
-      // Assuming you want to display each post in a separate card
       posts.forEach((post) => {
         const userPostCard = document.createElement("div");
         const title = document.createElement("h4");
-        title.textContent = post.title; // Assign post title to the h4 element
+        title.textContent = post.title;
 
         userPostCard.appendChild(title);
         userPostContainer.appendChild(userPostCard);
