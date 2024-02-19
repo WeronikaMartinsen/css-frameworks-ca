@@ -1,7 +1,7 @@
 import * as listeners from "./handle/index.js";
 import * as templates from "./templates/index.js";
 import * as postMethods from "./api/post/index.js";
-import * as get from "./api/profile/index.js";
+import * as getMethods from "./api/profile/index.js";
 
 export default function router() {
   const path = location.pathname;
@@ -62,28 +62,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 export async function displayUserPost() {
-  const userName = new URLSearchParams(window.location.search).get("name");
+  try {
+    const posts = await getMethods.getUserPosts();
+    console.log("User posts:", posts);
 
-  console.log("userName:", userName);
+    const userPostContainer = document.getElementById("user-post");
 
-  if (userName) {
-    try {
-      const posts = await getMethod.getUserPost(userName);
-      console.log("User posts:", posts);
+    posts.forEach((post) => {
+      const userPostCard = document.createElement("div");
+      const title = document.createElement("h4");
+      title.textContent = post.title;
 
-      const userPostContainer = document.getElementById("user-post");
-
-      posts.forEach((post) => {
-        const userPostCard = document.createElement("div");
-        const title = document.createElement("h4");
-        title.textContent = post.title;
-
-        userPostCard.appendChild(title);
-        userPostContainer.appendChild(userPostCard);
-      });
-    } catch (error) {
-      console.error("Error fetching user posts:", error);
-    }
+      userPostCard.appendChild(title);
+      userPostContainer.appendChild(userPostCard);
+    });
+  } catch (error) {
+    console.error("Error fetching user posts:", error);
   }
 }
 
