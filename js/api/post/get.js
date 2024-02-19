@@ -1,4 +1,4 @@
-import { API_SOCIAL_URL } from "../constants.js";
+import { API_POSTS, API_SOCIAL_URL } from "../constants.js";
 
 import { authFetch } from "../authorizationFetch.js";
 

@@ -15,7 +15,7 @@ export async function updateProfileFormListener() {
     form.name.value = name;
     form.email.value = email;
     form.banner.value = profile.banner;
-    form.banner.value = profile.avatar;
+    form.avatar.value = profile.avatar;
 
     button.disabled = false;
 

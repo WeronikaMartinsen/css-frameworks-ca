@@ -12,8 +12,11 @@ export async function getProfiles() {
   return await response.json();
 }
 
-export async function getProfile(author) {
-  const getProfileURL = `${API_SOCIAL_URL}${action}/${author}`;
+export async function getProfile(name) {
+  if (!name) {
+    throw new Error("Get requires a profile name");
+  }
+  const getProfileURL = `${API_SOCIAL_URL}${action}/${name}?_followers=true&_following=true&_posts=true`;
 
   const response = await authFetch(getProfileURL);
 
