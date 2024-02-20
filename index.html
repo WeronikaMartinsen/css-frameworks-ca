@@ -39,9 +39,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script type="module" defer src="js/index.js"></script>
-    <script defer type="module" src="/js/handle/register.js"></script>
-    <script defer type="module" src="/js/handle/login.js"></script>
+    <script src="js/index.js" defer type="module"></script>
   </head>
 
   <body
@@ -69,7 +67,7 @@
       >
         <h1 class="fs-2">Log in</h1>
         <div class="mb-3 w-100">
-          <form method="POST" id="loginForm">
+          <form id="loginForm">
             <!-- Email Input -->
 
             <div class="mb-2">
@@ -141,7 +139,7 @@
           <span>Don`t have an account?</span
           ><a
             class="text-secondary text-decoration-underline"
-            href="/profile/register/index.html"
+            href="register/index.html"
             >Register here</a
           >
         </div>
