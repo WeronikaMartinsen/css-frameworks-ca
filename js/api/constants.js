@@ -4,3 +4,11 @@ export const LOGIN = "/auth/login";
 export const POSTS = "/posts";
 export const PROFILES = "/profiles";
 export const MEDIA = "/media";
+
+const queryString = document.location.search;
+
+const params = new URLSearchParams(queryString);
+
+export const id = params.get("id");
+
+export const authorName = params.get("author");

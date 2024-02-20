@@ -1,4 +1,4 @@
-import { getPosts } from "./getPosts.js";
+import { getPosts } from "./get.js";
 
 export async function displayPosts() {
   try {
@@ -7,7 +7,7 @@ export async function displayPosts() {
 
     posts.forEach((post) => {
       const card = document.createElement("div");
-      card.classList.add("card");
+      card.classList.add("singlePost");
 
       const titleElement = document.createElement("h5");
       titleElement.classList.add("card-title");
@@ -18,18 +18,32 @@ export async function displayPosts() {
       cardBody.textContent = post.body;
 
       const mediaElement = document.createElement("img");
-      mediaElement.classList.add("media");
-      mediaElement.src = post.media;
+      mediaElement.classList.add("post-image");
+
+      // Check if post.media exists, if yes, set src to post.media; otherwise, set it to the default source
+      mediaElement.src = post.media
+        ? post.media
+        : "https://picsum.photos/id/18/2500/1667";
       mediaElement.alt = post.title;
+
+      const mediaContainer = document.createElement("div");
+      mediaContainer.classList.add("w-100");
 
       const authorElement = document.createElement("span");
       authorElement.classList.add("author");
-      authorElement.textContent = "Author: " + post.author;
+      authorElement.textContent = post.author.name;
 
+      const postID = document.createElement("span");
+      postID.classList.add("post-id");
+      postID.textContent = post.id;
+
+      mediaContainer.append(mediaElement);
       // Append card body to card
       card.append(titleElement);
       card.append(cardBody);
-      card.append(mediaElement);
+      card.append(mediaContainer);
+      card.append(authorElement);
+      card.append(postID);
 
       // Append card to posts container
       postsContainer.append(card);
