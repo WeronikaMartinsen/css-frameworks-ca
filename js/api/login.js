@@ -1,26 +1,35 @@
-import { API_SOCIAL_URL } from "./constants.js";
-import * as storage from "./getToken.js";
+import { API_BASE_URL, LOGIN } from "./constants.js";
 
-const action = "/auth/login";
-const method = "post";
+import * as storage from "./storeToken.js";
 
-export async function login(profile) {
-  const loginURL = API_SOCIAL_URL + action;
-  const body = JSON.stringify(profile);
+export async function login(user) {
+  const loginURL = API_BASE_URL + LOGIN;
+  try {
+    const postData = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    };
+    const response = await fetch(loginURL, postData);
+    const json = await response.json();
+    if (response.ok) {
+      storage.save("token", json.accessToken);
+      storage.save("profile", {
+        userName: json.name,
+        userEmail: json.email,
+        userAvatar: json.avatar,
+      });
 
-  const response = await fetch(loginURL, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    method,
-    body,
-  });
-
-  const { accessToken, ...user } = await response.json();
-
-  storage.save("token", accessToken);
-  storage.save("profile", user);
-
-  window.location.href = `profile/index.html`;
-  alert("You are now logged in!");
+      window.location.href = "feed/index.html";
+    } else {
+      const status = json.statusCode;
+      if (status === 401) {
+        `Wrong email or password!`;
+      }
+    }
+  } catch (error) {
+    console.error(error);
+  }
 }

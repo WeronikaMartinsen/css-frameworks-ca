@@ -1,3 +1,5 @@
-import router from "./router.js";
+import { getUser } from "./login/loginForm.js";
+import { registerUser } from "./register/registerForm.js";
 
-router();
+registerUser();
+getUser();

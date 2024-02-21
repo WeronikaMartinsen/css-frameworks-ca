@@ -1,11 +1,9 @@
-export const API_BASE_URL = "https://api.noroff.dev";
-export const API_BASE = "/api/v1";
-export const API_SOCIAL_BASE = "/social";
-export const API_LOGIN = "/auth/login";
-export const API_PROFILES = "/profiles";
-export const API_POSTS = "/posts";
-export const API_MEDIA = "/media";
-export const API_SOCIAL_URL = `${API_BASE_URL}${API_BASE}${API_SOCIAL_BASE}`;
+export const API_BASE_URL = "https://api.noroff.dev/api/v1/social";
+export const REGISTER = "/auth/register";
+export const LOGIN = "/auth/login";
+export const POSTS = "/posts";
+export const PROFILES = "/profiles";
+export const MEDIA = "/media";
 
 const queryString = document.location.search;
 
@@ -13,4 +11,4 @@ const params = new URLSearchParams(queryString);
 
 export const id = params.get("id");
 
-export const author = params.get("author");
+export const authorName = params.get("author");

@@ -1,13 +1,13 @@
-import { remove } from "../api/getToken.js";
+import { remove } from "./storeToken.js";
 
-export async function logout() {
-  try {
+export function logout() {
+  const logoutBtn = document.querySelector("#logout");
+
+  logoutBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    console.log("Logout button clicked");
     remove("token");
-
+    remove("profile");
     window.location.href = "/index.html";
-
-    console.log("Logout successful");
-  } catch (error) {
-    console.error("Error during logout:", error.message);
-  }
+  });
 }

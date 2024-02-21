@@ -143,12 +143,12 @@ span {
 /* Feed */
 
 .post-image {
-  height: 200px;
+  max-height: 200px;
 }
 .singlePost {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   border: 1px solid $secondary;
   padding: 1em;
