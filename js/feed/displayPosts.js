@@ -1,21 +1,62 @@
 import { getPosts } from "./get.js";
 
+import { load } from "../api/storeToken.js";
+
+import { deletePost } from "./deletePost.js";
+
 export async function displayPosts() {
   try {
     const posts = await getPosts();
+    const getProfile = load("profile");
     const postsContainer = document.querySelector("#posts");
 
     posts.forEach((post) => {
-      const card = document.createElement("a");
+      const card = document.createElement("div");
       card.classList.add("singlePost");
-      card.href = "/feed/singlePost.html?id=" + post.id;
-      card.addEventListener("click", () => {
-        window.location.href = card.href;
-      });
 
-      const titleElement = document.createElement("h5");
+      if (getProfile.userName === post.author.name) {
+        // Add edit and delete buttons to post created by the user
+        const editButton = document.createElement("a");
+        editButton.href = "/feed/post/edit/index.html?id=" + post.id;
+        editButton.classList.add("border-secondary");
+        editButton.classList.add("btn-light");
+        editButton.classList.add("btn");
+        editButton.innerText = "Update Post";
+        editButton.addEventListener("click", () => {
+          console.log("Edit post:", post.id);
+        });
+
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("border-secondary");
+        deleteButton.classList.add("btn-light");
+        deleteButton.classList.add("btn");
+        deleteButton.innerText = "Delete";
+        deleteButton.setAttribute("id", post.id);
+        deleteButton.addEventListener("click", () => {
+          deletePost(post.id);
+          alert("Post deleted successfully.");
+          window.location.reload();
+        });
+
+        // Append buttons to the card
+        card.append(editButton);
+        card.append(deleteButton);
+      }
+
+      const buttonsContainer = document.createElement("div");
+      buttonsContainer.classList.add("d-flex");
+      buttonsContainer.classList.add("justify-content-space-around");
+
+      const titleElement = document.createElement("a");
       titleElement.classList.add("card-title");
+      titleElement.classList.add("h3");
+      titleElement.classList.add("text-center");
       titleElement.textContent = post.title;
+      titleElement.href =
+        "/feed/singlePost.html?id=" + post.id + `author=` + post.author.name;
+      titleElement.addEventListener("click", () => {
+        window.location.href = titleElement.href;
+      });
 
       const cardBody = document.createElement("p");
       cardBody.classList.add("card-body");
@@ -62,6 +103,7 @@ export async function displayPosts() {
       card.append(authorElement);
       card.append(postID);
       card.append(date);
+      card.append(buttonsContainer);
 
       // Append card to posts container
       postsContainer.append(card);
