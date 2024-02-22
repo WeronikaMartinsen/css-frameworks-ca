@@ -59,10 +59,12 @@
             <div class="row" id="content">
               <div class="col-12 w-100 mw-50 no-shrink d-flex flex-column align-items-center p-0 m-1">
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control rounder-5 border border-light border-2" placeholder="Where next?" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                  <div class="input-group-append">
-                    <button class="input-group-text btn btn-light border border-secondary text-dark" id="basic-addon2">Search</button>
-                  </div>
+                <form id="searchPost" class="d-flex w-100">
+                  <label for="search"></label>
+                  <input type="text" id="search" class="form-control rounder-5 border border-secondary border-1" placeholder="Search post by title, body or author name." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                 
+                </form>
+                  
                 </div>
 
              
@@ -87,10 +89,10 @@
                   <div class="mb-3 mt-3 w-100">
                     <button type="submit" class="input-group-text btn btn-secondary rounder-5 w-100">Create post</button>
                   </div>
-                  </form>
-                  <a class="btn" href="/feed/post/edit/index.html">to jest url do edit</a>
-                 
+                  </form>   
+                             
             </div>
+          
             <div id="posts"></div>
 
 

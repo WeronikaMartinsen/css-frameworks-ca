@@ -142,8 +142,10 @@ span {
 
 /* Feed */
 
-.post-image {
-  max-height: 200px;
+.custom-width {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .singlePost {
   display: flex;

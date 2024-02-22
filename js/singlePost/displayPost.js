@@ -1,10 +1,12 @@
 import { id } from "../api/constants.js";
-
 import { getPost } from "../feed/get.js";
+import { load } from "../api/storeToken.js";
+import { deletePost } from "../feed/deletePost.js";
 
 export async function displayPost() {
   try {
     const getSinglePost = await getPost(id);
+    const getProfile = load("profile");
 
     const postContainer = document.querySelector("#singlePostId");
     postContainer.classList.add("singlePost");
@@ -42,12 +44,35 @@ export async function displayPost() {
     });
     date.innerText = postDate;
 
-    mediaContainer.append(media);
+    if (getProfile.userName === getSinglePost.author.name) {
+      // Add edit and delete buttons to post created by the user
+      const editButton = document.createElement("a");
+      editButton.href = "/feed/post/edit/index.html?id=" + getSinglePost.id;
+      editButton.classList.add("border-secondary");
+      editButton.classList.add("btn-light");
+      editButton.classList.add("btn");
+      editButton.innerText = "Update Post";
+      editButton.addEventListener("click", () => {
+        console.log("Edit post:", getSinglePost.id);
+      });
 
-    postContainer.append(postTitle);
-    postContainer.append(mediaContainer);
-    postContainer.append(body);
-    postContainer.append(author);
-    postContainer.append(date);
-  } catch {}
+      const deleteButton = document.createElement("i");
+      deleteButton.classList.add("border-secondary");
+      deleteButton.classList.add("btn-light");
+      deleteButton.classList.add("btn");
+      deleteButton.classList.add("fa-solid");
+      deleteButton.classList.add("fa-xmark");
+      deleteButton.addEventListener("click", async () => {
+        await deletePost(getSinglePost.id);
+        alert("Post deleted successfully.");
+        window.location.href = "/feed/index.html";
+      });
+
+      // Append buttons to the card
+      postContainer.appendChild(editButton);
+      postContainer.appendChild(deleteButton);
+    }
+  } catch (error) {
+    console.error("Error displaying post:", error);
+  }
 }

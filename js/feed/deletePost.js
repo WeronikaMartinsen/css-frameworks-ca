@@ -19,6 +19,7 @@ export async function deletePost(id) {
     const result = await response.json();
     if (response.ok) {
       return result;
+   
     }
   } catch (error) {
     alert("Error deleting post. Please try again.");

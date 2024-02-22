@@ -37,7 +37,7 @@ export async function updatePostForm() {
         };
         editPost(updatedPost);
         alert("Your post has been successfully updated!");
-        location.reload();
+        window.location.href = "/feed/index.html";
       });
     }
   } catch (error) {
