@@ -28,11 +28,13 @@ export async function updatePostForm() {
         // Corrected names for accessing form elements
         const title = form.editTitle.value;
         const body = form.editBody.value;
+
         const media = form.editMedia.value;
 
         const updatedPost = {
           title,
           body,
+
           media,
         };
         editPost(updatedPost);

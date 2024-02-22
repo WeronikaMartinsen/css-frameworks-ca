@@ -8,6 +8,7 @@ export function getNewPost() {
       getForm.addEventListener("submit", (event) => {
         event.preventDefault();
         const form = event.target;
+
         const title = form.title.value;
         const body = form.body.value;
         const media = form.media.value;

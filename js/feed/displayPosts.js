@@ -9,6 +9,30 @@ export async function displayPosts() {
 
     const searchInput = document.querySelector("#search");
     const postsContainer = document.querySelector("#posts");
+    const filterOptionOne = document.querySelector("#new-to-old");
+    const filterOptionTwo = document.querySelector("#old-to-new");
+    const filterOptionThree = document.querySelector("#with-media");
+
+    filterOptionOne.addEventListener("click", function () {
+      const sortedPosts = [...posts].sort((a, b) => {
+        return new Date(b.created) - new Date(a.created);
+      });
+
+      displayFilteredPosts(sortedPosts, getProfile, postsContainer);
+    });
+
+    filterOptionTwo.addEventListener("click", function () {
+      const sortedPosts = [...posts].sort((a, b) => {
+        return new Date(a.created) - new Date(b.created);
+      });
+
+      displayFilteredPosts(sortedPosts, getProfile, postsContainer);
+    });
+    filterOptionThree.addEventListener("click", function () {
+      const mediaPosts = posts.filter((post) => post.media);
+
+      displayFilteredPosts(mediaPosts, getProfile, postsContainer);
+    });
 
     searchInput.addEventListener("keyup", function (event) {
       const searchValue = event.target.value.trim().toLowerCase();
@@ -38,16 +62,17 @@ function displayFilteredPosts(posts, getProfile, postsContainer) {
 
     if (getProfile.userName === post.author.name) {
       // Add edit and delete buttons to post created by the user
-      const editButton = document.createElement("a");
-      editButton.href = "/feed/post/edit/index.html?id=" + post.id;
+      const editButton = document.createElement("button");
       editButton.classList.add("border-secondary");
       editButton.classList.add("btn-light");
       editButton.classList.add("btn");
       editButton.classList.add("d-flex");
       editButton.classList.add("align-items-center");
-      editButton.innerText = "...";
+      editButton.textContent = "...";
+
       editButton.addEventListener("click", () => {
-        console.log("Edit post:", post.id);
+        // Navigate to the edit URL when the button is clicked
+        window.location.href = "/feed/post/edit/index.html?id=" + post.id;
       });
 
       const deleteButton = document.createElement("i");
@@ -68,10 +93,12 @@ function displayFilteredPosts(posts, getProfile, postsContainer) {
 
       const btnContainer = document.createElement("div");
       btnContainer.classList.add("d-flex");
+      btnContainer.classList.add("gap-2");
       btnContainer.classList.add("justify-content-end");
 
       const boxForContainer = document.createElement("div");
       boxForContainer.classList.add("w-100");
+
       boxForContainer.classList.add("justify-content-end");
 
       boxForContainer.append(btnContainer);
@@ -81,6 +108,28 @@ function displayFilteredPosts(posts, getProfile, postsContainer) {
 
       card.append(boxForContainer);
     }
+
+    const tagContainer = document.createElement("div");
+    tagContainer.classList.add("mt-3");
+    tagContainer.classList.add("d-flex");
+    tagContainer.classList.add("justify-content-start");
+    tagContainer.classList.add("align-items-start");
+    tagContainer.classList.add("w-100");
+
+    // Loop through the tags array and create an element for each tag
+    post.tags.forEach((tag, index) => {
+      // Add # before each tag
+      const tagWithHash = `#${tag}`;
+
+      const tagElement = document.createElement("a");
+      tagElement.textContent = tagWithHash;
+
+      tagElement.classList.add("p-1");
+      tagElement.classList.add("text-dark");
+
+      // Append the tag element to the container
+      tagContainer.appendChild(tagElement);
+    });
 
     const titleContainer = document.createElement("div");
     titleContainer.classList.add("d-flex");
@@ -92,7 +141,6 @@ function displayFilteredPosts(posts, getProfile, postsContainer) {
     const titleElement = document.createElement("a");
     titleElement.classList.add("card-title");
     titleElement.classList.add("h4");
-    titleElement.classList.add("text-center");
     titleElement.textContent = post.title;
     titleElement.href =
       "/feed/singlePost.html?id=" + post.id + `author=` + post.author.name;
@@ -159,6 +207,7 @@ function displayFilteredPosts(posts, getProfile, postsContainer) {
 
     card.append(titleContainer);
     card.append(mediaContainer);
+    card.append(tagContainer);
     card.append(authorContainer);
 
     postsContainer.append(card);

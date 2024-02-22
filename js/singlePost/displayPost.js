@@ -51,14 +51,16 @@ export async function displayPost() {
 
     if (getProfile.userName === getSinglePost.author.name) {
       // Add edit and delete buttons to post created by the user
-      const editButton = document.createElement("a");
-      editButton.href = "/feed/post/edit/index.html?id=" + getSinglePost.id;
+      const editButton = document.createElement("button");
+
       editButton.classList.add("border-secondary");
       editButton.classList.add("btn-light");
       editButton.classList.add("btn");
       editButton.innerText = "Update Post";
       editButton.addEventListener("click", () => {
-        console.log("Edit post:", getSinglePost.id);
+        // Navigate to the edit URL when the button is clicked
+        window.location.href =
+          "/feed/post/edit/index.html?id=" + getSinglePost.id;
       });
 
       const deleteButton = document.createElement("button");
