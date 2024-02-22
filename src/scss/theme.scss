@@ -146,6 +146,8 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  max-width: 25em;
 }
 .singlePost {
   display: flex;

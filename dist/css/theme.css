@@ -11971,14 +11971,18 @@ span {
 }
 
 /* Feed */
-.post-image {
-  height: 200px;
+.custom-width {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 25em;
 }
 
 .singlePost {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   border: 1px solid #0da6a6;
   padding: 1em;

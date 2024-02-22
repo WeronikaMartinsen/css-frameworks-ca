@@ -82,6 +82,13 @@ function displayFilteredPosts(posts, getProfile, postsContainer) {
       card.append(boxForContainer);
     }
 
+    const titleContainer = document.createElement("div");
+    titleContainer.classList.add("d-flex");
+    titleContainer.classList.add("justify-content-start");
+    titleContainer.classList.add("align-items-start");
+    titleContainer.classList.add("flex-column");
+    titleContainer.classList.add("w-100");
+
     const titleElement = document.createElement("a");
     titleElement.classList.add("card-title");
     titleElement.classList.add("h3");
@@ -110,7 +117,7 @@ function displayFilteredPosts(posts, getProfile, postsContainer) {
 
     const mediaContainer = document.createElement("div");
     mediaContainer.classList.add("custom-width");
-    mediaContainer.classList.add("mt-3");
+    mediaContainer.classList.add("mt-2");
 
     const authorContainer = document.createElement("div");
     authorContainer.classList.add("d-flex");
@@ -142,13 +149,15 @@ function displayFilteredPosts(posts, getProfile, postsContainer) {
         hoursAgo > 0 ? `${hoursAgo} hours ago` : "Less than an hour ago";
     }
 
+    titleContainer.append(titleElement);
+    titleContainer.append(date);
+
     mediaContainer.append(cardBody);
     mediaContainer.append(mediaElement);
 
     authorContainer.append(authorElement);
 
-    card.append(titleElement);
-    card.append(date);
+    card.append(titleContainer);
     card.append(mediaContainer);
     card.append(authorContainer);
 
