@@ -16,7 +16,7 @@ export async function displayPost() {
     postTitle.innerText = getSinglePost.title;
 
     const media = document.getElementById("media");
-    media.classList.add("post-image");
+    media.classList.add("w-100");
 
     media.src = getSinglePost.media
       ? getSinglePost.media
@@ -24,7 +24,7 @@ export async function displayPost() {
     media.alt = getSinglePost.title;
 
     const mediaContainer = document.getElementById("mediaContainer");
-    mediaContainer.classList.add("w-100");
+    mediaContainer.classList.add("custom-width");
 
     const body = document.getElementById("body");
     body.innerText = getSinglePost.body;
