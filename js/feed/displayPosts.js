@@ -91,7 +91,7 @@ function displayFilteredPosts(posts, getProfile, postsContainer) {
 
     const titleElement = document.createElement("a");
     titleElement.classList.add("card-title");
-    titleElement.classList.add("h3");
+    titleElement.classList.add("h4");
     titleElement.classList.add("text-center");
     titleElement.textContent = post.title;
     titleElement.href =

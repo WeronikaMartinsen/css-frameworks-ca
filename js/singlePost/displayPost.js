@@ -9,7 +9,7 @@ export async function displayPost() {
     const getProfile = load("profile");
 
     const postContainer = document.querySelector("#singlePostId");
-    postContainer.classList.add("singlePost");
+    postContainer.classList.add("singlePostIDCard");
     postContainer.classList.add("px-5");
 
     const postTitle = document.getElementById("title");
@@ -34,15 +34,20 @@ export async function displayPost() {
     author.href = "/profile.index.html?author=" + getSinglePost.author.name;
 
     const date = document.getElementById("date");
-    let postDate = new Date(getSinglePost.created).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: true,
-    });
-    date.innerText = postDate;
+    date.classList.add("very-small");
+    const currentTime = new Date();
+    const postCreationTime = new Date(getSinglePost.created);
+
+    const timeDifference = currentTime - postCreationTime;
+    const hoursAgo = Math.floor(timeDifference / (1000 * 60 * 60));
+    const daysAgo = Math.floor(hoursAgo / 24);
+
+    if (daysAgo > 0) {
+      date.innerText = daysAgo === 1 ? "1 day ago" : `${daysAgo} days ago`;
+    } else {
+      date.innerText =
+        hoursAgo > 0 ? `${hoursAgo} hours ago` : "Less than an hour ago";
+    }
 
     if (getProfile.userName === getSinglePost.author.name) {
       // Add edit and delete buttons to post created by the user
@@ -56,21 +61,26 @@ export async function displayPost() {
         console.log("Edit post:", getSinglePost.id);
       });
 
-      const deleteButton = document.createElement("i");
+      const deleteButton = document.createElement("button");
       deleteButton.classList.add("border-secondary");
       deleteButton.classList.add("btn-light");
       deleteButton.classList.add("btn");
-      deleteButton.classList.add("fa-solid");
-      deleteButton.classList.add("fa-xmark");
+      deleteButton.innerHTML = "Delete";
       deleteButton.addEventListener("click", async () => {
         await deletePost(getSinglePost.id);
         alert("Post deleted successfully.");
         window.location.href = "/feed/index.html";
       });
 
+      const btnContainer = document.createElement("div");
+      btnContainer.classList.add("d-flex");
+      btnContainer.classList.add("m-4");
+      btnContainer.classList.add("justify-content-between");
+
+      btnContainer.append(editButton);
+      btnContainer.append(deleteButton);
       // Append buttons to the card
-      postContainer.appendChild(editButton);
-      postContainer.appendChild(deleteButton);
+      postContainer.append(btnContainer);
     }
   } catch (error) {
     console.error("Error displaying post:", error);

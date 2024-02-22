@@ -147,7 +147,7 @@ span {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 25em;
+  max-width: 20em;
 }
 .singlePost {
   display: flex;
@@ -159,6 +159,12 @@ span {
   margin: 1em;
   border-radius: 1em;
   text-align: center;
+}
+.singlePostIDCard {
+  border: 1px solid $secondary;
+  margin-top: 5em;
+  border-radius: 1em;
+  padding-top: 1em;
 }
 
 .img-feed {
