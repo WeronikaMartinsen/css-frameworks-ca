@@ -1,6 +1,6 @@
-import { getProfileForm } from "./getProfileForm.js";
-
+/* import { getProfileForm } from "./getProfileForm.js";
+ */
 import { logout } from "../api/logout.js";
 
-getProfileForm();
+/* getProfileForm(); */
 logout();

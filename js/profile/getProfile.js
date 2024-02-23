@@ -1,4 +1,4 @@
-import { load } from "../api/storeToken.js";
+/* import { load } from "../api/storeToken.js";
 
 import { API_BASE_URL, PROFILES, authorName } from "../api/constants.js";
 
@@ -22,3 +22,4 @@ export async function getProfile() {
     console.error(error);
   }
 }
+ */

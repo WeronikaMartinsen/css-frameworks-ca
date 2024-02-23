@@ -1,4 +1,4 @@
-import { getProfile } from "./getProfile.js";
+/* import { getProfile } from "./getProfile.js";
 
 export async function getProfileForm() {
   try {
@@ -16,4 +16,4 @@ export async function getProfileForm() {
   } catch (error) {
     console.error(error);
   }
-}
+} */
