@@ -44,7 +44,7 @@
                       <i class="fa-solid fa-arrow-right-from-bracket text-center"></i>
                       <a class="nav-link text-center px-2" id="logout">Log out</a></li>
                       <li class="nav-item">
-                        <a id="user-profile" class="nav-link" href="/profile/index.html"> <img src="/images/me.jpg" alt="Profile image." class="stories-width-profile rounded-circle"></a>
+                        <a id="user-profile" class="nav-link" href="/profile/index.html"> <img src="/images/avatar.png" id="profile" alt="Profile image." class="stories-width-profile rounded-circle"></a>
                       </li>
               </ul>
             </div>
@@ -57,10 +57,10 @@
           <!-- Page Content  -->
 
           <main
-            class="container-fluid d-flex flex-column justify-content-center align-items-center mt-custom p-0 max-width-content">
-            <div class="row" id="content">
+            class="container-fluid d-flex flex-column justify-content-center align-items-center mt-custom p-0 w-100 max-width-content p-2">
+            <div class="row d-flex justify-content-center align-items-center" id="content">
 
-              <div class="d-flex flex-column align-items-center w-100 mw-50 no-shrink d-flex justify-content-center align-items-center m-3 border rounded-4 p-4 border-secondary border-2 bg-light">
+              <div class="d-flex flex-column align-items-center no-shrink d-flex justify-content-center align-items-center m-3 border rounded-4 p-3 border-secondary border-2 bg-light">
                 <h2>Create Post</h2>  
                 <form id="createPost"class="w-100 d-flex flex-column align-items-center flex-nowrap mb-2">
                     <div class="form-group w-100">
@@ -81,29 +81,26 @@
               </div>
               <div class="col-12 w-100 mw-50 no-shrink d-flex flex-column align-items-center p-0 m-1">
                 <div class="input-group mb-3 d-flex justify-content-between">
+                  <div class="dropdown show">
+                    <button class="btn border-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Sort by:
+                    </button>
+                  
+                    <div class="dropdown-menu" id="dropdownMenuLink" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" id="new-to-old" href="#">Newest to Oldest</a>
+                      <a class="dropdown-item" id="old-to-new" href="#">Oldest to Newest</a>
+                      <a class="dropdown-item" id="with-media" href="#">With image</a>
+                    </div>
+                  </div>
                   <form id="searchPost" class="d-flex w-50">
                     <label for="search"></label>
                     <div class="input-group">
                       <input type="text" id="search" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                      <div class="input-group-append h-100">
-                        <span class="input-group-text h-100">
-                          <i class="fa-solid fa-magnifying-glass w-100"></i>
-                        </span>
-                      </div>
+                      
                     </div>
                   </form>
                 <!-- Example split danger button -->
-                <div class="dropdown show px-4">
-                  <button class="btn border-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Sort by:
-                  </button>
-                
-                  <div class="dropdown-menu" id="dropdownMenuLink" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" id="new-to-old" href="#">Newest to Oldest</a>
-                    <a class="dropdown-item" id="old-to-new" href="#">Oldest to Newest</a>
-                    <a class="dropdown-item" id="with-media" href="#">With image</a>
-                  </div>
-                </div>
+
 
       
           <!-- Add post  -->
