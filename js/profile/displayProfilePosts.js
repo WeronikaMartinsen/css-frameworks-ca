@@ -1,21 +1,17 @@
-import { authorName } from "../api/constants.js";
 import { deletePost } from "../feed/deletePost.js";
 import { getProfilePosts } from "./getProfilePosts.js";
+import { load } from "../api/storeToken.js";
 
 export async function displayProfilePosts() {
   try {
     const posts = await getProfilePosts();
-
-    if (!Array.isArray(posts)) {
-      console.error("Error: getProfilePosts did not return an array.");
-      return;
-    }
+    const getProfile = load("profile");
 
     const postsContainer = document.querySelector(".user-posts");
 
-    postsContainer.innerHTML = "";
-
     posts.forEach((post) => {
+      console.log("Post object:", post);
+
       const card = document.createElement("div");
       card.classList.add("singlePost");
 
@@ -24,20 +20,29 @@ export async function displayProfilePosts() {
       titleElement.textContent = post.title;
       card.appendChild(titleElement);
 
+      // Author
+      const authorElement = document.createElement("span");
+
+      if (post.author && post.author.name) {
+        // Check if post has an author and if the author's name is defined
+        authorElement.textContent = post.author.name;
+      } else {
+        authorElement.textContent = "Unknown";
+      }
+
+      card.appendChild(authorElement);
+
       // Body
       const bodyElement = document.createElement("p");
       bodyElement.textContent = post.body;
       card.appendChild(bodyElement);
 
-      // Author
-      const authorElement = document.createElement("p");
-      if (post.author && post.author.name) {
-        authorElement.textContent = `Author: ${post.author.name}`;
-      } else {
-        authorElement.textContent = "Author: Unknown";
-      }
-      card.appendChild(authorElement);
-      {
+      // Check if post has an author and if the author's name matches the username
+      if (
+        post.author &&
+        post.author.name &&
+        getProfile.userName === post.author.name
+      ) {
         // Add edit and delete buttons to post created by the user
         const editButton = document.createElement("button");
         editButton.classList.add("border-secondary");

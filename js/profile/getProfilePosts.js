@@ -16,11 +16,13 @@ export async function getProfilePosts() {
         Authorization: `Bearer ${token}`,
       },
     });
-    const currentUser = await response.json();
     if (response.ok) {
-      return currentUser;
+      const posts = await response.json();
+      return posts;
+    } else {
+      console.error("Error fetching profile posts:", response.statusText);
     }
   } catch (error) {
-    console.error(error);
+    console.error("Error fetching profile posts:", error);
   }
 }
