@@ -31,7 +31,7 @@ export async function displayPost() {
 
     const author = document.getElementById("author");
     author.innerText = getSinglePost.author.name;
-    author.href = "/profile.index.html?author=" + getSinglePost.author.name;
+    author.href = "/profile/index.html?author=" + getSinglePost.author.name;
 
     const date = document.getElementById("date");
     date.classList.add("very-small");

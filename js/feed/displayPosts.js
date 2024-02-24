@@ -175,7 +175,7 @@ function displayFilteredPosts(posts, getProfile, postsContainer) {
     const authorElement = document.createElement("a");
     authorElement.classList.add("text-secondary");
     authorElement.textContent = post.author.name;
-    authorElement.href = "/profile.index.html?author=" + post.author.name;
+    authorElement.href = "/profile/index.html?author=" + post.author.name;
 
     const postID = document.createElement("span");
     postID.classList.add("post-id");

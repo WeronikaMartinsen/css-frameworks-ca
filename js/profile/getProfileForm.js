@@ -9,10 +9,10 @@ export async function getProfileForm() {
     const currentUserBanner = document.querySelector("#banner");
     const currentUserAvatar = document.querySelector("#avatar");
 
-    currentUserName.innerText = `${profile.name}`;
-    currentUserEmail.innerText = `${profile.email}`;
-    currentUserBanner.innerText = `${profile.banner}`;
-    currentUserAvatar.innerText = `${profile.avatar}`;
+    currentUserName.value = profile.name;
+    currentUserEmail.value = profile.email;
+    currentUserBanner.value = profile.banner;
+    currentUserAvatar.value = profile.avatar;
   } catch (error) {
     console.error(error);
   }
