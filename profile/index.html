@@ -45,7 +45,7 @@
                           <i class="fa-solid fa-arrow-right-from-bracket text-center"></i>
                           <a class="nav-link text-center px-2" id="logout">Log out</a></li>
                           <li class="nav-item">
-                            <a class="nav-link" href="/profile/index.html"> <img src="/images/me.jpg" alt="Profile image." class="stories-width-profile rounded-circle"></a>
+                            <a class="nav-link" href="/profile/index.html"> <img src="/images/avatar.png" alt="Profile image." class="stories-width-profile rounded-circle"></a>
                           </li>
                   </ul>
                 </div>
@@ -54,51 +54,45 @@
           </header>
       <!-- Page Content  -->
 
-      <main class="col-md-9 col-lg-10 d-flex flex-column justify-content-center align-items-center flex-grow-1">
-
-  
-              <!-- First column to the right -->
-  
-              <form id="editProfile" class="col text-center m-4">
-
-                <div class="form-group mb-3 mt-4">
-                  <label for="">Name</label>
-                  <input type="text" class="form-control" id="name" name="name">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="">Email</label>
-                  <input type="text" class="form-control" id="email" name="email">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="">Banner</label>
-                  <input type="text" class="form-control" id="banner" name="banner">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="">Avatar</label>
-                  <input type="text" class="form-control" id="avatar" name="avatar">
-                </div>
-                <div><button class="btn btn-secondary">Update Profile</button></div>
-                
-         <!--        <img
-                class="image-fluid rounded-circle mb-3 profile-img border border-light border-5"
-                src=""
+      <main class="col-md-9 col-lg-10 d-flex flex-column justify-content-center align-items-center flex-grow-1 mt-1">
+              <div class="container d-flex flex-wrap justify-content-center align-items-center"><img
+                class="image-fluid rounded-circle mb-3 profile-img border border-light"
+                src="/images/avatar.png"
                 alt="Profile picture of myself."
               />
+
+              <form id="editProfile" class="col text-center m-3">
+
+                <div class="form-group mt-1">
+                  <label for=""></label>
+                  <input type="text" class="form-control border-white fs-2" id="name" name="name">
+                </div>
+                <div class="form-group mb-1">
+                  <label for=""></label>
+                  <input type="text" class="form-control border-white" id="email" name="email">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="avatar"></label>
+                  <input type="text" class="form-control" id="avatar" name="avatar" placeholder="Upload profile image.">
+                </div>
+                <div class="mb-5"><button class="btn border">Update Profile</button></div>
+                
+              </form>
+</div>
                 <div
-                  class="d-flex justify-content-center align-items-center flex-wrap gap-3 w-100"
-                >
-                  <div><h1 class="text-nowrap fs-2">Name: <span id="profileName"></span></h1></div>
-                  <div class="d-flex flex-row gap-2">
-                    <button href="/index.html" class="btn btn-secondary">Follow</button>
-                    <button href="/feed/index.html" class="btn btn-light text-nowrap">
-                      Send message
-                    </button>
-                    <button class="btn btn-light" aria-label="Address Book">
-                      <i class="fa-solid fa-address-book"></i>
-                    </button>
-                  </div>
-                </div> -->
-  
+                class="d-flex justify-content-center align-items-center flex-wrap gap-3 w-100"
+              >
+                <div class="d-flex flex-row gap-2">
+                  <button href="/index.html" class="btn btn-secondary">Follow</button>
+                  <button href="/feed/index.html" class="btn btn-light text-nowrap">
+                    Send message
+                  </button>
+                  <button class="btn btn-light" aria-label="Address Book">
+                    <i class="fa-solid fa-address-book"></i>
+                  </button>
+                </div>
+              </div>
+        
                 <!-- Second column to the right -->
   
                 <div
@@ -109,20 +103,14 @@
                   <span class="text-nowrap">Follow: <strong></strong></span>
                 </div>
   
-                <!-- Third column to the right -->
-  
-                <div class="d-flex flex-column justify-content-start mt-3 m-1">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </form>
             </div>
+
           </div>
-  
-          <!------------------------ Second container ----------------------------->
-<div class="user-posts"></div>
+
+  <div class="container d-flex justify-content-center ali">  
        
+    <div class="user-posts bg-light mt-4 p-5 rounded-4"></div></div>
+
       </main>
       <footer class="container-fluid d-flex flex-column bg-light text-center z-3">
         <!-- Grid container -->
