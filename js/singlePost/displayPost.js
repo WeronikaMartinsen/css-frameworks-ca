@@ -52,7 +52,6 @@ export async function displayPost() {
     if (getProfile.userName === getSinglePost.author.name) {
       // Add edit and delete buttons to post created by the user
       const editButton = document.createElement("button");
-
       editButton.classList.add("border-secondary");
       editButton.classList.add("btn-light");
       editButton.classList.add("btn");

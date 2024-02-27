@@ -1,5 +1,4 @@
 import { load } from "../api/storeToken.js";
-import { authorName } from "../api/constants.js";
 
 export function profileLink() {
   const getProfileFromToken = load("profile");
@@ -8,9 +7,7 @@ export function profileLink() {
   const getProfileLink = document.querySelector("#profile");
 
   if (getProfileLink) {
-    const targetAuthor = authorName || user;
-
-    getProfileLink.href = `/profile/index.html?author=${targetAuthor}`;
+    getProfileLink.href = `/profile/index.html?author=${user}`;
   }
 }
 

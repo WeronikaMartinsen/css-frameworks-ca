@@ -12,6 +12,7 @@ export async function displayProfilePosts() {
     if (authorName) {
       const getProfilePostsURL = `${API_BASE_URL}${PROFILES}/${authorName}${POSTS}`;
       const token = load("token");
+      const currentUser = load("profile").userName;
 
       const response = await fetch(getProfilePostsURL, {
         headers: {
@@ -27,21 +28,48 @@ export async function displayProfilePosts() {
 
         posts.forEach((post) => {
           const card = document.createElement("div");
-          card.classList.add("singlePost");
+          card.classList.add("custom-width-post");
 
           // Title
-          const titleElement = document.createElement("h2");
+          const titleElement = document.createElement("h4");
           titleElement.textContent = post.title;
           card.appendChild(titleElement);
+          titleElement.href =
+            "/feed/singlePost.html?id=" + post.id + `author=` + authorName;
+          titleElement.addEventListener("click", () => {
+            window.location.href = titleElement.href;
+          });
+          const date = document.createElement("span");
+          date.classList.add("very-small");
+          const currentTime = new Date();
+          const postCreationTime = new Date(post.created);
+
+          const timeDifference = currentTime - postCreationTime;
+          const hoursAgo = Math.floor(timeDifference / (1000 * 60 * 60));
+          const daysAgo = Math.floor(hoursAgo / 24);
+
+          if (daysAgo > 0) {
+            date.innerText =
+              daysAgo === 1 ? "1 day ago" : `${daysAgo} days ago`;
+          } else {
+            date.innerText =
+              hoursAgo > 0 ? `${hoursAgo} hours ago` : "Less than an hour ago";
+          }
+
+          card.appendChild(date);
 
           // Author
-          const authorElement = document.createElement("span");
-          authorElement.textContent = authorName; // Set author name directly from URL
-          card.appendChild(authorElement);
+          const authorElement = document.createElement("a");
+          authorElement.textContent = authorName;
+          authorElement.classList.add("text-end");
+          authorElement.classList.add("m-3");
+          authorElement.href = "/profile/index.html?author=" + authorName;
 
           // Body
           const bodyElement = document.createElement("p");
           bodyElement.textContent = post.body;
+          bodyElement.classList.add("text-center");
+          bodyElement.classList.add("mb-2");
           card.appendChild(bodyElement);
 
           const mediaElement = document.createElement("img");
@@ -58,15 +86,15 @@ export async function displayProfilePosts() {
           const mediaContainer = document.createElement("div");
           mediaContainer.classList.add("custom-width");
           mediaContainer.classList.add("mt-2");
+          mediaContainer.classList.add("mb-2");
 
           mediaContainer.append(mediaElement);
 
           card.append(mediaContainer);
+          card.appendChild(authorElement);
 
-          console.log("post.author:", post.author);
-          console.log("authorName:", authorName);
           // Check if author information is available in the post
-          if (post.author && post.author.name === authorName) {
+          if (authorName === currentUser) {
             // Add edit and delete buttons to post created by the user
             const editButton = document.createElement("button");
             editButton.classList.add("border-secondary");
@@ -74,21 +102,20 @@ export async function displayProfilePosts() {
             editButton.classList.add("btn");
             editButton.classList.add("d-flex");
             editButton.classList.add("align-items-center");
-            editButton.textContent = "...";
+            editButton.innerText = "Update Post";
 
             editButton.addEventListener("click", () => {
               // Navigate to the edit URL when the button is clicked
               window.location.href = `/feed/post/edit/index.html?id=${post.id}`;
             });
 
-            const deleteButton = document.createElement("i");
+            const deleteButton = document.createElement("a");
             deleteButton.classList.add("border-secondary");
             deleteButton.classList.add("btn-light");
             deleteButton.classList.add("d-flex");
             deleteButton.classList.add("align-items-center");
             deleteButton.classList.add("btn");
-            deleteButton.classList.add("fa-solid");
-            deleteButton.classList.add("fa-xmark");
+            deleteButton.innerHTML = "Delete";
 
             deleteButton.setAttribute("id", post.id);
             deleteButton.addEventListener("click", () => {

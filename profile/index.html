@@ -45,7 +45,7 @@
                           <i class="fa-solid fa-arrow-right-from-bracket text-center"></i>
                           <a class="nav-link text-center px-2" id="logout">Log out</a></li>
                           <li class="nav-item">
-                            <a class="nav-link" href="/profile/index.html"> <img src="/images/avatar.png" alt="Profile image." class="stories-width-profile rounded-circle"></a>
+                            <a id="profile" href="/profile"> <img src="/images/avatar.png" alt="Profile image." class="stories-width-profile rounded-circle"></a>
                           </li>
                   </ul>
                 </div>
@@ -54,63 +54,64 @@
           </header>
       <!-- Page Content  -->
 
-      <main class="col-md-9 col-lg-10 d-flex flex-column justify-content-center align-items-center flex-grow-1 mt-1">
-              <div class="container-fluid d-flex flex-wrap justify-content-center align-items-center">
-              <div>  
-                <img
-                class="image-fluid rounded-circle profile-img border border-light"
-                src="/images/avatar.png"
-                alt="Profile picture of myself."
-              /></div>
-
-              <form id="editProfile" class="col text-center">
-
-                <div class="form-group mt-1">
-                  <label for=""></label>
-                  <input type="text" class="form-control border-white fs-1 text-center mb-4" id="name" name="name">
+      <main class="col-md-9 col-lg-10 d-flex flex-column justify-content-center align-items-center flex-grow-1 mt-1 w-100">
+              <div class="container-fluid d-flex justify-content-start align-items-start mt-1">
+              
+                <div class="w-50 d-flex justify-content-center align-items-center pt-2">
+                 <div class="d-flex flex-column"> <div>
+                  <label for="avatar" style="cursor: pointer;">
+                  
+                  <input type="text" class="form-control" id="avatar" name="avatar" placeholder="Upload profile image." style="display: none;">
+                  <img class="image-fluid rounded-circle profile-img border border-light h-100" src="/images/avatar.png" alt="Profile picture of myself." onclick="openFileInput()">
+                </label></div>
+                <div class="mb-5"><button class="btn border">Update profile image</button></div></div>
                 </div>
-                
-                <div
-                class="d-flex justify-content-center align-items-center flex-wrap gap-3 w-100"
-              >
-                <div class="d-flex flex-row gap-2">
-                  <button href="/index.html" class="btn btn-secondary">Follow</button>
-                  <button href="/feed/index.html" class="btn btn-light text-nowrap">
-                    Send message
-                  </button>
-                  <button class="btn btn-light" aria-label="Address Book">
-                    <i class="fa-solid fa-address-book"></i>
-                  </button>
-                </div>
-              </div>
-  
-                <div
-                  class="d-flex justify-content-center flex-wrap mt-4 gap-4"
+                <form id="editProfile" class="d-flex flex-column justify-content-start align-items-start">
+
+                  <div class="form-group mt-1">
+                    <label for="name"></label>
+                    <input type="text" class="form-control border-white fs-1 text-start" id="name" name="name">
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for=""></label>
+                    <input type="text" class="form-control border-white" id="email" name="email">
+                  </div>
+                  
+                  <div
+                  class="d-flex justify-content-start align-items-start flex-wrap gap-3 w-100"
                 >
-                  <span class="text-nowrap">Posts: <strong></strong></span>
-                  <span class="text-nowrap">Followers: <strong></strong></span>
-                  <span class="text-nowrap">Follow: <strong></strong></span>
+                  <div class="d-flex flex-row flex-wrap gap-2">
+                    <button href="/index.html" class="btn btn-secondary">Follow</button>
+                    <button href="/feed/index.html" class="btn btn-light text-nowrap">
+                      Send message
+                    </button>
+                    <button class="btn btn-light" aria-label="Address Book">
+                      <i class="fa-solid fa-address-book"></i>
+                    </button>
+                  </div>
                 </div>
-                <div class="form-group mb-1">
-                  <label for=""></label>
-                  <input type="text" class="form-control border-white" id="email" name="email">
+    
+                  <div
+                    class="d-flex justify-content-start align-items-start flex-wrap  text-start mt-4 gap-4"
+                  >
+                    <span class="text-nowrap">Posts: <strong></strong></span>
+                    <span class="text-nowrap">Followers: <strong></strong></span>
+                    <span class="text-nowrap">Follow: <strong></strong></span></div>
+                 
+                </form>
                 </div>
-                <div class="form-group mb-3">
-                  <label for="avatar"></label>
-                  <input type="text" class="form-control" id="avatar" name="avatar" placeholder="Upload profile image.">
-                </div>
-                <div class="mb-5"><button class="btn border">Update Profile</button></div>
-                
-              </form>
+     
 </div>
 
             </div>
 
           </div>
 
-  <div class="container d-flex justify-content-center">  
+  <div class="container-fluid d-flex flex-wrap justify-content-center">  
        
     <div class="user-posts bg-light mt-2 rounded-4"></div></div>
+
+    <div class="d-flex justify-content-center align-items-center m-5 gap-2"><i class="fa-solid fa-arrow-left"></i><a class="text-center text-dark" href="/feed/index.html">Back to home page</a></div>
 
       </main>
       <footer class="container-fluid d-flex flex-column bg-light text-center z-3">

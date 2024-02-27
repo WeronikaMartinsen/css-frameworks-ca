@@ -11939,8 +11939,8 @@ span {
 }
 
 .profile-img {
-  width: 12.5em; /* 200px / 16px */
-  height: 12.5em; /* 200px / 16px */
+  width: 10em; /* 200px / 16px */
+  height: 10em; /* 200px / 16px */
 }
 
 .stories-width {
@@ -11971,12 +11971,31 @@ span {
 }
 
 /* Feed */
+.user-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.custom-width-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 18em;
+  width: 100%;
+  border: 1px solid #0da6a6;
+  padding: 1.3em;
+  margin: 1em;
+  width: 100%;
+  border-radius: 10px;
+}
+
 .custom-width {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 20em;
+  max-width: 35em;
 }
 
 .singlePost {

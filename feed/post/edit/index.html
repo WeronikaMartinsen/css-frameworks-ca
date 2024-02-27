@@ -44,7 +44,7 @@
                       <i class="fa-solid fa-arrow-right-from-bracket text-center"></i>
                       <a class="nav-link text-center px-2" id="logout">Log out</a></li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/profile/index.html"> <img src="/images/me.jpg" alt="Profile image." class="stories-width-profile rounded-circle"></a>
+                        <a id="profile" href="/profile"> <img src="/images/avatar.png" alt="Profile image." class="stories-width-profile rounded-circle"></a>
                       </li>
               </ul>
             </div>
@@ -52,6 +52,9 @@
         </nav>
       </header>
       
+    
+      <main
+      class="container-fluid d-flex flex-column justify-content-center align-items-center mt-custom p-0 max-width-content">
       <div class="bg-light rounded-5 mb-3 max-width-content mt-3 p-4 w-100 ">
         <div class="d-flex flex-column align-items-center w-100 mw-50 no-shrink d-flex justify-content-center align-items-center mb-1">
           <h2>Edit Post</h2>  
@@ -69,12 +72,11 @@
                 <button class="input-group-text btn btn-secondary rounder-5 w-100">Edit post</button>
               </div>
               </form>
-              <a class="btn" href="/feed/index.html">Back to create post</a>
+
         </div>
-      <main
-      class="container-fluid d-flex flex-column justify-content-center align-items-center mt-custom p-0 max-width-content">
-      <div id="post"></div>
+        
       </main>
+      <div class="d-flex justify-content-center align-items-center m-5 gap-2"><i class="fa-solid fa-arrow-left"></i><a class="text-center text-dark" href="/feed/index.html">Back to home page</a></div>
           <!-- Page Content  -->
 
           <footer class="container-fluid d-flex flex-column bg-light text-center z-3">
