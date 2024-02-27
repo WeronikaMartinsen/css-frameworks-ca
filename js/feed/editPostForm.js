@@ -2,6 +2,13 @@ import { editPost } from "./editPost.js";
 import { id } from "../api/constants.js";
 import { getPost } from "./get.js";
 
+/**
+ * Updates the post form with values from the specified post ID.
+ * Submits the updated post when the form is submitted.
+ * @async
+ * @function updatePostForm
+ * @throws {Error} Throws an error if there is an issue retrieving or updating the post.
+ */
 export async function updatePostForm() {
   try {
     const getValuesFromPostId = await getPost(id);

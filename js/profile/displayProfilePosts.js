@@ -2,6 +2,12 @@ import { API_BASE_URL, POSTS, PROFILES } from "../api/constants.js";
 import { load } from "../api/storeToken.js";
 import { deletePost } from "../feed/deletePost.js";
 
+/**
+ * Fetches and displays posts for a specific user profile.
+ * @async
+ * @function displayProfilePosts
+ * @throws {Error} Throws an error if there is an issue fetching or displaying posts.
+ */
 export async function displayProfilePosts() {
   try {
     // Extract authorName from URL parameters
@@ -109,7 +115,7 @@ export async function displayProfilePosts() {
               window.location.href = `/feed/post/edit/index.html?id=${post.id}`;
             });
 
-            const deleteButton = document.createElement("a");
+            const deleteButton = document.createElement("button");
             deleteButton.classList.add("border-secondary");
             deleteButton.classList.add("btn-light");
             deleteButton.classList.add("d-flex");
