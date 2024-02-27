@@ -1,6 +1,6 @@
 import { API_BASE_URL, POSTS, PROFILES } from "../api/constants.js";
 import { load } from "../api/storeToken.js";
-import { deletePost } from "../feed/deletePost.js"; // Import deletePost function if not imported
+import { deletePost } from "../feed/deletePost.js";
 
 export async function displayProfilePosts() {
   try {
