@@ -55,30 +55,21 @@
       <!-- Page Content  -->
 
       <main class="col-md-9 col-lg-10 d-flex flex-column justify-content-center align-items-center flex-grow-1 mt-1">
-              <div class="container d-flex flex-wrap justify-content-center align-items-center"><img
-                class="image-fluid rounded-circle mb-3 profile-img border border-light"
+              <div class="container-fluid d-flex flex-wrap justify-content-center align-items-center">
+              <div>  
+                <img
+                class="image-fluid rounded-circle profile-img border border-light"
                 src="/images/avatar.png"
                 alt="Profile picture of myself."
-              />
+              /></div>
 
-              <form id="editProfile" class="col text-center m-3">
+              <form id="editProfile" class="col text-center">
 
                 <div class="form-group mt-1">
                   <label for=""></label>
-                  <input type="text" class="form-control border-white fs-2" id="name" name="name">
+                  <input type="text" class="form-control border-white fs-1 text-center mb-4" id="name" name="name">
                 </div>
-                <div class="form-group mb-1">
-                  <label for=""></label>
-                  <input type="text" class="form-control border-white" id="email" name="email">
-                </div>
-                <div class="form-group mb-3">
-                  <label for="avatar"></label>
-                  <input type="text" class="form-control" id="avatar" name="avatar" placeholder="Upload profile image.">
-                </div>
-                <div class="mb-5"><button class="btn border">Update Profile</button></div>
                 
-              </form>
-</div>
                 <div
                 class="d-flex justify-content-center align-items-center flex-wrap gap-3 w-100"
               >
@@ -92,8 +83,6 @@
                   </button>
                 </div>
               </div>
-        
-                <!-- Second column to the right -->
   
                 <div
                   class="d-flex justify-content-center flex-wrap mt-4 gap-4"
@@ -102,14 +91,26 @@
                   <span class="text-nowrap">Followers: <strong></strong></span>
                   <span class="text-nowrap">Follow: <strong></strong></span>
                 </div>
-  
+                <div class="form-group mb-1">
+                  <label for=""></label>
+                  <input type="text" class="form-control border-white" id="email" name="email">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="avatar"></label>
+                  <input type="text" class="form-control" id="avatar" name="avatar" placeholder="Upload profile image.">
+                </div>
+                <div class="mb-5"><button class="btn border">Update Profile</button></div>
+                
+              </form>
+</div>
+
             </div>
 
           </div>
 
-  <div class="container d-flex justify-content-center ali">  
+  <div class="container d-flex justify-content-center">  
        
-    <div class="user-posts bg-light mt-4 p-5 rounded-4"></div></div>
+    <div class="user-posts bg-light mt-2 rounded-4"></div></div>
 
       </main>
       <footer class="container-fluid d-flex flex-column bg-light text-center z-3">
