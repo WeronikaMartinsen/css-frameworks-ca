@@ -5,7 +5,6 @@ import { load, save } from "../api/storeToken.js";
 import {
   showLoadingIndicator,
   hideLoadingIndicator,
-  delay,
 } from "../global/functions/loader.js";
 
 export async function getPosts() {
@@ -14,7 +13,6 @@ export async function getPosts() {
 
   try {
     showLoadingIndicator();
-    await delay(2000);
     const response = await fetch(getPostsURL, {
       headers: {
         "Content-Type": "application/json",
@@ -36,6 +34,7 @@ export async function getPost(id) {
   const getPostIdUrl = API_BASE_URL + POSTS + `/` + id + `?_author=true`;
   const token = load("token");
   try {
+    showLoadingIndicator();
     let response = await fetch(getPostIdUrl, {
       headers: {
         "Content-Type": "application/json",
@@ -44,6 +43,7 @@ export async function getPost(id) {
     });
     const post = await response.json();
     if (response.ok) {
+      hideLoadingIndicator();
       return post;
     }
   } catch (error) {

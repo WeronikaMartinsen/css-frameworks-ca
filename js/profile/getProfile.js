@@ -4,7 +4,6 @@ import { API_BASE_URL, PROFILES, authorName } from "../api/constants.js";
 
 export async function getProfile() {
   const getProfileURL = `${API_BASE_URL}${PROFILES}/${authorName}`;
-
   const token = load("token");
 
   try {
