@@ -1,27 +1,29 @@
-import { load } from "../api/storeToken.js";
-import { API_BASE_URL, PROFILES, MEDIA, authorName } from "../api/constants.js";
+/* import { load } from "../api/storeToken.js";
+import { API_BASE_URL, PROFILES, MEDIA } from "../api/constants.js";
 
-export async function updateProfile(data) {
-  const updateProfileURL = `${API_BASE_URL}${PROFILES}/${authorName}${MEDIA}`;
+export async function updateProfile(update) {
   const token = load("token");
+  const currentUser = load("profile");
 
+  const updateProfileURL = `${API_BASE_URL}${PROFILES}/${currentUser.userName}${MEDIA}`;
   try {
-    const response = await fetch(updateProfileURL, {
+    const updateProfile = {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(data),
-    });
+      body: JSON.stringify(update),
+    };
 
-    if (!response.ok) {
-      throw new Error(`Error updating profile: ${response.statusText}`);
+    const response = await fetch(updateProfileURL, updateProfile);
+    const result = await response.json();
+
+    if (response.ok) {
+      return result;
     }
-
-    return await response.json();
   } catch (error) {
     console.error(error);
-    throw error; // Rethrow the error to be caught in the calling function
   }
 }
+ */

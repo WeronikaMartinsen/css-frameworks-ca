@@ -26,6 +26,7 @@ export async function register(user) {
     const status = json.statusCode;
     if (response.ok) {
       alert("You are register now! You can log in!");
+      window.location.href = "/index.html";
     } else if (status === 400) {
       alert("Your profile already exist.");
     }

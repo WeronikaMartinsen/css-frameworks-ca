@@ -157,7 +157,6 @@ export async function displayProfilePosts() {
     } else {
       console.error("Author name not found in URL parameters.");
       console.log("Author information not available or does not match.");
-      console.log("post.author:", post.author);
       console.log("authorName:", authorName);
     }
   } catch (error) {
