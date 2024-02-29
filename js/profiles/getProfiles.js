@@ -1,14 +1,10 @@
 import { load } from "../api/storeToken.js";
 
-import { API_BASE_URL, PROFILES, authorName } from "../api/constants.js";
+import { API_BASE_URL, PROFILES } from "../api/constants.js";
 
-export async function getProfile() {
-  const getProfileURL = `${API_BASE_URL}${PROFILES}/${authorName}`;
+export async function getProfiles() {
+  const getProfileURL = `${API_BASE_URL}${PROFILES}`;
   const token = load("token");
-  if (!authorName) {
-    console.error("Author name is not defined.");
-    return; // Return or handle this case appropriately
-  }
 
   try {
     const response = await fetch(getProfileURL, {
@@ -19,6 +15,7 @@ export async function getProfile() {
     });
     const currentUser = await response.json();
     if (response.ok) {
+      console.log("got profiles");
       return currentUser;
     }
   } catch (error) {

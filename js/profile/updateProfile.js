@@ -1,11 +1,10 @@
 /* import { load } from "../api/storeToken.js";
-import { API_BASE_URL, PROFILES, MEDIA } from "../api/constants.js";
+import { API_BASE_URL, PROFILES, MEDIA, authorName } from "../api/constants.js";
 
 export async function updateProfile(update) {
   const token = load("token");
-  const currentUser = load("profile");
 
-  const updateProfileURL = `${API_BASE_URL}${PROFILES}/${currentUser.userName}${MEDIA}`;
+  const updateProfileURL = `${API_BASE_URL}${PROFILES}/${authorName}${MEDIA}`;
   try {
     const updateProfile = {
       method: "PUT",
@@ -21,9 +20,11 @@ export async function updateProfile(update) {
 
     if (response.ok) {
       return result;
+    } else {
+      console.error("Error updating profile. Server response:", result);
     }
   } catch (error) {
-    console.error(error);
+    console.error("Error updating profile:", error);
   }
 }
  */

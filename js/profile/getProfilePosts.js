@@ -7,6 +7,7 @@ import { authorName } from "../api/constants.js";
 import {
   showLoadingIndicator,
   hideLoadingIndicator,
+  delay,
 } from "../global/functions/loader.js";
 
 export async function getProfilePosts() {
@@ -15,6 +16,8 @@ export async function getProfilePosts() {
 
   try {
     showLoadingIndicator();
+    await delay(3000);
+
     const response = await fetch(getProfilePostsURL, {
       headers: {
         "Content-Type": "application/json",

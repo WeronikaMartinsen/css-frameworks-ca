@@ -138,9 +138,14 @@ function displayFilteredPosts(posts, getProfile, postsContainer) {
     titleContainer.classList.add("flex-column");
     titleContainer.classList.add("w-100");
 
+    const containerForTitle = document.createElement("div");
+    containerForTitle.classList.add("d-flex");
+    containerForTitle.classList.add("justify-content-start");
+    containerForTitle.classList.add("gap-2");
+
     const titleElement = document.createElement("a");
-    titleElement.classList.add("card-title");
     titleElement.classList.add("h4");
+    titleElement.classList.add("mt-5");
     titleElement.textContent = post.title;
     titleElement.href =
       "/feed/singlePost.html?id=" + post.id + `author=` + post.author.name;
@@ -160,20 +165,28 @@ function displayFilteredPosts(posts, getProfile, postsContainer) {
       ? post.media
       : "https://picsum.photos/id/18/2500/1667";
     mediaElement.alt = post.title;
-    mediaElement.classList.add("rounded-4");
     mediaElement.classList.add("w-100");
 
-    const mediaContainer = document.createElement("div");
-    mediaContainer.classList.add("custom-width");
-    mediaContainer.classList.add("mt-2");
+    const avatarElement = document.createElement("img");
+    avatarElement.classList.add("custom-avatar-size");
+    avatarElement.src = post.author.avatar;
+    avatarElement.src = post.author.avatar
+      ? post.author.avatar
+      : "/images/avatar.png";
+    avatarElement.alt = "Author Avatar";
+    avatarElement.classList.add("rounded-circle");
+    avatarElement.classList.add("mr-2");
 
-    const authorContainer = document.createElement("div");
-    authorContainer.classList.add("d-flex");
-    authorContainer.classList.add("justify-content-end");
-    authorContainer.classList.add("w-100");
+    const boxForAuthorAndDate = document.createElement("div");
+    boxForAuthorAndDate.classList.add("d-flex");
+    boxForAuthorAndDate.classList.add("justify-content-start");
+    boxForAuthorAndDate.classList.add("align-item-start");
+    boxForAuthorAndDate.classList.add("flex-column");
+    boxForAuthorAndDate.classList.add("w-100");
 
     const authorElement = document.createElement("a");
     authorElement.classList.add("text-secondary");
+    authorElement.classList.add("text-bold");
     authorElement.textContent = post.author.name;
     authorElement.href = "/profile/index.html?author=" + post.author.name;
 
@@ -197,18 +210,20 @@ function displayFilteredPosts(posts, getProfile, postsContainer) {
         hoursAgo > 0 ? `${hoursAgo} hours ago` : "Less than an hour ago";
     }
 
+    boxForAuthorAndDate.append(authorElement);
+
+    boxForAuthorAndDate.append(date);
+
+    containerForTitle.append(avatarElement);
+    containerForTitle.append(boxForAuthorAndDate);
+
     titleContainer.append(titleElement);
-    titleContainer.append(date);
 
-    mediaContainer.append(cardBody);
-    mediaContainer.append(mediaElement);
-
-    authorContainer.append(authorElement);
-
+    card.append(containerForTitle);
     card.append(titleContainer);
-    card.append(mediaContainer);
+    card.append(cardBody);
     card.append(tagContainer);
-    card.append(authorContainer);
+    card.append(mediaElement);
 
     postsContainer.append(card);
   });
