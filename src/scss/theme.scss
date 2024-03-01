@@ -163,10 +163,8 @@ span {
 /* Feed */
 
 .post-image {
-  width: 100%;
-  height: 50%; /* Ensure the image maintains its aspect ratio */
-  display: block; /* Remove any extra spacing below the image */
-  border-radius: 0 0 10px 10px;
+  display: block;
+  border-radius: 0 0 15px 15px;
 }
 
 .user-posts {
@@ -189,6 +187,7 @@ span {
 }
 
 .custom-avatar-size {
+  height: 2.5em;
   width: 2.5em;
 }
 
@@ -198,17 +197,10 @@ span {
   align-items: start;
   flex-direction: column;
   border: 1px solid $secondary;
-
   margin: 1em;
   border-radius: 1em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
-}
-.singlePostIDCard {
-  border: 1px solid $secondary;
-  margin-top: 5em;
-  border-radius: 1em;
-  padding: 2em;
 }
 
 .img-feed {

@@ -29,31 +29,31 @@ export async function displayProfilePosts() {
 
       if (response.ok) {
         const posts = await response.json();
-
         const postsContainer = document.querySelector(".user-posts");
 
         posts.forEach((post) => {
+          // Create a div for the post card
           const card = document.createElement("div");
           card.classList.add("custom-width-post");
 
-          // Title
+          // Append the title element to the card
           const titleElement = document.createElement("h4");
           titleElement.textContent = post.title;
-          card.appendChild(titleElement);
           titleElement.href =
             "/feed/singlePost.html?id=" + post.id + `author=` + authorName;
           titleElement.addEventListener("click", () => {
             window.location.href = titleElement.href;
           });
+          card.appendChild(titleElement);
+
+          // Date
           const date = document.createElement("span");
           date.classList.add("very-small");
           const currentTime = new Date();
           const postCreationTime = new Date(post.created);
-
           const timeDifference = currentTime - postCreationTime;
           const hoursAgo = Math.floor(timeDifference / (1000 * 60 * 60));
           const daysAgo = Math.floor(hoursAgo / 24);
-
           if (daysAgo > 0) {
             date.innerText =
               daysAgo === 1 ? "1 day ago" : `${daysAgo} days ago`;
@@ -61,7 +61,6 @@ export async function displayProfilePosts() {
             date.innerText =
               hoursAgo > 0 ? `${hoursAgo} hours ago` : "Less than an hour ago";
           }
-
           card.appendChild(date);
 
           // Author
@@ -70,6 +69,7 @@ export async function displayProfilePosts() {
           authorElement.classList.add("text-end");
           authorElement.classList.add("m-3");
           authorElement.href = "/profile/index.html?author=" + authorName;
+          card.appendChild(authorElement);
 
           // Body
           const bodyElement = document.createElement("p");
@@ -78,30 +78,24 @@ export async function displayProfilePosts() {
           bodyElement.classList.add("mb-2");
           card.appendChild(bodyElement);
 
+          // Media
           const mediaElement = document.createElement("img");
           mediaElement.classList.add("post-image");
-
-          // Check if post.media exists, if yes, set src to post.media; otherwise, set it to the default source
           mediaElement.src = post.media
             ? post.media
             : "https://picsum.photos/id/18/2500/1667";
           mediaElement.alt = post.title;
           mediaElement.classList.add("rounded-4");
           mediaElement.classList.add("w-100");
-
           const mediaContainer = document.createElement("div");
           mediaContainer.classList.add("custom-width");
           mediaContainer.classList.add("mt-2");
           mediaContainer.classList.add("mb-2");
-
           mediaContainer.append(mediaElement);
-
           card.append(mediaContainer);
-          card.appendChild(authorElement);
 
-          // Check if author information is available in the post
+          // Edit and Delete buttons
           if (authorName === currentUser) {
-            // Add edit and delete buttons to post created by the user
             const editButton = document.createElement("button");
             editButton.classList.add("border-secondary");
             editButton.classList.add("btn-light");
@@ -109,9 +103,7 @@ export async function displayProfilePosts() {
             editButton.classList.add("d-flex");
             editButton.classList.add("align-items-center");
             editButton.innerText = "Update Post";
-
             editButton.addEventListener("click", () => {
-              // Navigate to the edit URL when the button is clicked
               window.location.href = `/feed/post/edit/index.html?id=${post.id}`;
             });
 
@@ -122,10 +114,9 @@ export async function displayProfilePosts() {
             deleteButton.classList.add("align-items-center");
             deleteButton.classList.add("btn");
             deleteButton.innerHTML = "Delete";
-
             deleteButton.setAttribute("id", post.id);
-            deleteButton.addEventListener("click", () => {
-              deletePost(post.id);
+            deleteButton.addEventListener("click", async () => {
+              await deletePost(post.id);
               alert("Post deleted successfully.");
               window.location.reload();
             });
@@ -134,21 +125,17 @@ export async function displayProfilePosts() {
             btnContainer.classList.add("d-flex");
             btnContainer.classList.add("gap-2");
             btnContainer.classList.add("justify-content-end");
-            console.log("Appending buttons to the card");
-
             const boxForContainer = document.createElement("div");
             boxForContainer.classList.add("w-100");
             boxForContainer.classList.add("justify-content-end");
 
-            // Append buttons to the card
             btnContainer.append(editButton);
             btnContainer.append(deleteButton);
             boxForContainer.append(btnContainer);
-
             card.append(boxForContainer);
           }
 
-          // Append card to postsContainer
+          // Append the card to postsContainer
           postsContainer.appendChild(card);
         });
       } else {
