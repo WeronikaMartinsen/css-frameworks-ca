@@ -11982,36 +11982,17 @@ span {
   height: 3.125em; /* 50px / 16px */
 }
 
-/* CONTENT STYLE */
-#content {
-  width: 100%;
-  min-height: 100vh;
-  transition: all 0.3s;
-}
-
 /* Feed */
 .post-image {
-  display: block;
+  max-height: 20em;
   border-radius: 0 0 15px 15px;
+  object-fit: cover;
 }
 
 .user-posts {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-
-.custom-width-post {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 18em;
-  width: 100%;
-  border: 1px solid #0da6a6;
-  padding: 1.3em;
-  margin: 1em;
-  width: 100%;
-  border-radius: 10px;
 }
 
 .custom-avatar-size {
