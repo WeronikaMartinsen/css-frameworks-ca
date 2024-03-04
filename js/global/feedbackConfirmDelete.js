@@ -8,11 +8,26 @@ export function confirmDelatePost(message, postId) {
   const messageBox = document.createElement("div");
   messageBox.classList.add("messageBox");
 
-  const content = document.createElement("h4");
+  const content = document.createElement("span");
   content.classList.add("text-center");
   content.classList.add("text-wrap");
 
   content.textContent = message;
+
+  const deleteButton = document.createElement("i");
+
+  deleteButton.classList.add("d-flex");
+  deleteButton.classList.add("align-items-center");
+  deleteButton.classList.add("btn");
+  deleteButton.classList.add("fa-solid");
+  deleteButton.classList.add("d-flex");
+  deleteButton.classList.add("justify-content-end");
+  deleteButton.classList.add("align-item-end");
+  deleteButton.classList.add("fa-xmark");
+
+  deleteButton.addEventListener("click", () => {
+    document.body.removeChild(overlay);
+  });
 
   const buttonsContainer = document.createElement("div");
   buttonsContainer.classList.add("buttons-confirm");
@@ -39,6 +54,7 @@ export function confirmDelatePost(message, postId) {
   buttonsContainer.append(noBtn);
   buttonsContainer.append(yesBtn);
 
+  messageBox.append(deleteButton);
   messageBox.append(content);
   messageBox.append(buttonsContainer);
 

@@ -186,7 +186,7 @@ span {
   border: 1px solid $secondary;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
-  min-height: 25em;
+  min-height: 22em;
   max-height: 25em;
   width: 100%;
 }
@@ -202,6 +202,10 @@ span {
   transition: box-shadow 0.3s ease-in-out;
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
+}
+
+.custom-margin-top {
+  margin-top: 6em;
 }
 
 .img-feed {
@@ -239,8 +243,18 @@ span {
 
 ////////////////////////////// User Message //////////////////////////////7
 
+.messageBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-wrap: wrap;
+  width: 100%;
+}
 .overlayConfirmDelate {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: $light;
   position: fixed;
   top: 50%;
@@ -250,6 +264,8 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 27em;
+  height: 15em;
 }
 .buttons-confirm {
   display: flex;

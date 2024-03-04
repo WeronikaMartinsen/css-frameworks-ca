@@ -19,8 +19,8 @@ export function createPostCard(post, getProfile, includeButtons = true) {
 
   const tagContainer = document.createElement("div");
   tagContainer.classList.add("d-flex");
-  tagContainer.classList.add("justify-content-start");
-  tagContainer.classList.add("align-items-start");
+  tagContainer.classList.add("justify-content-end");
+  tagContainer.classList.add("align-items-end");
   tagContainer.classList.add("w-100");
   tagContainer.classList.add("px-2");
 
@@ -47,7 +47,7 @@ export function createPostCard(post, getProfile, includeButtons = true) {
   titleContainer.classList.add("w-100");
 
   const titleElement = document.createElement("a");
-  titleElement.classList.add("h4");
+  titleElement.classList.add("h5");
   titleElement.classList.add("mt-3");
   titleElement.classList.add("px-2");
   titleElement.textContent = post.title;
@@ -77,6 +77,7 @@ export function createPostCard(post, getProfile, includeButtons = true) {
     : "https://picsum.photos/id/18/2500/1667";
   mediaElement.alt = post.title;
   mediaElement.classList.add("w-100");
+  mediaElement.classList.add("mt-2");
 
   const avatarElement = document.createElement("img");
   avatarElement.classList.add("custom-avatar-size");
@@ -87,6 +88,7 @@ export function createPostCard(post, getProfile, includeButtons = true) {
   avatarElement.classList.add("rounded-circle");
   avatarElement.classList.add("mr-2");
   avatarElement.classList.add("m-2");
+  console.log(post.author.avatar);
 
   const authorElement = document.createElement("a");
   authorElement.classList.add("text-secondary");

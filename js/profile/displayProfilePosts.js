@@ -1,6 +1,7 @@
 import { API_BASE_URL, POSTS, PROFILES } from "../api/constants.js";
 import { load } from "../api/storeToken.js";
 import { deletePost } from "../feed/deletePost.js";
+import { getProfileForm } from "./getProfileForm.js";
 
 /**
  * Fetches and displays posts for a specific user profile.
@@ -10,6 +11,7 @@ import { deletePost } from "../feed/deletePost.js";
  */
 export async function displayProfilePosts() {
   try {
+    const profile = await getProfileForm();
     // Extract authorName from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const authorName = urlParams.get("author");
@@ -38,15 +40,24 @@ export async function displayProfilePosts() {
 
           // Author
 
+          console.log(post);
           const avatarElement = document.createElement("img");
           avatarElement.classList.add("custom-avatar-size");
-          avatarElement.src = post.author?.avatar
-            ? post.author.avatar
-            : "/images/avatar.png";
-          avatarElement.alt = "Author Avatar";
           avatarElement.classList.add("rounded-circle");
           avatarElement.classList.add("mr-2");
           avatarElement.classList.add("m-2");
+
+          // Check if the profile object and avatar property exist
+          if (profile && profile.avatar) {
+            avatarElement.src = profile.avatar;
+          } else {
+            // If not, set a default avatar or leave it empty
+            avatarElement.src = "/images/avatar.png"; // replace with your default avatar path
+          }
+          console.log("Avatar URL:", avatarElement.src);
+          console.log("Profile:", profile);
+          console.log("Avatar URL:", profile && profile.avatar);
+
           const authorElement = document.createElement("a");
           authorElement.textContent = authorName;
           authorElement.href = "/profile/index.html?author=" + authorName;

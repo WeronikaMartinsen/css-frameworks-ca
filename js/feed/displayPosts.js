@@ -4,6 +4,7 @@ import { createPostCard } from "./postCard.js";
 export async function displayPosts() {
   try {
     const posts = await getPosts();
+    console.log(posts);
     const getProfile = load("profile");
 
     const searchInput = document.querySelector("#search");
