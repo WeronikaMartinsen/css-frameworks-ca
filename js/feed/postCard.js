@@ -157,7 +157,6 @@ export function createPostCard(post, getProfile, includeButtons = true) {
     deleteButton.classList.add("btn");
     deleteButton.classList.add("fa-solid");
     deleteButton.classList.add("fa-xmark");
-
     deleteButton.setAttribute("id", post.id);
     deleteButton.addEventListener("click", () => {
       confirmDelatePost("Are you sure you want to delete this post?", post.id);

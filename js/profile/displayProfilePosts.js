@@ -1,7 +1,7 @@
 import { API_BASE_URL, POSTS, PROFILES } from "../api/constants.js";
 import { load } from "../api/storeToken.js";
-import { deletePost } from "../feed/deletePost.js";
 import { getProfileForm } from "./getProfileForm.js";
+import { confirmDelatePost } from "../global/feedbackConfirmDelete.js";
 
 /**
  * Fetches and displays posts for a specific user profile.
@@ -156,10 +156,11 @@ export async function displayProfilePosts() {
             deleteButton.classList.add("btn");
             deleteButton.innerHTML = "Delete";
             deleteButton.setAttribute("id", post.id);
-            deleteButton.addEventListener("click", async () => {
-              await deletePost(post.id);
-              alert("Post deleted successfully.");
-              window.location.reload();
+            deleteButton.addEventListener("click", () => {
+              confirmDelatePost(
+                "Are you sure you want to delete this post?",
+                post.id
+              );
             });
 
             const btnContainer = document.createElement("div");
