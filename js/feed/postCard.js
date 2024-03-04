@@ -1,8 +1,9 @@
-import { deletePost } from "../feed/deletePost.js";
+import { confirmDelatePost } from "../global/feedbackConfirmDelete.js";
 
 export function createPostCard(post, getProfile, includeButtons = true) {
   const card = document.createElement("div");
   card.classList.add("singlePost");
+  card.classList.add("text-wrap");
 
   const boxForAuthorAndDate = document.createElement("div");
   boxForAuthorAndDate.classList.add("d-flex");
@@ -59,9 +60,12 @@ export function createPostCard(post, getProfile, includeButtons = true) {
     window.location.href = titleElement.href;
   });
 
-  const cardBody = document.createElement("p");
-  cardBody.classList.add("card-body");
+  const containerCardBody = document.createElement("div");
+  containerCardBody.classList.add("bodyContainer");
+
+  const cardBody = document.createElement("span");
   cardBody.classList.add("px-2");
+  cardBody.classList.add("w-100");
   cardBody.textContent = post.body;
 
   const mediaElement = document.createElement("img");
@@ -118,9 +122,10 @@ export function createPostCard(post, getProfile, includeButtons = true) {
 
   titleContainer.append(titleElement);
 
+  containerCardBody.append(cardBody);
   card.append(containerForTitle);
   card.append(titleContainer);
-  card.append(cardBody);
+  card.append(containerCardBody);
   card.append(tagContainer);
   card.append(mediaElement);
 
@@ -134,7 +139,6 @@ export function createPostCard(post, getProfile, includeButtons = true) {
   ) {
     // Add edit and delete buttons to post created by the user
     const editButton = document.createElement("button");
-    editButton.classList.add("btn-light");
     editButton.classList.add("btn");
     editButton.classList.add("d-flex");
     editButton.classList.add("align-items-center");
@@ -146,7 +150,7 @@ export function createPostCard(post, getProfile, includeButtons = true) {
     });
 
     const deleteButton = document.createElement("i");
-    deleteButton.classList.add("btn-light");
+
     deleteButton.classList.add("d-flex");
     deleteButton.classList.add("align-items-center");
     deleteButton.classList.add("btn");
@@ -155,14 +159,12 @@ export function createPostCard(post, getProfile, includeButtons = true) {
 
     deleteButton.setAttribute("id", post.id);
     deleteButton.addEventListener("click", () => {
-      deletePost(post.id);
-      alert("Post deleted successfully.");
-      window.location.href = "/feed/index.html";
+      confirmDelatePost("Are you sure you want to delete this post?", post.id);
+      console.log("button clicked");
     });
 
     const btnContainer = document.createElement("div");
     btnContainer.classList.add("d-flex");
-    btnContainer.classList.add("gap-2");
     btnContainer.classList.add("justify-content-end");
     btnContainer.classList.add("ml-auto");
     btnContainer.classList.add("m-1");

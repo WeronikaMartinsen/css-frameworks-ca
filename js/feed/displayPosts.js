@@ -1,6 +1,5 @@
 import { getPosts } from "./get.js";
 import { load } from "../api/storeToken.js";
-import { deletePost } from "./deletePost.js";
 import { createPostCard } from "./postCard.js";
 export async function displayPosts() {
   try {

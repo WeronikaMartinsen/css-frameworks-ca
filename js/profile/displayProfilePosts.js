@@ -34,17 +34,22 @@ export async function displayProfilePosts() {
         posts.forEach((post) => {
           // Create a div for the post card
           const card = document.createElement("div");
-          card.classList.add("custom-width-post");
+          card.classList.add("custom-card-width-profile");
 
-          // Append the title element to the card
-          const titleElement = document.createElement("h4");
-          titleElement.textContent = post.title;
-          titleElement.href =
-            "/feed/singlePost.html?id=" + post.id + `author=` + authorName;
-          titleElement.addEventListener("click", () => {
-            window.location.href = titleElement.href;
-          });
-          card.appendChild(titleElement);
+          // Author
+
+          const avatarElement = document.createElement("img");
+          avatarElement.classList.add("custom-avatar-size");
+          avatarElement.src = post.author?.avatar
+            ? post.author.avatar
+            : "/images/avatar.png";
+          avatarElement.alt = "Author Avatar";
+          avatarElement.classList.add("rounded-circle");
+          avatarElement.classList.add("mr-2");
+          avatarElement.classList.add("m-2");
+          const authorElement = document.createElement("a");
+          authorElement.textContent = authorName;
+          authorElement.href = "/profile/index.html?author=" + authorName;
 
           // Date
           const date = document.createElement("span");
@@ -61,36 +66,61 @@ export async function displayProfilePosts() {
             date.innerText =
               hoursAgo > 0 ? `${hoursAgo} hours ago` : "Less than an hour ago";
           }
-          card.appendChild(date);
 
-          // Author
-          const authorElement = document.createElement("a");
-          authorElement.textContent = authorName;
-          authorElement.classList.add("text-end");
-          authorElement.classList.add("m-3");
-          authorElement.href = "/profile/index.html?author=" + authorName;
-          card.appendChild(authorElement);
+          const containerAvatar = document.createElement("div");
+          containerAvatar.classList.add("d-flex");
+          containerAvatar.classList.add("align-item-center");
+
+          const containerAuthorDate = document.createElement("div");
+          containerAuthorDate.classList.add("d-flex");
+          containerAuthorDate.classList.add("flex-column");
+          containerAuthorDate.classList.add("p-0");
+          containerAuthorDate.classList.add("m-1");
+          containerAuthorDate.classList.add("align-item-center");
+
+          const containerForAvatarAuthorDate = document.createElement("div");
+          containerForAvatarAuthorDate.classList.add("d-flex");
+          containerForAvatarAuthorDate.classList.add("justify-content-start");
+          containerForAvatarAuthorDate.classList.add("align-item-center");
+          containerForAvatarAuthorDate.classList.add("gap-2");
+
+          containerAvatar.append(avatarElement);
+          containerAuthorDate.append(authorElement);
+          containerAuthorDate.append(date);
+
+          containerForAvatarAuthorDate.append(containerAvatar);
+          containerForAvatarAuthorDate.append(containerAuthorDate);
+
+          card.append(containerForAvatarAuthorDate);
+
+          // Append the title element to the card
+          const titleElement = document.createElement("h5");
+          titleElement.classList.add("px-3");
+          titleElement.classList.add("mt-2");
+          titleElement.textContent = post.title;
+          titleElement.href =
+            "/feed/singlePost.html?id=" + post.id + `author=` + authorName;
+          titleElement.addEventListener("click", () => {
+            window.location.href = titleElement.href;
+          });
+          card.appendChild(titleElement);
 
           // Body
           const bodyElement = document.createElement("p");
           bodyElement.textContent = post.body;
           bodyElement.classList.add("text-center");
-          bodyElement.classList.add("mb-2");
+          bodyElement.classList.add("px-3");
           card.appendChild(bodyElement);
 
           // Media
           const mediaElement = document.createElement("img");
-          mediaElement.classList.add("post-image");
+          mediaElement.classList.add("profile-card-img");
           mediaElement.src = post.media
             ? post.media
             : "https://picsum.photos/id/18/2500/1667";
           mediaElement.alt = post.title;
-          mediaElement.classList.add("rounded-4");
-          mediaElement.classList.add("w-100");
           const mediaContainer = document.createElement("div");
-          mediaContainer.classList.add("custom-width");
-          mediaContainer.classList.add("mt-2");
-          mediaContainer.classList.add("mb-2");
+          mediaContainer.classList.add("custom-width-profile-media-cont");
           mediaContainer.append(mediaElement);
           card.append(mediaContainer);
 
@@ -128,9 +158,13 @@ export async function displayProfilePosts() {
             const boxForContainer = document.createElement("div");
             boxForContainer.classList.add("w-100");
             boxForContainer.classList.add("justify-content-end");
+            boxForContainer.classList.add("mb-2");
+            boxForContainer.classList.add("mt-2");
+            boxForContainer.classList.add("px-2");
 
             btnContainer.append(editButton);
             btnContainer.append(deleteButton);
+
             boxForContainer.append(btnContainer);
             card.append(boxForContainer);
           }
