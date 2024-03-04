@@ -1,4 +1,5 @@
 import { createPost } from "./createPost.js";
+import { userFeedback } from "../global/functions/userFeedback.js";
 
 export function getNewPost() {
   try {
@@ -19,8 +20,10 @@ export function getNewPost() {
           media,
         };
         createPost(newPost);
-        alert("Your post has been successfully created!");
-        location.reload();
+        userFeedback("You post has been added!", () => {
+          // Callback function to execute after the timeout
+          location.reload();
+        });
       });
     }
   } catch (error) {

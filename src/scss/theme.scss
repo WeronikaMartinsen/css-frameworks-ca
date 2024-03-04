@@ -251,10 +251,8 @@ span {
   text-wrap: wrap;
   width: 100%;
 }
+.overlayUserFeedback,
 .overlayConfirmDelate {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   background-color: $light;
   position: fixed;
   top: 50%;
@@ -264,8 +262,13 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 27em;
-  height: 15em;
+  flex-wrap: wrap;
+  padding: 1em;
+  margin: 1em;
+  max-width: 40em;
+  min-width: 15em;
+  height: 12em;
+  z-index: 1000;
 }
 .buttons-confirm {
   display: flex;

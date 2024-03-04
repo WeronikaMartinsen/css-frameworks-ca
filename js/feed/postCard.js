@@ -115,8 +115,7 @@ export function createPostCard(post, getProfile, includeButtons = true) {
   if (daysAgo > 0) {
     date.innerText = daysAgo === 1 ? "1 day ago" : `${daysAgo} days ago`;
   } else {
-    date.innerText =
-      hoursAgo > 0 ? `${hoursAgo} hours ago` : "Less than an hour ago";
+    date.innerText = hoursAgo > 0 ? `${hoursAgo} hours ago` : "1 hour ago";
   }
 
   boxForAuthorAndDate.append(authorElement);
@@ -162,7 +161,6 @@ export function createPostCard(post, getProfile, includeButtons = true) {
     deleteButton.setAttribute("id", post.id);
     deleteButton.addEventListener("click", () => {
       confirmDelatePost("Are you sure you want to delete this post?", post.id);
-      console.log("button clicked");
     });
 
     const btnContainer = document.createElement("div");

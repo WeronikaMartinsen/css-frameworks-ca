@@ -1,7 +1,7 @@
 import { editPost } from "./editPost.js";
 import { id } from "../api/constants.js";
 import { getPost } from "./get.js";
-
+import { userFeedback } from "../global/functions/userFeedback.js";
 /**
  * Updates the post form with values from the specified post ID.
  * Submits the updated post when the form is submitted.
@@ -34,8 +34,10 @@ export async function updatePostForm() {
           media,
         };
         editPost(updatedPost);
-        alert("Your post has been successfully updated!");
-        window.location.href = "/feed/index.html";
+        userFeedback("You post has been updated!", () => {
+          // Callback function to execute after the timeout
+          window.location.href = "/feed/index.html";
+        });
       });
     }
   } catch (error) {

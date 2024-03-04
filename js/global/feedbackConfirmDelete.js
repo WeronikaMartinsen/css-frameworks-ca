@@ -1,4 +1,5 @@
 import { deletePost } from "../feed/deletePost.js";
+import { userFeedback } from "./functions/userFeedback.js";
 
 export function confirmDelatePost(message, postId) {
   console.log("confirm delete post called");
@@ -38,8 +39,10 @@ export function confirmDelatePost(message, postId) {
   yesBtn.classList.add("btn-secondary");
   yesBtn.addEventListener("click", async () => {
     await deletePost(postId);
-    alert("Post deleted successfully.");
-    window.location.href = "/feed/index.html";
+    userFeedback("Your post has been successfully deleted!", () => {
+      // Callback function to execute after the timeout
+      window.location.href = "/feed/index.html";
+    });
   });
 
   const noBtn = document.createElement("button");
