@@ -277,12 +277,13 @@ span {
   transform: translate(-50%, -50%);
   border-radius: 15px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 1em;
   margin: 1em;
-  max-width: 40em;
+  max-width: 30em;
   min-width: 15em;
   height: 12em;
   z-index: 1000;
