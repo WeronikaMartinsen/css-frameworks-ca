@@ -15,6 +15,9 @@ export function confirmDelatePost(message, postId) {
 
   content.textContent = message;
 
+  const containerForCloseBtn = document.createElement("div");
+  containerForCloseBtn.classList.add("ms-auto");
+
   const deleteButton = document.createElement("i");
 
   deleteButton.classList.add("d-flex");
@@ -38,11 +41,16 @@ export function confirmDelatePost(message, postId) {
   yesBtn.classList.add("btn");
   yesBtn.classList.add("btn-secondary");
   yesBtn.addEventListener("click", async () => {
-    await deletePost(postId);
-    userFeedback("Your post has been successfully deleted!", () => {
-      // Callback function to execute after the timeout
-      window.location.href = "/feed/index.html";
-    });
+    try {
+      await deletePost(postId);
+      document.body.removeChild(overlay);
+      userFeedback("Your post has been successfully deleted!", async () => {
+        console.log("Callback from userFeedback executed");
+        location.reload();
+      });
+    } catch (error) {
+      console.error("Error deleting post:", error);
+    }
   });
 
   const noBtn = document.createElement("button");
@@ -57,7 +65,8 @@ export function confirmDelatePost(message, postId) {
   buttonsContainer.append(noBtn);
   buttonsContainer.append(yesBtn);
 
-  messageBox.append(deleteButton);
+  containerForCloseBtn.append(deleteButton);
+  overlay.append(containerForCloseBtn);
   messageBox.append(content);
   messageBox.append(buttonsContainer);
 
