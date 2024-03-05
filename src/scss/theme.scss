@@ -1,9 +1,10 @@
-$primary: #87ceeb;
-$secondary: #0da6a6;
-$info: #eee0df;
+$primary: #030438;
+$secondary: #9b72f2;
+$info: #d6c8f3;
 $btn-dark: #223240;
 $dark: #333333;
-$i: #333333;
+$light: #1ffbf5;
+$i: #ffffff;
 $customHoverColor: $secondary;
 
 // Configuration
@@ -142,12 +143,6 @@ span {
   width: 1.875em; /* 30px / 16px */
 }
 
-#sidebar {
-  min-width: 13.75em; /* 220px / 16px */
-  max-width: 13.75em; /* 220px / 16px */
-  transition: all 0.3s;
-}
-
 .custom-height {
   height: 3.125em; /* 50px / 16px */
 }
@@ -165,7 +160,7 @@ span {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 80em;
+  max-width: 100em;
 }
 
 .custom-avatar-size {
@@ -183,7 +178,7 @@ span {
   padding: 0;
   margin: 1em;
   border-radius: 15px;
-  border: 1px solid $secondary;
+  border: 1px solid $light;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
   min-height: 22em;
@@ -195,13 +190,19 @@ span {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  border: 1px solid $secondary;
+  border: 1px solid $light;
   margin: 1em;
   border-radius: 1em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
+  margin-bottom: 1em;
+}
+
+.custom-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .custom-margin-top {

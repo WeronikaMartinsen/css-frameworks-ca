@@ -143,6 +143,8 @@ export function createPostCard(post, getProfile, includeButtons = true) {
     editButton.classList.add("btn");
     editButton.classList.add("d-flex");
     editButton.classList.add("align-items-center");
+    editButton.classList.add("text-primary");
+    editButton.classList.add("custom-shadow");
     editButton.textContent = "...";
 
     editButton.addEventListener("click", () => {
@@ -157,6 +159,8 @@ export function createPostCard(post, getProfile, includeButtons = true) {
     deleteButton.classList.add("btn");
     deleteButton.classList.add("fa-solid");
     deleteButton.classList.add("fa-xmark");
+    deleteButton.classList.add("text-primary");
+    deleteButton.classList.add("custom-shadow");
     deleteButton.setAttribute("id", post.id);
     deleteButton.addEventListener("click", () => {
       confirmDelatePost("Are you sure you want to delete this post?", post.id);
