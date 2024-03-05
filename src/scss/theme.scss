@@ -315,17 +315,28 @@ input:invalid + .feedback {
 }
 
 .rounded-image {
-  width: 4em; /* Ensure the image takes the full width of its container */
-  height: 4em; /* Ensure the image takes the full height of its container */
-  object-fit: cover; /* Make the image cover the entire container while maintaining aspect ratio */
-  border-radius: 50%; /* Make the image rounded */
+  width: 4em;
+  height: 4em;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid $primary;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+.profile {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 1em;
 }
 
 .profile-name {
   text-align: center;
   margin-top: 10px;
-  font-size: 12px;
+  font-size: 10px;
 }
 .carousel {
   display: flex;
+  max-width: 70em; /* Set your desired max-width */
 }

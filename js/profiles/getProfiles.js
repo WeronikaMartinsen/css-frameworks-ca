@@ -16,7 +16,7 @@ export async function getProfiles() {
 
     if (!response.ok) {
       console.error(`Error: ${response.status} - ${response.statusText}`);
-      return null; // or handle the error appropriately
+      return null;
     }
 
     const currentUser = await response.json();
@@ -24,6 +24,6 @@ export async function getProfiles() {
     return currentUser;
   } catch (error) {
     console.error(error);
-    return null; // or handle the error appropriately
+    return null;
   }
 }
