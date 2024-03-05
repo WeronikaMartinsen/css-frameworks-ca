@@ -1,4 +1,5 @@
 import { createPost } from "./createPost.js";
+import { userFeedback } from "../global/functions/userFeedback.js";
 
 export function getNewPost() {
   try {
@@ -8,6 +9,7 @@ export function getNewPost() {
       getForm.addEventListener("submit", (event) => {
         event.preventDefault();
         const form = event.target;
+
         const title = form.title.value;
         const body = form.body.value;
         const media = form.media.value;
@@ -18,8 +20,10 @@ export function getNewPost() {
           media,
         };
         createPost(newPost);
-        alert("Your post has been successfully created!");
-        location.reload();
+        userFeedback("You post has been added!", () => {
+          // Callback function to execute after the timeout
+          location.reload();
+        });
       });
     }
   } catch (error) {

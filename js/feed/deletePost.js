@@ -21,6 +21,6 @@ export async function deletePost(id) {
       return result;
     }
   } catch (error) {
-    alert("Error deleting post. Please try again.");
+    console.error(error);
   }
 }

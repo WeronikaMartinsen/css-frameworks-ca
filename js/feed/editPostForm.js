@@ -1,22 +1,21 @@
 import { editPost } from "./editPost.js";
 import { id } from "../api/constants.js";
 import { getPost } from "./get.js";
-
+import { userFeedback } from "../global/functions/userFeedback.js";
+/**
+ * Updates the post form with values from the specified post ID.
+ * Submits the updated post when the form is submitted.
+ * @async
+ * @function updatePostForm
+ * @throws {Error} Throws an error if there is an issue retrieving or updating the post.
+ */
 export async function updatePostForm() {
   try {
     const getValuesFromPostId = await getPost(id);
 
-    const newTitle = (document.getElementById(
-      "editTitle"
-    ).value = `${getValuesFromPostId.title}`);
-
-    const newBody = (document.querySelector(
-      "#editBody"
-    ).value = `${getValuesFromPostId.body}`);
-
-    const newMedia = (document.getElementById(
-      "editMedia"
-    ).value = `${getValuesFromPostId.media}`);
+    document.getElementById("editTitle").value = getValuesFromPostId.title;
+    document.querySelector("#editBody").value = getValuesFromPostId.body;
+    document.getElementById("editMedia").value = getValuesFromPostId.media;
 
     const updateForm = document.querySelector("#updatePost");
 
@@ -25,7 +24,6 @@ export async function updatePostForm() {
         event.preventDefault();
         const form = event.target;
 
-        // Corrected names for accessing form elements
         const title = form.editTitle.value;
         const body = form.editBody.value;
         const media = form.editMedia.value;
@@ -36,8 +34,10 @@ export async function updatePostForm() {
           media,
         };
         editPost(updatedPost);
-        alert("Your post has been successfully updated!");
-        location.reload();
+        userFeedback("You post has been updated!", () => {
+          // Callback function to execute after the timeout
+          window.location.href = "/feed/index.html";
+        });
       });
     }
   } catch (error) {

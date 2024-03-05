@@ -19,7 +19,6 @@ export async function login(user) {
       storage.save("profile", {
         userName: json.name,
         userEmail: json.email,
-        userAvatar: json.avatar,
       });
 
       window.location.href = "feed/index.html";
