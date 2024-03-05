@@ -11997,7 +11997,7 @@ span {
 }
 
 .custom-card-width-profile {
-  min-width: 17em;
+  min-width: 19em;
   max-width: 25em;
   display: flex;
   justify-content: space-between;
