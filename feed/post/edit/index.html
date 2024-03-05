@@ -25,9 +25,9 @@
 <script defer type="module" src="/js/editPost/index.js"></script>
   </head>
   <body>
-    <div class="container-fluid d-flex flex-column pt-5">
+    <div class="container-fluid d-flex flex-column m-0 p-0">
       <header>
-        <nav class="navbar fixed-top navbar-expand-sm bg-light p-2">
+        <nav class="navbar fixed-top navbar-expand-sm bg-primary p-2">
           <div class="container-fluid">
             <a class="navbar-brand" href="/feed/index.html"><img class="logo-size" src="/images/logo-pack-and-go.png" alt="Logo of the brand."></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,16 +35,16 @@
         </button>
       
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav w-100 justify-content-end align-items-end gap-3">
+              <ul class="navbar-nav w-100 justify-content-end align-items-center gap-3">
                 <li class="nav-item d-flex justify-content-center align-items-center active">
                   <i class="fa-solid fa-house text-center"></i>
-                  <a class="nav-link text-center px-2" href="/feed/index.html">Feed</a>
+                  <a class="nav-link text-center px-2 text-white" href="/feed/index.html">Feed</a>
                 </li>
                     <li class="nav-item d-flex justify-content-center align-items-center">
                       <i class="fa-solid fa-arrow-right-from-bracket text-center"></i>
-                      <a class="nav-link text-center px-2" id="logout">Log out</a></li>
+                      <a class="nav-link text-center px-2 text-white" id="logout">Log out</a></li>
                       <li class="nav-item">
-                        <a id="profile" href="/profile"> <img src="/images/avatar.png" alt="Profile image." class="stories-width-profile rounded-circle"></a>
+                        <a id="profile" href="/profile"> <img src="/images/avatar.png" alt="Profile image." class="stories-width-profile rounded-circle border border-white"></a>
                       </li>
               </ul>
             </div>
@@ -54,16 +54,16 @@
       
      
       <main
-      class="container-fluid d-flex flex-column justify-content-center align-items-center mt-custom p-0 max-width-content">
+      class="container-fluid d-flex flex-column justify-content-center align-items-center mt-custom p-0 max-width-content mt-1">
       <div class="loaderContainer">
         <div id="loader"></div>
       </div>
       
-      <div class="bg-light rounded-5 mb-3 max-width-content mt-3 p-4 w-100 ">
+      <div class="bg-light rounded-5 mb-3 max-width-content mt-3 p-4 w-100">
 
        
         
-        <div class="d-flex flex-column align-items-center w-100 mw-50 no-shrink d-flex justify-content-center align-items-center mb-1">
+        <div class="d-flex flex-column align-items-center w-100 mw-50 no-shrink d-flex justify-content-center align-items-center mb-1 mt-5">
           <h2>Edit Post</h2>  
           <form id="updatePost"class="w-100 d-flex flex-column align-items-center flex-nowrap mb-2">
               <div class="form-group w-100">
@@ -86,7 +86,7 @@
       <div class="d-flex justify-content-center align-items-center m-5 gap-2"><i class="fa-solid fa-arrow-left"></i><a class="text-center text-dark" href="/feed/index.html">Back to home page</a></div>
           <!-- Page Content  -->
 
-          <footer class="container-fluid d-flex flex-column bg-light text-center z-3">
+          <footer class="container-fluid d-flex flex-column bg-primary text-white text-center z-3">
             <!-- Grid container -->
             <div class="p-4">
               <!-- Section: Social media -->
@@ -200,16 +200,16 @@
       
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a class="text-body" href="#">Destinations</a>
+                        <a class="text-white" href="#">Destinations</a>
                       </li>
                       <li>
-                        <a class="text-body" href="#">Travel Stories</a>
+                        <a class="text-white" href="#">Travel Stories</a>
                       </li>
                       <li>
-                        <a class="text-body" href="#">Culture</a>
+                        <a class="text-white" href="#">Culture</a>
                       </li>
                       <li>
-                        <a class="text-body" href="#">Events</a>
+                        <a class="text-white" href="#">Events</a>
                       </li>
                     </ul>
                   </div>
@@ -221,16 +221,16 @@
       
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a class="text-body" href="#">Guides</a>
+                        <a class="text-white" href="#">Guides</a>
                       </li>
                       <li>
-                        <a class="text-body" href="#">Groups</a>
+                        <a class="text-white" href="#">Groups</a>
                       </li>
                       <li>
-                        <a class="text-body" href="#">Partners</a>
+                        <a class="text-white" href="#">Partners</a>
                       </li>
                       <li>
-                        <a class="text-body" href="#">Sponsors</a>
+                        <a class="text-white" href="#">Sponsors</a>
                       </li>
                     </ul>
                   </div>
@@ -242,16 +242,16 @@
       
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a class="text-body" href="#">Plans</a>
+                        <a class="text-white" href="#">Plans</a>
                       </li>
                       <li>
-                        <a class="text-body" href="#">Experience</a>
+                        <a class="text-white" href="#">Experience</a>
                       </li>
                       <li>
-                        <a class="text-body" href="#">Pictures</a>
+                        <a class="text-white" href="#">Pictures</a>
                       </li>
                       <li>
-                        <a class="text-body" href="#">Opinions</a>
+                        <a class="text-white" href="#">Opinions</a>
                       </li>
                     </ul>
                   </div>
@@ -262,16 +262,16 @@
                     <h2 class="text-uppercase fs-5">Plan</h2>
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a class="text-body" href="#">Hotels</a>
+                        <a class="text-white" href="#">Hotels</a>
                       </li>
                       <li>
-                        <a class="text-body" href="#">Flights</a>
+                        <a class="text-white" href="#">Flights</a>
                       </li>
                       <li>
-                        <a class="text-body" href="#">Booking</a>
+                        <a class="text-white" href="#">Booking</a>
                       </li>
                       <li>
-                        <a class="text-body" href="#">Last Minute</a>
+                        <a class="text-white" href="#">Last Minute</a>
                       </li>
                     </ul>
                   </div>
