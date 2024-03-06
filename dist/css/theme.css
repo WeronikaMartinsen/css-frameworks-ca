@@ -11960,6 +11960,7 @@ span {
 .profile-img {
   width: 10em; /* 200px / 16px */
   height: 10em; /* 200px / 16px */
+  object-fit: cover;
 }
 
 .stories-width {
@@ -12026,6 +12027,7 @@ span {
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
   margin-bottom: 1em;
+  max-width: 50em;
 }
 
 .custom-shadow {
@@ -12034,7 +12036,7 @@ span {
 }
 
 .custom-margin-top {
-  margin-top: 6em;
+  margin-top: 5em;
 }
 
 .img-feed {
@@ -12080,7 +12082,8 @@ span {
   max-height: 10em;
 }
 
-.overlayUserFeedback {
+.overlayUserFeedback,
+.overlayConfirmDelate {
   background-color: #f0ebfc;
   position: fixed;
   top: 50%;
@@ -12097,8 +12100,13 @@ span {
 }
 
 .overlayConfirmDelate {
-  border: 1px solid #9b72f2;
-  background-color: #f0ebfc;
+  height: 13em;
+}
+
+/* 
+.overlayConfirmDelate {
+  border: 1px solid $secondary;
+  background-color: $light;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -12111,12 +12119,11 @@ span {
   flex-wrap: wrap;
   padding: 1em;
   margin: 1em;
-  max-width: 30em;
-  min-width: 15em;
+  max-width: 35em;
+  min-width: 20em;
   height: 12em;
   z-index: 1000;
-}
-
+} */
 .buttons-confirm {
   display: flex;
   justify-content: center;
