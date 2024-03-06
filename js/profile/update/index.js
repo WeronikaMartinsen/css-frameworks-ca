@@ -1,3 +1,3 @@
-import { updateAvatar } from "./updateProfile";
+import { updateAvatar } from "./updateProfile.js";
 
 updateAvatar();

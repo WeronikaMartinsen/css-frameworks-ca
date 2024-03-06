@@ -1,28 +1,25 @@
 import { updateAvatar } from "./updateProfile.js";
 
 document
-  .getElementById("avatarUploadForm")
-  .addEventListener("submit", async function (event) {
-    event.preventDefault();
-
+  .getElementById("uploadButton")
+  .addEventListener("click", async function () {
     const urlParams = new URLSearchParams(window.location.search);
     const authorName = urlParams.get("author");
 
     if (authorName) {
       const avatarInput = document.getElementById("avatar");
-      const avatarFile = avatarInput.files[0];
+      const avatarUrl = avatarInput.value;
 
-      if (avatarFile) {
+      if (avatarUrl) {
         try {
-          const response = await updateAvatar(avatarFile, authorName);
-
+          const response = await updateAvatar(avatarUrl, authorName);
           // Handle the response as needed
           console.log("Avatar updated successfully:", response);
         } catch (error) {
           console.error("Error updating avatar:", error);
         }
       } else {
-        console.error("No avatar file selected.");
+        console.error("Avatar URL is required.");
       }
     } else {
       console.error("Author name not found in URL parameters.");

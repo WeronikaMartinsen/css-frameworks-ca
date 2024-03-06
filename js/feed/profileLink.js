@@ -21,8 +21,18 @@ export function mediaLink() {
   const getMediaLink = document.querySelector("#media");
 
   if (getMediaLink) {
-    getMediaLink.href = `/profile/update.html?author=${user}&media=${media}`;
+    // Check if media is defined and a valid URL
+    const mediaUrl = media && isValidUrl(media) ? media : "";
+
+    getMediaLink.href = `/profile/update.html?author=${user}&media=${mediaUrl}`;
   }
 }
 
-mediaLink();
+function isValidUrl(url) {
+  try {
+    new URL(url);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}

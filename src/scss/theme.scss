@@ -161,7 +161,7 @@ span {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 100em;
+  width: 100%;
 }
 
 .custom-avatar-size {
@@ -249,8 +249,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  text-wrap: wrap;
+  flex-direction: column;
   max-height: 10em;
 }
 
@@ -274,27 +273,6 @@ span {
 .overlayConfirmDelate {
   height: 13em;
 }
-/* 
-.overlayConfirmDelate {
-  border: 1px solid $secondary;
-  background-color: $light;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 1em;
-  margin: 1em;
-  max-width: 35em;
-  min-width: 20em;
-  height: 12em;
-  z-index: 1000;
-} */
 
 .buttons-confirm {
   display: flex;
