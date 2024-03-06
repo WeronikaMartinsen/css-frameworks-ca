@@ -12,3 +12,17 @@ export function profileLink() {
 }
 
 profileLink();
+
+export function mediaLink() {
+  const getProfileFromToken = load("profile");
+  const user = getProfileFromToken.userName;
+  const media = getProfileFromToken.mediaName;
+
+  const getMediaLink = document.querySelector("#media");
+
+  if (getMediaLink) {
+    getMediaLink.href = `/profile/update.html?author=${user}&media=${media}`;
+  }
+}
+
+mediaLink();

@@ -4,7 +4,7 @@ import { logout } from "../api/logout.js";
 
 import { displayProfilePosts } from "./displayProfilePosts.js";
 
-import { profileLink } from "../feed/profileLink.js";
+import { profileLink, mediaLink } from "../feed/profileLink.js";
 
 import {
   showLoadingIndicator,
@@ -19,3 +19,4 @@ profileLink();
 showLoadingIndicator();
 hideLoadingIndicator();
 delay();
+mediaLink();

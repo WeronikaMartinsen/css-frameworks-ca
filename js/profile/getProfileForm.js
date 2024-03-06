@@ -29,9 +29,12 @@ export async function getProfileForm() {
     const currentUserEmail = document.querySelector("#email");
     const currentUserAvatar = document.querySelector("#avatar");
 
-    currentUserName.value = profile.name;
-    currentUserEmail.value = profile.email;
-    currentUserAvatar.value = profile.avatar;
+    currentUserName.textContent = profile.name;
+    currentUserEmail.textContent = profile.email;
+    currentUserAvatar.src = profile.avatar || "/images/avatar.png";
+    currentUserAvatar.alt = "Profile picture of myself.";
+
+    return profile;
   } catch (error) {
     console.error(error);
   }
