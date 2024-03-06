@@ -12,16 +12,19 @@ import { confirmDelatePost } from "../global/feedbackConfirmDelete.js";
 export async function displayProfilePosts() {
   try {
     const profile = await getProfileForm();
-    // Extract authorName from URL parameters
+  
     const urlParams = new URLSearchParams(window.location.search);
     const authorName = urlParams.get("author");
+
 
     // If authorName is available, fetch and display posts
     if (authorName) {
       const getProfilePostsURL = `${API_BASE_URL}${PROFILES}/${authorName}${POSTS}`;
+
       const token = load("token");
       const currentUser = load("profile").userName;
 
+      console.log("Fetching profile posts for author:", authorName);
       const response = await fetch(getProfilePostsURL, {
         headers: {
           "Content-Type": "application/json",
@@ -31,10 +34,12 @@ export async function displayProfilePosts() {
 
       if (response.ok) {
         const posts = await response.json();
+        console.log("Fetched posts:", posts);
+
         const postsContainer = document.querySelector(".user-posts");
 
         posts.forEach((post) => {
-          // Create a div for the post card
+    
           const card = document.createElement("div");
           card.classList.add("custom-card-width-profile");
 

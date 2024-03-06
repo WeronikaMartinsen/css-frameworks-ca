@@ -191,7 +191,6 @@ span {
   justify-content: center;
   flex-direction: column;
   border: 1px solid $light;
-  margin: 1em;
   border-radius: 1em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
@@ -298,9 +297,12 @@ span {
   margin-top: 2em;
 }
 
-.min-width-custom {
-  width: 100%;
-  min-width: 25em;
+.custom-max-width {
+  max-width: 100em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 ////////////////Register///////////
 
@@ -310,4 +312,31 @@ span {
 
 input:invalid + .feedback {
   display: block;
+}
+
+.rounded-image {
+  width: 4em;
+  height: 4em;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid $secondary;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+.profile {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 1em;
+}
+
+.profile-name {
+  text-align: center;
+  margin-top: 9px;
+  font-size: 11px;
+}
+.carousel {
+  display: flex;
+  max-width: 70em; /* Set your desired max-width */
 }

@@ -37,6 +37,8 @@
       crossorigin="anonymous"
     ></script>
     <script defer type="module" src="/js/feed/index.js"></script>
+    <script defer type="module" src="/js/profiles/index.js"></script>
+
   </head>
   <body class="mw-100 mt-5">
     <div
@@ -96,9 +98,14 @@
       </header>
       <!-- Page Content  -->
       <main class="container-fluid max-width-content w-100">
-        <div>
+      <div class="d-flex justify-content-center align-items-center custom-margin-top">
+        <i id="prevBtn"class="fa-solid fa-angle-left text-primary m-3"></i>
+        <div id="profiles" class="carousel">
+        </div>
+        <i id="nextBtn"class="fa-solid fa-chevron-right text-primary m-3"></i></div>
+        <div class="">
           <div
-            class="custom-margin-top bg-light mb-4 p-3 rounded-4 custom-shadow"
+            class="bg-light mb-4 p-3 rounded-4 custom-shadow mt-4"
           >
             <h2 class="text-center">Create Post</h2>
             <form
@@ -145,9 +152,9 @@
             </form>
           </div>
           <div
-            class="col-12 w-100 mw-50 no-shrink d-flex flex-column align-items-center p-0 m-1"
+            class="col-12 w-100 mw-50 no-shrink d-flex flex-column align-items-center p-0 m-1 align-items-center"
           >
-            <div class="input-group mb-3 d-flex justify-content-between">
+            <div class="input-group mb-3 d-flex justify-content-between align-items-center">
               <div class="dropdown show">
                 <button
                   class="btn border-secondary dropdown-toggle custom-shadow"
@@ -185,7 +192,7 @@
                   <input
                     type="text"
                     id="search"
-                    class="form-control custom-shadow"
+                    class="form-control custom-shadow w-100"
                     placeholder="Search..."
                     aria-label="Recipient's username"
                     aria-describedby="basic-addon2"
