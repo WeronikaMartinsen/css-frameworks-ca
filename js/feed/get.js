@@ -22,7 +22,7 @@ export async function getPosts() {
     const posts = await response.json();
     if (response.ok) {
       hideLoadingIndicator();
-      console.log(response.ok);
+
       save("posts", posts);
       return posts;
     }

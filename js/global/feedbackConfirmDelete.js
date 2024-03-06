@@ -45,12 +45,9 @@ export function confirmDelatePost(message, postId) {
       await deletePost(postId);
       document.body.removeChild(overlay);
       userFeedback("Your post has been successfully deleted!", async () => {
-        console.log("Callback from userFeedback executed");
         location.reload();
       });
-    } catch (error) {
-      console.error("Error deleting post:", error);
-    }
+    } catch (error) {}
   });
 
   const noBtn = document.createElement("button");

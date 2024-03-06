@@ -24,7 +24,7 @@ export async function displayPosts() {
     let currentPage = 1;
 
     filterOptionOne.addEventListener("click", function () {
-      console.log("Filtering by new-to-old");
+
       const sortedPosts = [...allPosts].sort(
         (a, b) => new Date(b.created) - new Date(a.created)
       );
@@ -32,7 +32,7 @@ export async function displayPosts() {
     });
 
     filterOptionTwo.addEventListener("click", function () {
-      console.log("Filtering by old-to-new");
+ 
       const sortedPosts = [...allPosts].sort(
         (a, b) => new Date(a.created) - new Date(b.created)
       );
@@ -40,13 +40,13 @@ export async function displayPosts() {
     });
 
     filterOptionThree.addEventListener("click", function () {
-      console.log("Filtering by with-media");
+
       const mediaPosts = allPosts.filter((post) => post.media);
       displayFilteredPosts(mediaPosts, getProfile, postsContainer);
     });
 
     filterOptionFour.addEventListener("click", function () {
-      console.log("Filtering by all-posts");
+     
       displayFilteredPosts(allPosts, getProfile, postsContainer);
     });
 

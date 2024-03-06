@@ -6,26 +6,24 @@ export function userFeedback(message, callback) {
   messageBox.classList.add("messageBox");
 
   const content = document.createElement("span");
-  content.classList.add("text-center");
-  content.classList.add("text-wrap");
+  content.classList.add("text-center", "text-wrap");
 
   content.textContent = message;
 
   const containerForCloseBtn = document.createElement("div");
-  containerForCloseBtn.classList.add("ms-auto");
-  containerForCloseBtn.classList.add("mb-2");
+  containerForCloseBtn.classList.add("ms-auto", "mb-2");
 
   const closeBtn = document.createElement("i");
-
-  closeBtn.classList.add("d-flex");
-  closeBtn.classList.add("align-items-center");
-  closeBtn.classList.add("btn");
-  closeBtn.classList.add("fa-solid");
-  closeBtn.classList.add("d-flex");
-  closeBtn.classList.add("justify-content-end");
-  closeBtn.classList.add("align-item-end");
-  closeBtn.classList.add("fa-xmark");
-  closeBtn.classList.add("text-end");
+  closeBtn.classList.add(
+    "d-flex",
+    "align-items-center",
+    "btn",
+    "fa-solid",
+    "justify-content-end",
+    "align-item-end",
+    "fa-xmark",
+    "text-end"
+  );
 
   closeBtn.addEventListener("click", () => {
     document.body.removeChild(overlay);
