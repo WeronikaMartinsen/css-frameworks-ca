@@ -12,10 +12,9 @@ import { confirmDelatePost } from "../global/feedbackConfirmDelete.js";
 export async function displayProfilePosts() {
   try {
     const profile = await getProfileForm();
-  
+
     const urlParams = new URLSearchParams(window.location.search);
     const authorName = urlParams.get("author");
-
 
     // If authorName is available, fetch and display posts
     if (authorName) {
@@ -39,7 +38,6 @@ export async function displayProfilePosts() {
         const postsContainer = document.querySelector(".user-posts");
 
         posts.forEach((post) => {
-    
           const card = document.createElement("div");
           card.classList.add("custom-card-width-profile");
 
@@ -88,17 +86,21 @@ export async function displayProfilePosts() {
           containerAvatar.classList.add("align-item-center");
 
           const containerAuthorDate = document.createElement("div");
-          containerAuthorDate.classList.add("d-flex");
-          containerAuthorDate.classList.add("flex-column");
-          containerAuthorDate.classList.add("p-0");
-          containerAuthorDate.classList.add("m-1");
-          containerAuthorDate.classList.add("align-item-center");
+          containerAuthorDate.classList.add(
+            "d-flex",
+            "flex-column",
+            "p-0",
+            "m-1",
+            "align-item-center"
+          );
 
           const containerForAvatarAuthorDate = document.createElement("div");
-          containerForAvatarAuthorDate.classList.add("d-flex");
-          containerForAvatarAuthorDate.classList.add("justify-content-start");
-          containerForAvatarAuthorDate.classList.add("align-item-center");
-          containerForAvatarAuthorDate.classList.add("gap-2");
+          containerForAvatarAuthorDate.classList.add(
+            "d-flex",
+            "justify-content-start",
+            "align-item-center",
+            "gap-2"
+          );
 
           containerAvatar.append(avatarElement);
           containerAuthorDate.append(authorElement);
@@ -111,8 +113,8 @@ export async function displayProfilePosts() {
 
           // Append the title element to the card
           const titleElement = document.createElement("h5");
-          titleElement.classList.add("px-3");
-          titleElement.classList.add("mt-2");
+          titleElement.classList.add("px-3", "mt-2");
+
           titleElement.textContent = post.title;
           titleElement.href =
             "/feed/singlePost.html?id=" + post.id + `author=` + authorName;
@@ -124,8 +126,7 @@ export async function displayProfilePosts() {
           // Body
           const bodyElement = document.createElement("p");
           bodyElement.textContent = post.body;
-          bodyElement.classList.add("text-center");
-          bodyElement.classList.add("px-3");
+          bodyElement.classList.add("text-center", "px-3");
           card.appendChild(bodyElement);
 
           // Media
@@ -143,22 +144,28 @@ export async function displayProfilePosts() {
           // Edit and Delete buttons
           if (authorName === currentUser) {
             const editButton = document.createElement("button");
-            editButton.classList.add("border-secondary");
-            editButton.classList.add("btn-light");
-            editButton.classList.add("btn");
-            editButton.classList.add("d-flex");
-            editButton.classList.add("align-items-center");
+            editButton.classList.add(
+              "border-secondary",
+              "btn-light",
+              "btn",
+              "d-flex",
+              "align-items-center"
+            );
+
             editButton.innerText = "Update Post";
             editButton.addEventListener("click", () => {
               window.location.href = `/feed/post/edit/index.html?id=${post.id}`;
             });
 
             const deleteButton = document.createElement("button");
-            deleteButton.classList.add("border-secondary");
-            deleteButton.classList.add("btn-light");
-            deleteButton.classList.add("d-flex");
-            deleteButton.classList.add("align-items-center");
-            deleteButton.classList.add("btn");
+            deleteButton.classList.add(
+              "border-secondary",
+              "btn-light",
+              "d-flex",
+              "align-items-center",
+              "btn"
+            );
+
             deleteButton.innerHTML = "Delete";
             deleteButton.setAttribute("id", post.id);
             deleteButton.addEventListener("click", () => {
@@ -169,15 +176,16 @@ export async function displayProfilePosts() {
             });
 
             const btnContainer = document.createElement("div");
-            btnContainer.classList.add("d-flex");
-            btnContainer.classList.add("gap-2");
-            btnContainer.classList.add("justify-content-end");
+            btnContainer.classList.add("d-flex", "gap-2", "justify-content-end");
+
             const boxForContainer = document.createElement("div");
-            boxForContainer.classList.add("w-100");
-            boxForContainer.classList.add("justify-content-end");
-            boxForContainer.classList.add("mb-2");
-            boxForContainer.classList.add("mt-2");
-            boxForContainer.classList.add("px-2");
+            boxForContainer.classList.add(
+              "w-100",
+              "justify-content-end",
+              "mb-2",
+              "mt-2",
+              "px-2"
+            );
 
             btnContainer.append(editButton);
             btnContainer.append(deleteButton);

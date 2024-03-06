@@ -18,13 +18,9 @@ export async function displayPost() {
     const postContainer = document.querySelector("#singlePostId");
     postContainer.classList.add("singlePost");
 
-    // Call the createPostCard function to generate the post card
     const card = createPostCard(getSinglePost, getProfile);
 
-    // Append the generated post card to the post container
     postContainer.appendChild(card);
-
-    // ... (other post details)
   } catch (error) {
     console.error("Error displaying post:", error);
   }

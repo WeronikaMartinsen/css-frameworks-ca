@@ -15,15 +15,13 @@ export async function getProfiles() {
     });
 
     if (!response.ok) {
-      console.error(`Error: ${response.status} - ${response.statusText}`);
       return null;
     }
 
     const currentUser = await response.json();
-    console.log("got profiles", currentUser);
+
     return currentUser;
   } catch (error) {
-    console.error(error);
     return null;
   }
 }

@@ -6,7 +6,6 @@ export async function getProfile() {
   const getProfileURL = `${API_BASE_URL}${PROFILES}/${authorName}`;
   const token = load("token");
   if (!authorName) {
-    console.error("Author name is not defined.");
     return; // Return or handle this case appropriately
   }
 

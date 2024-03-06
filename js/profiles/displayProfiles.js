@@ -23,6 +23,15 @@ export async function displayProfiles() {
     avatarElement.classList.add("rounded-image");
     avatarElement.src = profile.avatar || "/images/avatar.png";
     avatarElement.alt = "Profile Avatar";
+
+    avatarElement.href = getProfileLink(profile);
+
+    avatarElement.addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log("Profile name clicked:", profile.name);
+      window.location.href = getProfileLink(profile);
+    });
+
     profileElement.appendChild(avatarElement);
 
     const nameElement = document.createElement("a");
