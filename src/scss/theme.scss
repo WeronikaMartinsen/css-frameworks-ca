@@ -319,7 +319,7 @@ input:invalid + .feedback {
   height: 4em;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid $primary;
+  border: 2px solid $secondary;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
 }
@@ -333,8 +333,8 @@ input:invalid + .feedback {
 
 .profile-name {
   text-align: center;
-  margin-top: 10px;
-  font-size: 10px;
+  margin-top: 9px;
+  font-size: 11px;
 }
 .carousel {
   display: flex;

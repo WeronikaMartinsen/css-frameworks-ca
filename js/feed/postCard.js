@@ -91,7 +91,7 @@ export function createPostCard(post, getProfile, includeButtons = true) {
 
   const authorElement = document.createElement("a");
   authorElement.classList.add("text-secondary", "mt-1", "text-bold");
-  authorElement.textContent = post.author?.name || ""; // Check if post.author exists before accessing properties
+  authorElement.textContent = post.author?.name || "";
   authorElement.href =
     "/profile/index.html?author=" + (post.author?.name || "");
 

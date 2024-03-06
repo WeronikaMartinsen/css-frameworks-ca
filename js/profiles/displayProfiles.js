@@ -52,19 +52,27 @@ export async function displayProfiles() {
   }
 
   function handlePrevClick() {
-    if (currentIndex >= getDisplayCount()) {
-      currentIndex -= getDisplayCount();
-      displayProfiles(currentIndex);
-      updateButtonsVisibility();
-    }
+    // Calculate the new currentIndex for the previous page
+    const newCurrentIndex = currentIndex - getDisplayCount();
+
+    // Make sure the new currentIndex is not less than 0
+    currentIndex = Math.max(0, newCurrentIndex);
+
+    // Display profiles and update buttons visibility
+    displayProfiles(currentIndex);
+    updateButtonsVisibility();
   }
 
   function handleNextClick() {
-    if (currentIndex + getDisplayCount() < profiles.length) {
-      currentIndex += getDisplayCount();
-      displayProfiles(currentIndex);
-      updateButtonsVisibility();
-    }
+    // Calculate the new currentIndex for the next page
+    const newCurrentIndex = currentIndex + getDisplayCount();
+
+    // Make sure the new currentIndex is within the valid range
+    currentIndex = Math.min(newCurrentIndex, profiles.length - 1);
+
+    // Display profiles and update buttons visibility
+    displayProfiles(currentIndex);
+    updateButtonsVisibility();
   }
 
   function displayProfiles(startIndex) {
@@ -101,11 +109,13 @@ export async function displayProfiles() {
   function getDisplayCount() {
     const screenWidth = window.innerWidth;
 
-    if (screenWidth < 430) {
-      return 3;
+    if (screenWidth < 400) {
+      return 2;
     } else if (screenWidth < 500) {
-      return 4;
+      return 3;
     } else if (screenWidth < 600) {
+      return 4;
+    } else if (screenWidth < 700) {
       return 5;
     } else if (screenWidth < 992) {
       return 6; // Display 5 profiles for medium screens
