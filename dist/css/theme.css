@@ -12090,7 +12090,7 @@ span {
 }
 
 .overlayConfirmDelate {
-  height: 13em;
+  height: 12em;
 }
 
 .buttons-confirm {
@@ -12127,12 +12127,18 @@ input:invalid + .feedback {
   transition: box-shadow 0.3s ease-in-out;
 }
 
+.rounded-image:hover,
+.rounded-image:active {
+  scale: 1.02;
+}
+
 .profile {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   padding-right: 1em;
+  cursor: pointer;
 }
 
 .profile-name {

@@ -141,28 +141,28 @@ export async function displayProfilePosts() {
           if (authorName === currentUser) {
             const editButton = document.createElement("button");
             editButton.classList.add(
-              "border-secondary",
-              "btn-light",
-              "btn",
+              "custom-shadow",
               "d-flex",
-              "align-items-center"
+              "align-items-center",
+              "btn",
+              "fa-solid",
+              "fa-pen-to-square"
             );
 
-            editButton.innerText = "Update Post";
             editButton.addEventListener("click", () => {
               window.location.href = `/feed/post/edit/index.html?id=${post.id}`;
             });
 
             const deleteButton = document.createElement("button");
             deleteButton.classList.add(
-              "border-secondary",
-              "btn-light",
+              "custom-shadow",
               "d-flex",
               "align-items-center",
-              "btn"
+              "btn",
+              "fa-solid",
+              "fa-trash"
             );
 
-            deleteButton.innerHTML = "Delete";
             deleteButton.setAttribute("id", post.id);
             deleteButton.addEventListener("click", () => {
               confirmDelatePost(
