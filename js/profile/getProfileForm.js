@@ -28,9 +28,11 @@ export async function getProfileForm() {
     const currentUserName = document.querySelector("#name");
     const currentUserEmail = document.querySelector("#email");
     const currentUserAvatar = document.querySelector("#avatar");
+    const currentUserAvatarInput = document.querySelector("#avatarInput");
 
     currentUserName.textContent = profile.name;
     currentUserEmail.textContent = profile.email;
+    currentUserAvatarInput.value = profile.avatar;
     currentUserAvatar.src = profile.avatar || "/images/avatar.png";
     currentUserAvatar.alt = "Profile picture of myself.";
 

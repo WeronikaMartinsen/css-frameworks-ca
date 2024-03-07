@@ -13,7 +13,20 @@ export function profileLink() {
 
 profileLink();
 
-export function mediaLink() {
+export function profileLinkMedia() {
+  const getProfileFromToken = load("profile");
+  const user = getProfileFromToken.userName;
+
+  const getProfileLinkMedia = document.querySelector("#profileMedia");
+
+  if (getProfileLinkMedia) {
+    getProfileLinkMedia.href = `/profile/update.html?author=${user}`;
+  }
+}
+
+profileLinkMedia();
+
+/* export function mediaLink() {
   const getProfileFromToken = load("profile");
   const user = getProfileFromToken.userName;
   const media = getProfileFromToken.mediaName;
@@ -36,3 +49,4 @@ function isValidUrl(url) {
     return false;
   }
 }
+ */
