@@ -23,21 +23,6 @@ $customHoverColor: $secondary;
 // Override Bootstrap variables
 $font-family-base: "Arimo", sans-serif;
 
-.btn {
-  &-light {
-    &:hover {
-      background-color: darken($light, 5%);
-      border-color: $secondary;
-    }
-  }
-  &-outline-secondary {
-    &:hover {
-      color: $light;
-      background-color: $light;
-    }
-  }
-}
-
 a {
   text-decoration: none;
   border: none;
@@ -129,8 +114,8 @@ span {
 }
 
 .profile-img {
-  width: 10em; /* 200px / 16px */
-  height: 10em; /* 200px / 16px */
+  width: 9em; /* 200px / 16px */
+  height: 9em; /* 200px / 16px */
   object-fit: cover;
 }
 

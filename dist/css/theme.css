@@ -11855,15 +11855,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.btn-light:hover {
-  background-color: #dfd5f9;
-  border-color: #9b72f2;
-}
-.btn-outline-secondary:hover {
-  color: #f0ebfc;
-  background-color: #f0ebfc;
-}
-
 a, a:hover {
   text-decoration: none;
   border: none;
@@ -11958,8 +11949,8 @@ span {
 }
 
 .profile-img {
-  width: 10em; /* 200px / 16px */
-  height: 10em; /* 200px / 16px */
+  width: 9em; /* 200px / 16px */
+  height: 9em; /* 200px / 16px */
   object-fit: cover;
 }
 
