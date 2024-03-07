@@ -13,7 +13,20 @@ export function profileLink() {
 
 profileLink();
 
-export function mediaLink() {
+export function profileLinkMedia() {
+  const getProfileFromToken = load("profile");
+  const user = getProfileFromToken.userName;
+
+  const getProfileLinkMedia = document.querySelector("#profileMedia");
+
+  if (getProfileLinkMedia) {
+    getProfileLinkMedia.href = `/profile/update.html?author=${user}`;
+  }
+}
+
+profileLinkMedia();
+
+/* export function mediaLink() {
   const getProfileFromToken = load("profile");
   const user = getProfileFromToken.userName;
   const media = getProfileFromToken.mediaName;
@@ -21,8 +34,19 @@ export function mediaLink() {
   const getMediaLink = document.querySelector("#media");
 
   if (getMediaLink) {
-    getMediaLink.href = `/profile/update.html?author=${user}&media=${media}`;
+    // Check if media is defined and a valid URL
+    const mediaUrl = media && isValidUrl(media) ? media : "";
+
+    getMediaLink.href = `/profile/update.html?author=${user}&media=${mediaUrl}`;
   }
 }
 
-mediaLink();
+function isValidUrl(url) {
+  try {
+    new URL(url);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+ */

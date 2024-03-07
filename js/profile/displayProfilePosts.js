@@ -43,7 +43,6 @@ export async function displayProfilePosts() {
 
           // Author
 
-          console.log(post);
           const avatarElement = document.createElement("img");
           avatarElement.classList.add("custom-avatar-size");
           avatarElement.classList.add("rounded-circle");
@@ -57,9 +56,6 @@ export async function displayProfilePosts() {
             // If not, set a default avatar or leave it empty
             avatarElement.src = "/images/avatar.png"; // replace with your default avatar path
           }
-          console.log("Avatar URL:", avatarElement.src);
-          console.log("Profile:", profile);
-          console.log("Avatar URL:", profile && profile.avatar);
 
           const authorElement = document.createElement("a");
           authorElement.textContent = authorName;
@@ -176,7 +172,11 @@ export async function displayProfilePosts() {
             });
 
             const btnContainer = document.createElement("div");
-            btnContainer.classList.add("d-flex", "gap-2", "justify-content-end");
+            btnContainer.classList.add(
+              "d-flex",
+              "gap-2",
+              "justify-content-end"
+            );
 
             const boxForContainer = document.createElement("div");
             boxForContainer.classList.add(
@@ -198,12 +198,7 @@ export async function displayProfilePosts() {
           postsContainer.appendChild(card);
         });
       } else {
-        console.error("Error fetching profile posts:", response.statusText);
       }
-    } else {
-      console.error("Author name not found in URL parameters.");
-      console.log("Author information not available or does not match.");
-      console.log("authorName:", authorName);
     }
   } catch (error) {
     console.error("Error fetching and displaying posts:", error);
