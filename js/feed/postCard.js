@@ -17,17 +17,12 @@ export function createPostCard(post, getProfile, includeButtons = true) {
     "d-flex",
     "align-item-center",
     "gap-2",
-    "w-100"
+    "w-100",
+    "mb-2"
   );
 
   const tagContainer = document.createElement("div");
-  tagContainer.classList.add(
-    "d-flex",
-    "justify-content-end",
-    "align-items-end",
-    "w-100",
-    "px-2"
-  );
+  tagContainer.classList.add("w-100", "px-2");
 
   // Loop through the tags array and create an element for each tag
   post.tags.forEach((tag, index) => {
@@ -49,7 +44,8 @@ export function createPostCard(post, getProfile, includeButtons = true) {
     "justify-content-start",
     "align-items-start",
     "flex-column",
-    "w-100"
+    "w-100",
+    "p-1"
   );
 
   const titleElement = document.createElement("a");
@@ -65,10 +61,10 @@ export function createPostCard(post, getProfile, includeButtons = true) {
   });
 
   const containerCardBody = document.createElement("div");
-  containerCardBody.classList.add("bodyContainer");
+  containerCardBody.classList.add("bodyContainer", "p-3");
 
   const cardBody = document.createElement("span");
-  cardBody.classList.add("px-2", "w-100");
+  cardBody.classList.add("w-100");
   cardBody.textContent = post.body;
 
   const mediaElement = document.createElement("img");
@@ -100,8 +96,8 @@ export function createPostCard(post, getProfile, includeButtons = true) {
   postID.textContent = post.id;
 
   const date = document.createElement("span");
-  date.classList.add("very-small");
-  date.classList.add("text-nowrap");
+  date.classList.add("very-small", "text-nowrap");
+
   const currentTime = new Date();
   const postCreationTime = new Date(post.created);
 
@@ -145,7 +141,7 @@ export function createPostCard(post, getProfile, includeButtons = true) {
 
     const deleteButton = document.createElement("i");
     deleteButton.className =
-      "d-flex align-items-center btn fa-solid fa-xmark text-primary custom-shadow";
+      "d-flex align-items-center btn fa-solid fa-trash text-primary custom-shadow";
     deleteButton.setAttribute("id", post.id);
     deleteButton.addEventListener("click", () => {
       confirmDelatePost("Are you sure you want to delete this post?", post.id);
