@@ -1,4 +1,5 @@
 import { API_BASE_URL, REGISTER } from "./constants.js";
+import { userFeedback } from "../global/functions/userFeedback.js";
 
 /**
  * Registers a new user by sending a POST request to the registration API endpoint.
@@ -25,10 +26,18 @@ export async function register(user) {
     const json = await response.json();
     const status = json.statusCode;
     if (response.ok) {
-      alert("You are register now! You can log in!");
-      window.location.href = "/index.html";
+      userFeedback(
+        "You have successfully registered now! Log in to enter the page.",
+        () => {
+          // Callback function to execute after the timeout
+          window.location.href = "/index.html";
+        }
+      );
     } else if (status === 400) {
-      alert("Your profile already exist.");
+      userFeedback("This profile already exist! Try again, please.", () => {
+        // Callback function to execute after the timeout
+        window.location.href = "/register/index.html";
+      });
     }
   } catch (error) {
     console.error(error);

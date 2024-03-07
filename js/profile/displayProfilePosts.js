@@ -127,7 +127,7 @@ export async function displayProfilePosts() {
 
           // Media
           const mediaElement = document.createElement("img");
-          mediaElement.classList.add("profile-card-img");
+          mediaElement.classList.add("profile-card-img", "custom-shadow");
           mediaElement.src = post.media
             ? post.media
             : "https://picsum.photos/id/18/2500/1667";

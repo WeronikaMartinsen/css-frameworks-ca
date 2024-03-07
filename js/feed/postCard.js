@@ -1,7 +1,7 @@
 import { confirmDelatePost } from "../global/feedbackConfirmDelete.js";
 
 export function createPostCard(post, getProfile, includeButtons = true) {
-  const card = document.createElement("div");
+  const card = document.createElement("a");
   card.classList.add("singlePost", "text-wrap");
 
   const boxForAuthorAndDate = document.createElement("div");
@@ -69,6 +69,14 @@ export function createPostCard(post, getProfile, includeButtons = true) {
 
   const mediaElement = document.createElement("img");
   mediaElement.classList.add("post-image");
+  mediaElement.href =
+    "/feed/singlePost.html?id=" +
+    post.id +
+    `author=` +
+    (post.author?.name || "");
+  mediaElement.addEventListener("click", () => {
+    window.location.href = mediaElement.href;
+  });
 
   // Check if post.media exists, if yes, set src to post.media; otherwise, set it to the default source
   mediaElement.src = post.media
@@ -78,7 +86,7 @@ export function createPostCard(post, getProfile, includeButtons = true) {
   mediaElement.classList.add("w-100", "mt-2");
 
   const avatarElement = document.createElement("img");
-  avatarElement.classList.add("custom-avatar-size");
+  avatarElement.classList.add("custom-avatar-size", "custom-shadow");
   avatarElement.src = post.author?.avatar
     ? post.author.avatar
     : "/images/avatar.png";

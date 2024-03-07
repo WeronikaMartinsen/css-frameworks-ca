@@ -1,5 +1,7 @@
-import { getUser } from "./login/loginForm.js";
 import { registerUser } from "./register/registerForm.js";
 
+import { setupInputValidation } from "./register/userMessage.js";
+
 registerUser();
-getUser();
+
+setupInputValidation();

@@ -88,7 +88,7 @@
               <div
                 class="feedback d-flex justify-content-center align-items-center p-1"
               >
-                <span class="very-small mx-2"
+                <span class="very-small mx-2 text-danger"
                   >* Name can only contain lower/ uppercase letter, numbers and
                   underscore.</span
                 >
@@ -106,7 +106,7 @@
                 placeholder="Email address"
                 class="form-control"
                 pattern="^[\w\-.]+@(stud.)?noroff.no$"
-                title="Email address must contains endpoint @stud.noroff.no or @noroff.no."
+                title="Only for Noroff users."
                 id="registerEmail"
                 required
               />
@@ -140,9 +140,12 @@
               <div
                 class="feedback d-flex justify-content-start align-items-center p-1"
               >
-                <span class="very-small mx-2"
-                  >* Password must contains at least 8 characters long.</span
-                >
+                <span class="very-small mx-2">* Min 8 characters long.</span>
+              </div>
+              <div
+                class="feedback d-flex justify-content-start align-items-center p-1"
+              >
+                <span class="very-small mx-2" id="passwordFeedback"></span>
               </div>
             </div>
 
@@ -173,7 +176,7 @@
       </div>
       <div class="col max-width-login">
         <div
-          class="d-flex justify-content-center align-items-center mt-3 w-100 gap-1 border bg-white rounded-4 p-3 very-small"
+          class="d-flex justify-content-center align-items-center mt-3 w-100 gap-1 border bg-white rounded-4 p-3"
         >
           <span>Already have an account?</span
           ><a
@@ -194,7 +197,7 @@
             <div class="d-flex flex-column">
               <button
                 type="button"
-                class="btn btn-light btn-sm border border-secondary shadow"
+                class="btn bg-white border custom-shadow btn-sm shadow"
               >
                 <i class="fa-brands fa-apple fa-lg text-primary"></i>
                 <span class="very-small">Download on the</span>
@@ -204,7 +207,7 @@
 
             <button
               type="button"
-              class="btn btn-light btn-sm border border-secondary shadow"
+              class="btn bg-white border custom-shadow btn-sm shadow"
             >
               <i class="fa-brands fa-google-play fa-lg text-primary"></i>
               <span class="very-small">Download on the</span>

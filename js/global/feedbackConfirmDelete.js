@@ -4,7 +4,7 @@ import { userFeedback } from "./functions/userFeedback.js";
 export function confirmDelatePost(message, postId) {
   console.log("confirm delete post called");
   const overlay = document.createElement("div");
-  overlay.classList.add("overlayConfirmDelate");
+  overlay.classList.add("overlayConfirmDelate", "border");
 
   const messageBox = document.createElement("div");
   messageBox.classList.add("messageBox");
@@ -20,14 +20,15 @@ export function confirmDelatePost(message, postId) {
 
   const deleteButton = document.createElement("i");
 
-  deleteButton.classList.add("d-flex");
-  deleteButton.classList.add("align-items-center");
-  deleteButton.classList.add("btn");
-  deleteButton.classList.add("fa-solid");
-  deleteButton.classList.add("d-flex");
-  deleteButton.classList.add("justify-content-end");
-  deleteButton.classList.add("align-item-end");
-  deleteButton.classList.add("fa-xmark");
+  deleteButton.classList.add(
+    "d-flex",
+    "align-items-center",
+    "btn",
+    "fa-solid",
+    "justify-content-end",
+    "align-item-end",
+    "fa-xmark"
+  );
 
   deleteButton.addEventListener("click", () => {
     document.body.removeChild(overlay);
@@ -38,8 +39,7 @@ export function confirmDelatePost(message, postId) {
 
   const yesBtn = document.createElement("button");
   yesBtn.textContent = "Delete";
-  yesBtn.classList.add("btn");
-  yesBtn.classList.add("btn-secondary");
+  yesBtn.classList.add("btn", "btn-secondary", "custom-shadow");
   yesBtn.addEventListener("click", async () => {
     try {
       await deletePost(postId);
@@ -51,8 +51,8 @@ export function confirmDelatePost(message, postId) {
   });
 
   const noBtn = document.createElement("button");
-  noBtn.classList.add("btn");
-  noBtn.classList.add("border-secondary");
+  noBtn.classList.add("btn", "border-secondary", "custom-shadow");
+
   noBtn.textContent = "Close";
   noBtn.addEventListener("click", () => {
     deletePost(false);
