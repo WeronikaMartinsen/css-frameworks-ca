@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           try {
             const response = await updateAvatar(newAvatarUrl, profileUsername);
             console.log("Avatar updated successfully:", response);
+            location.reload();
           } catch (error) {
             console.error("Error updating avatar:", error);
           }
