@@ -36,8 +36,6 @@ export function setupLoginValidation() {
       } else {
         inputElement.classList.remove("is-valid");
         inputElement.classList.add("is-invalid");
-        // You can choose to display the error message or handle it as needed.
-        // Example: document.getElementById("passwordFeedback").textContent = errorMessage;
       }
     }
   });
