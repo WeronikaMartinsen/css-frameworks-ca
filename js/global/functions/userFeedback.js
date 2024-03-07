@@ -1,6 +1,6 @@
 export function userFeedback(message, callback) {
   const overlay = document.createElement("div");
-  overlay.classList.add("overlayUserFeedback");
+  overlay.classList.add("overlayUserFeedback", "border");
 
   const messageBox = document.createElement("div");
   messageBox.classList.add("messageBox");

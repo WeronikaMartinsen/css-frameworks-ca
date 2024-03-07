@@ -11980,7 +11980,7 @@ span {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  max-width: 90em;
 }
 
 .custom-avatar-size {
@@ -12074,7 +12074,7 @@ span {
 
 .overlayUserFeedback,
 .overlayConfirmDelate {
-  background-color: #f0ebfc;
+  background-color: white;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -12086,7 +12086,8 @@ span {
   max-width: 35em;
   min-width: 20em;
   z-index: 1000;
-  border: 1px solid #9b72f2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .overlayConfirmDelate {
