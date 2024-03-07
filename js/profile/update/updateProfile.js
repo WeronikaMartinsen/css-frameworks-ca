@@ -1,5 +1,6 @@
 import { load } from "../../api/storeToken.js";
 import { API_BASE_URL, PROFILES, MEDIA } from "../../api/constants.js";
+import { toggleAvatarForm } from "./toggleAvatar.js";
 
 export async function updateAvatar(newAvatarUrl, authorName) {
   const token = load("token");
@@ -33,11 +34,30 @@ export async function updateAvatar(newAvatarUrl, authorName) {
     console.error("Error updating avatar:", error);
   }
 }
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM Content Loaded!");
-  const profileMediaButton = document.getElementById("profileMedia");
 
-  if (profileMediaButton) {
+document.addEventListener("DOMContentLoaded", async function () {
+  console.log("DOM Content Loaded!");
+
+  const profileMediaButton = document.getElementById("profileMedia");
+  const toggleAvatarFormButton = document.getElementById("toggleAvatarForm");
+
+  if (profileMediaButton && toggleAvatarFormButton) {
+    const currentUser = load("profile");
+
+    // Load the username from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const profileUsername = urlParams.get("author");
+
+    // Compare if the username from the profile and URL are the same
+    const isSameUser = currentUser.userName === profileUsername;
+
+    if (isSameUser) {
+      toggleAvatarFormButton.style.display = "inline-block"; // Show the button
+      toggleAvatarForm(); // Initialize the toggleAvatarForm functionality
+    } else {
+      toggleAvatarFormButton.style.display = "none"; // Hide the button
+    }
+
     profileMediaButton.addEventListener("click", async function (event) {
       event.preventDefault();
 
@@ -46,15 +66,12 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("Avatar Input Value:", avatarInput.value);
       const newAvatarUrl = avatarInput.value;
 
-      const urlParams = new URLSearchParams(window.location.search);
-      const authorName = urlParams.get("author");
-
-      if (authorName) {
+      if (isSameUser) {
         if (newAvatarUrl) {
           avatarImage.src = newAvatarUrl;
 
           try {
-            const response = await updateAvatar(newAvatarUrl, authorName);
+            const response = await updateAvatar(newAvatarUrl, profileUsername);
             console.log("Avatar updated successfully:", response);
           } catch (error) {
             console.error("Error updating avatar:", error);
@@ -63,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
           console.error("Avatar URL is required.");
         }
       } else {
-        console.error("Author name not found in URL parameters.");
+        console.error("You can only update your own avatar.");
       }
     });
   }

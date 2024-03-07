@@ -1,3 +1,5 @@
+import { toggleAvatarForm } from "./update/toggleAvatar.js";
+
 import { getProfileForm } from "./getProfileForm.js";
 
 import { logout } from "../api/logout.js";
@@ -13,6 +15,7 @@ import {
 } from "../global/functions/loader.js";
 import { updateAvatar } from "./update/updateProfile.js";
 
+toggleAvatarForm();
 getProfileForm();
 logout();
 displayProfilePosts();
