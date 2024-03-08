@@ -1,5 +1,6 @@
 import { API_BASE_URL, REGISTER } from "./constants.js";
 import { userFeedback } from "../global/functions/userFeedback.js";
+import { handleError } from "../global/functions/handleError.js";
 
 /**
  * Registers a new user by sending a POST request to the registration API endpoint.
@@ -40,6 +41,6 @@ export async function register(user) {
       });
     }
   } catch (error) {
-    console.error(error);
+    handleError("An unexpected error occurred. Please try again.");
   }
 }

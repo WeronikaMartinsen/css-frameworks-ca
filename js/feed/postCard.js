@@ -24,9 +24,9 @@ export function createPostCard(post, getProfile, includeButtons = true) {
   const tagContainer = document.createElement("div");
   tagContainer.classList.add("w-100", "px-2");
 
-  // Loop through the tags array and create an element for each tag
+  
   post.tags.forEach((tag, index) => {
-    // Add # before each tag
+  
     const tagWithHash = `#${tag}`;
 
     const tagElement = document.createElement("a");
@@ -34,7 +34,7 @@ export function createPostCard(post, getProfile, includeButtons = true) {
 
     tagElement.classList.add("p-1", "text-dark");
 
-    // Append the tag element to the container
+  
     tagContainer.appendChild(tagElement);
   });
 

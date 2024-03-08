@@ -7,6 +7,8 @@ import {
   hideLoadingIndicator,
 } from "../global/functions/loader.js";
 
+import { handleError } from "../global/functions/handleError.js";
+
 export async function getPosts() {
   const getPostsURL = API_BASE_URL + POSTS + `?_author=true`;
   const token = load("token");
@@ -27,7 +29,7 @@ export async function getPosts() {
       return posts;
     }
   } catch (error) {
-    console.error(error);
+    handleError("Error fecthing posts.");
   }
 }
 export async function getPost(id) {
@@ -47,6 +49,6 @@ export async function getPost(id) {
       return post;
     }
   } catch (error) {
-    console.error(error);
+    handleError("Error fetching post.");
   }
 }

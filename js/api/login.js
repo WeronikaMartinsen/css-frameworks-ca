@@ -1,9 +1,16 @@
 import { API_BASE_URL, LOGIN } from "./constants.js";
-
 import * as storage from "./storeToken.js";
+import { handleError } from "../global/functions/handleError.js";
 
+/**
+ * Logs in the user and stores the token and profile data.
+ * Redirects to the feed page upon successful login.
+ * @param {Object} user - The user object containing email and password.
+ * @throws {Error} Throws an error if login fails or if an unexpected error occurs.
+ */
 export async function login(user) {
   const loginURL = API_BASE_URL + LOGIN;
+
   try {
     const postData = {
       method: "POST",
@@ -12,23 +19,28 @@ export async function login(user) {
       },
       body: JSON.stringify(user),
     };
+
     const response = await fetch(loginURL, postData);
     const json = await response.json();
+
     if (response.ok) {
       storage.save("token", json.accessToken);
       storage.save("profile", {
         userName: json.name,
         userEmail: json.email,
+        userAvatar: json.avatar,
       });
 
       window.location.href = "feed/index.html";
     } else {
       const status = json.statusCode;
       if (status === 401) {
-        `Wrong email or password!`;
+        throw new Error("Wrong email or password!");
+      } else {
+        throw new Error(`Login failed with status ${status}.`);
       }
     }
   } catch (error) {
-    console.error(error);
+    handleError("An unexpected error occurred. Please try again.");
   }
 }
