@@ -26,9 +26,9 @@
   
   </head>
   <body class="container-fluid m-0 p-0 d-flex flex-column justify-content-center align-items-center">
-    <div class="container-fluid w-100">
+    <div class="container-fluid w-100 m-0 p-0">
 
-        <div class="container-fluid d-flex flex-column justify-content-center align-items-center mt-5">
+        <div class="container-fluid d-flex flex-column justify-content-center align-items-center m-0 p-0 mt-4">
           <header>
             <nav class="navbar fixed-top navbar-expand-sm bg-primary">
               <div class="container-fluid">
@@ -46,7 +46,7 @@
                           <i class="fa-solid fa-arrow-right-from-bracket text-center"></i>
                           <a class="nav-link text-center text-white px-2" href="#" id="logout">Log out</a></li>
                           <li class="nav-item">
-                            <a id="profile" href="/profile"> <img src="/images/avatar.png" alt="Profile image." class="stories-width-profile rounded-circle border border-white"></a>
+                            <a id="profile" href="/profile"> <img id="avatar-nav" src="/images/avatar.png" alt="Profile image." class="stories-width-profile rounded-circle border border-white avatar-img"></a>
                           </li>
                   </ul>
                 </div>
@@ -55,23 +55,32 @@
           </header>
       <!-- Page Content  -->
 
-      <main class="col-md-9 col-lg-10 d-flex flex-column justify-content-center align-items-center flex-grow-1 mt-1 w-100">
-              <div class="container-fluid d-flex justify-content-center align-items-center mt-5 w-100 gap-1">
+      <main class="col-md-9 col-lg-10 custom-shadow d-flex flex-column justify-content-center align-items-center flex-grow-1 mt-1 w-100">
+              <div class="container-fluid d-flex justify-content-center align-items-center mt-5 w-50 gap-1">
               
                 <div class="d-flex justify-content-center align-items-center flex-column">
                  <div class="d-flex flex-column"> 
                   <form id="updateProfileBtn">
                   <label for="avatar">
                 <div class="position-relative">
-                  <img id="avatar" class="rounded-circle custom-shadow profile-img border border-light m-2" src="/images/avatar.png" alt="Profile picture of myself.">
+                  <img id="avatar" class="rounded-circle custom-shadow profile-img border border-light m-2 avatar-img" src="/images/avatar.png" alt="Profile picture of the user.">
                 <button class="position-absolute bottom-0 end-0 btn border rounded-circle custom-shadow" id="toggleAvatarForm"><i class="fa-solid fa-camera text-primary"></i></button>
                 </div>
                 </div>
                 
-                <div id="avatarUploadForm" class="d-none d-flex flex-wrap justify-content-center align-items-center border overlayUserFeedback">
-                 <label for="avatar">Add/Change avatar:</label>
-                  <input class="border border-primary rounded-2 w-75" type="url" id="avatarInput" name="avatar">
-                  <a id="profileMedia" href="/profile" class="btn btn-secondary border border-primary" type="submit">Upload</a>
+                <div id="avatarUploadForm" class="d-none gap-2 p-2 d-flex flex-column border overlayUserFeedback custom-width-overlay-change-avatar">
+               
+               <div class="d-flex justify-content-end align-items-end">
+           
+                  <i id="close-btn"class="fa-solid fa-xmark text-primary"></i>
+                
+               </div>
+               <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                
+                <label for="avatar">Add/Change avatar:</label>
+                <input class="border border-primary rounded-2 w-100" type="url" id="avatarInput" name="avatar">
+                <a id="profileMedia" href="/profile" class="btn btn-secondary border border-primary" type="submit">Upload</a>
+               </div>
                 </div>
               
               </div>

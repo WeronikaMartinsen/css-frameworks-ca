@@ -81,7 +81,7 @@ export function createPostCard(post, getProfile, includeButtons = true) {
   // Check if post.media exists, if yes, set src to post.media; otherwise, set it to the default source
   mediaElement.src = post.media
     ? post.media
-    : "https://picsum.photos/id/18/2500/1667";
+    : "https://picsum.photos/id/12/2500/1667";
   mediaElement.alt = post.title;
   mediaElement.classList.add("w-100", "mt-2");
 
