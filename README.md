@@ -1,9 +1,11 @@
-# CSS Frameworks
+# JS2
+
+**Live:** [Netlify](https://precious-griffin-033237.netlify.app/)
 
 ## "Pack & Go"
 
-![Screenshot 2](images/readme.jpg)
-![Screenshot 1](images/readme2.jpg)
+![Screenshot 2](images/readme.png)
+![Screenshot 1](images/readme2.png)
 
 Pack & Go is a responsive web application built with Bootstrap and custom Sass, designed to help users plan and organize their travel itineraries efficiently.
 
@@ -29,7 +31,7 @@ To get started with this project, follow these steps:
 
 ```bash
 
-   git clone https://github.com/WeronikaMartinsen/css-frameworks-ca/tree/css-frameworks
+   git clone https://github.com/WeronikaMartinsen/css-frameworks-ca/tree/js2
 
 ```
 
