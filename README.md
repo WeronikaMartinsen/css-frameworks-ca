@@ -2,9 +2,8 @@
 
 ## "Pack & Go"
 
-![Screenshot 2](images/for-readme.1.jpg)
-![Screenshot 1](images/for-readme.jpg)
-![Screenshot 2](images/for.readme2.jpg)
+![Screenshot 2](images/readme.jpg)
+![Screenshot 1](images/readme2.jpg)
 
 Pack & Go is a responsive web application built with Bootstrap and custom Sass, designed to help users plan and organize their travel itineraries efficiently.
 
