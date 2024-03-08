@@ -44,10 +44,12 @@ export async function displayProfilePosts() {
           // Author
 
           const avatarElement = document.createElement("img");
-          avatarElement.classList.add("custom-avatar-size");
-          avatarElement.classList.add("rounded-circle");
-          avatarElement.classList.add("mr-2");
-          avatarElement.classList.add("m-2");
+          avatarElement.classList.add(
+            "custom-avatar-size",
+            "rounded-circle",
+            "mr-2",
+            "m-2"
+          );
 
           // Check if the profile object and avatar property exist
           if (profile && profile.avatar) {
@@ -78,8 +80,7 @@ export async function displayProfilePosts() {
           }
 
           const containerAvatar = document.createElement("div");
-          containerAvatar.classList.add("d-flex");
-          containerAvatar.classList.add("align-item-center");
+          containerAvatar.classList.add("d-flex", "align-items-center");
 
           const containerAuthorDate = document.createElement("div");
           containerAuthorDate.classList.add(
@@ -130,7 +131,7 @@ export async function displayProfilePosts() {
           mediaElement.classList.add("profile-card-img", "custom-shadow");
           mediaElement.src = post.media
             ? post.media
-            : "https://picsum.photos/id/18/2500/1667";
+            : "https://picsum.photos/id/64/4326/2884";
           mediaElement.alt = post.title;
           const mediaContainer = document.createElement("div");
           mediaContainer.classList.add("custom-width-profile-media-cont");

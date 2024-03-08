@@ -2,6 +2,7 @@ import { editPost } from "./editPost.js";
 import { id } from "../api/constants.js";
 import { getPost } from "./get.js";
 import { userFeedback } from "../global/functions/userFeedback.js";
+import { handleError } from "../global/functions/handleError.js";
 /**
  * Updates the post form with values from the specified post ID.
  * Submits the updated post when the form is submitted.
@@ -41,6 +42,6 @@ export async function updatePostForm() {
       });
     }
   } catch (error) {
-    console.error(error);
+    handleError("Error updating post. Please, try again.");
   }
 }

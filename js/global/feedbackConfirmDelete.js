@@ -1,5 +1,6 @@
 import { deletePost } from "../feed/deletePost.js";
 import { userFeedback } from "./functions/userFeedback.js";
+import { handleError } from "./functions/handleError.js";
 
 export function confirmDelatePost(message, postId) {
   console.log("confirm delete post called");
@@ -47,7 +48,9 @@ export function confirmDelatePost(message, postId) {
       userFeedback("Your post has been successfully deleted!", async () => {
         location.reload();
       });
-    } catch (error) {}
+    } catch (error) {
+      handleError("Error delating post.");
+    }
   });
 
   const noBtn = document.createElement("button");

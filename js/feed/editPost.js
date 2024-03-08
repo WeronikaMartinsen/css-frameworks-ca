@@ -4,6 +4,8 @@ import { id } from "../api/constants.js";
 
 import { load } from "../api/storeToken.js";
 
+import { handleError } from "../global/functions/handleError.js";
+
 export async function editPost(editedPost) {
   const token = load("token");
   if (!id) {
@@ -25,6 +27,6 @@ export async function editPost(editedPost) {
       return editResult;
     }
   } catch (error) {
-    console.error(error);
+    handleError("Error editing post. Please try again.");
   }
 }
