@@ -12090,6 +12090,12 @@ span {
   transition: box-shadow 0.3s ease-in-out;
 }
 
+.custom-width-overlay-change-avatar {
+  min-height: 10em;
+  max-width: 40em;
+  min-width: 18em;
+}
+
 .overlayConfirmDelate {
   height: 12em;
 }

@@ -1,6 +1,7 @@
 export function toggleAvatarForm() {
   document.addEventListener("DOMContentLoaded", function () {
     const toggleAvatarFormButton = document.getElementById("toggleAvatarForm");
+    const closeBtn = document.getElementById("close-btn");
 
     const avatarForm = document.getElementById("avatarUploadForm");
 
@@ -14,6 +15,12 @@ export function toggleAvatarForm() {
       } else {
         console.log("avatarForm is null");
       }
+    });
+
+    closeBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      avatarForm.classList.toggle("d-none");
     });
   });
 }

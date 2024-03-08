@@ -63,12 +63,15 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const avatarInput = document.getElementById("avatarInput");
       const avatarImage = document.getElementById("avatar");
+      const avatarImageNav = document.getElementById("avatar-nav");
+
       console.log("Avatar Input Value:", avatarInput.value);
       const newAvatarUrl = avatarInput.value;
 
       if (isSameUser) {
         if (newAvatarUrl) {
           avatarImage.src = newAvatarUrl;
+          avatarImageNav.src = newAvatarUrl;
 
           try {
             const response = await updateAvatar(newAvatarUrl, profileUsername);
