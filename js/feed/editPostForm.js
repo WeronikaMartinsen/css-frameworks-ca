@@ -3,6 +3,7 @@ import { id } from "../api/constants.js";
 import { getPost } from "./get.js";
 import { userFeedback } from "../global/functions/userFeedback.js";
 import { handleError } from "../global/functions/handleError.js";
+
 /**
  * Updates the post form with values from the specified post ID.
  * Submits the updated post when the form is submitted.
@@ -42,6 +43,10 @@ export async function updatePostForm() {
       });
     }
   } catch (error) {
-    handleError("Error updating post. Please, try again.");
+    handleError("Error editing post.");
+    userFeedback("Something went wrong. Please, try again.", () => {
+      // Callback function to execute after the timeout
+      location.reload();
+    });
   }
 }

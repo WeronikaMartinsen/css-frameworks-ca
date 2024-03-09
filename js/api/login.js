@@ -1,6 +1,7 @@
 import { API_BASE_URL, LOGIN } from "./constants.js";
 import * as storage from "./storeToken.js";
 import { handleError } from "../global/functions/handleError.js";
+import { userFeedback } from "../global/functions/userFeedback.js";
 
 /**
  * Logs in the user and stores the token and profile data.
@@ -34,6 +35,13 @@ export async function login(user) {
     } else {
       const status = json.statusCode;
       if (status === 401) {
+        userFeedback(
+          "Login failed. Please check your email and password.",
+          () => {
+            // Callback function to execute after the timeout
+            location.reload();
+          }
+        );
         throw new Error("Wrong email or password!");
       } else {
         throw new Error(`Login failed with status ${status}.`);
@@ -41,5 +49,9 @@ export async function login(user) {
     }
   } catch (error) {
     handleError("An unexpected error occurred. Please try again.");
+    userFeedback("Login failed. Please check your email and password.", () => {
+      // Callback function to execute after the timeout
+      location.reload();
+    });
   }
 }

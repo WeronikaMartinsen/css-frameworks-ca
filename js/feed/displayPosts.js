@@ -1,6 +1,8 @@
 import { getPosts } from "./get.js";
 import { load } from "../api/storeToken.js";
 import { createPostCard } from "./postCard.js";
+import { handleError } from "../global/functions/handleError.js";
+import { userFeedback } from "../global/functions/userFeedback.js";
 
 const POSTS_PER_PAGE = 10;
 
@@ -24,7 +26,6 @@ export async function displayPosts() {
     let currentPage = 1;
 
     filterOptionOne.addEventListener("click", function () {
-
       const sortedPosts = [...allPosts].sort(
         (a, b) => new Date(b.created) - new Date(a.created)
       );
@@ -32,7 +33,6 @@ export async function displayPosts() {
     });
 
     filterOptionTwo.addEventListener("click", function () {
- 
       const sortedPosts = [...allPosts].sort(
         (a, b) => new Date(a.created) - new Date(b.created)
       );
@@ -40,13 +40,11 @@ export async function displayPosts() {
     });
 
     filterOptionThree.addEventListener("click", function () {
-
       const mediaPosts = allPosts.filter((post) => post.media);
       displayFilteredPosts(mediaPosts, getProfile, postsContainer);
     });
 
     filterOptionFour.addEventListener("click", function () {
-     
       displayFilteredPosts(allPosts, getProfile, postsContainer);
     });
 
@@ -82,7 +80,11 @@ export async function displayPosts() {
       postsContainer
     );
   } catch (error) {
-    console.error("Error fetching and displaying posts:", error);
+    handleError("Error fetching and displaying posts");
+    userFeedback("Something went wrong. Please, try again.", () => {
+      // Callback function to execute after the timeout
+      location.reload();
+    });
   }
 }
 

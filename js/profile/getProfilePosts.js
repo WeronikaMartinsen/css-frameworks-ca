@@ -10,6 +10,8 @@ import {
   delay,
 } from "../global/functions/loader.js";
 
+import { handleError } from "../global/functions/handleError.js";
+
 export async function getProfilePosts() {
   const getProfilePostsURL = `${API_BASE_URL}${PROFILES}/${authorName}${POSTS}`;
   const token = load("token");
@@ -30,6 +32,6 @@ export async function getProfilePosts() {
       return posts;
     }
   } catch (error) {
-    console.error("Error fetching profile posts:", error);
+    handleError("Error fetching users posts.");
   }
 }

@@ -4,6 +4,8 @@ import { load } from "../api/storeToken.js";
 
 import { handleError } from "../global/functions/handleError.js";
 
+import { userFeedback } from "../global/functions/userFeedback.js";
+
 /**
  * Creates a new post.
  *
@@ -36,5 +38,9 @@ export async function createPost(newPost) {
     }
   } catch (error) {
     handleError("Error adding post. Please try again.");
+    userFeedback("Something went wrong. Please, try again.", () => {
+      // Callback function to execute after the timeout
+      location.reload();
+    });
   }
 }

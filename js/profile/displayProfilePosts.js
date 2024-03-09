@@ -2,6 +2,8 @@ import { API_BASE_URL, POSTS, PROFILES } from "../api/constants.js";
 import { load } from "../api/storeToken.js";
 import { getProfileForm } from "./getProfileForm.js";
 import { confirmDelatePost } from "../global/feedbackConfirmDelete.js";
+import { handleError } from "../global/functions/handleError.js";
+import { userFeedback } from "../global/functions/userFeedback.js";
 
 /**
  * Fetches and displays posts for a specific user profile.
@@ -23,7 +25,6 @@ export async function displayProfilePosts() {
       const token = load("token");
       const currentUser = load("profile").userName;
 
-      console.log("Fetching profile posts for author:", authorName);
       const response = await fetch(getProfilePostsURL, {
         headers: {
           "Content-Type": "application/json",
@@ -33,7 +34,6 @@ export async function displayProfilePosts() {
 
       if (response.ok) {
         const posts = await response.json();
-        console.log("Fetched posts:", posts);
 
         const postsContainer = document.querySelector(".user-posts");
 
@@ -198,10 +198,16 @@ export async function displayProfilePosts() {
           // Append the card to postsContainer
           postsContainer.appendChild(card);
         });
-      } else {
       }
     }
   } catch (error) {
-    console.error("Error fetching and displaying posts:", error);
+    handleError("Error fetching users posts.");
+    userFeedback(
+      "An unexpected error occurred. Please try again later.",
+      () => {
+        // Callback function to execute after the timeout
+        location.reload();
+      }
+    );
   }
 }
