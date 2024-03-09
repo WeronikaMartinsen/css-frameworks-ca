@@ -1,4 +1,5 @@
 import { getProfile } from "./getProfile.js";
+import { handleError } from "../global/functions/handleError.js";
 
 /**
  * Retrieves user profile information and updates the corresponding form elements.
@@ -38,6 +39,6 @@ export async function getProfileForm() {
 
     return profile;
   } catch (error) {
-    console.error(error);
+    handleError("Error getting user information.");
   }
 }

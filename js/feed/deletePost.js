@@ -2,6 +2,10 @@ import { API_BASE_URL, POSTS } from "../api/constants.js";
 
 import { load } from "../api/storeToken.js";
 
+import { handleError } from "../global/functions/handleError.js";
+
+import { userFeedback } from "../global/functions/userFeedback.js";
+
 export async function deletePost(id) {
   const token = load("token");
   try {
@@ -21,6 +25,10 @@ export async function deletePost(id) {
       return result;
     }
   } catch (error) {
-    console.error(error);
+    handleError("Error when trying to delate post");
+    userFeedback("Something went wrong. Please, try again.", () => {
+      // Callback function to execute after the timeout
+      location.reload();
+    });
   }
 }

@@ -6,6 +6,8 @@ import { load } from "../api/storeToken.js";
 
 import { handleError } from "../global/functions/handleError.js";
 
+import { userFeedback } from "../global/functions/userFeedback.js";
+
 export async function editPost(editedPost) {
   const token = load("token");
   if (!id) {
@@ -27,6 +29,10 @@ export async function editPost(editedPost) {
       return editResult;
     }
   } catch (error) {
-    handleError("Error editing post. Please try again.");
+    handleError("Error editing post.");
+    userFeedback("Your post could`not be updated. Please, try again.", () => {
+      // Callback function to execute after the timeout
+      location.reload();
+    });
   }
 }

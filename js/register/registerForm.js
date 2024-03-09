@@ -1,10 +1,12 @@
 import { register } from "../api/register.js";
+import { handleError } from "../global/functions/handleError.js";
+import { userFeedback } from "../global/functions/userFeedback.js";
 
 export function registerUser() {
   const getForm = document.querySelector("#registerForm");
 
   if (getForm) {
-    getForm.addEventListener("submit", (event) => {
+    getForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       const form = event.target;
 
@@ -18,7 +20,18 @@ export function registerUser() {
         password,
       };
 
-      register(user);
+      try {
+        await register(user);
+      } catch (error) {
+        handleError("An unexpected error occurred.");
+        userFeedback(
+          "Registration failed. Please check your email and password.",
+          () => {
+            // Callback function to execute after the timeout
+            location.reload();
+          }
+        );
+      }
     });
   }
 }

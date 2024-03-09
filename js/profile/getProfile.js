@@ -2,6 +2,8 @@ import { load } from "../api/storeToken.js";
 
 import { API_BASE_URL, PROFILES, authorName } from "../api/constants.js";
 
+import { handleError } from "../global/functions/handleError.js";
+
 export async function getProfile() {
   const getProfileURL = `${API_BASE_URL}${PROFILES}/${authorName}`;
   const token = load("token");
@@ -21,6 +23,6 @@ export async function getProfile() {
       return currentUser;
     }
   } catch (error) {
-    console.error(error);
+    handleError("Error fetching users posts.");
   }
 }

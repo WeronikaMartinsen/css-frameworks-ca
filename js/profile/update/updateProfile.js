@@ -9,7 +9,6 @@ export async function updateAvatar(newAvatarUrl, authorName) {
   const updateProfileURL = `${API_BASE_URL}${PROFILES}/${user.userName}${MEDIA}`;
 
   try {
-    console.log("New Avatar URL:", newAvatarUrl);
     const requestBody = {
       avatar: newAvatarUrl,
     };
@@ -25,37 +24,31 @@ export async function updateAvatar(newAvatarUrl, authorName) {
 
     const result = await response.json();
 
-    if (response.ok) {
-      return result;
-    } else {
+    if (!response.ok) {
       console.error("Error updating avatar. Server response:", result);
     }
+
+    return result;
   } catch (error) {
     console.error("Error updating avatar:", error);
   }
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
-  console.log("DOM Content Loaded!");
-
   const profileMediaButton = document.getElementById("profileMedia");
   const toggleAvatarFormButton = document.getElementById("toggleAvatarForm");
 
   if (profileMediaButton && toggleAvatarFormButton) {
     const currentUser = load("profile");
-
-    // Load the username from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const profileUsername = urlParams.get("author");
-
-    // Compare if the username from the profile and URL are the same
     const isSameUser = currentUser.userName === profileUsername;
 
     if (isSameUser) {
-      toggleAvatarFormButton.style.display = "inline-block"; // Show the button
-      toggleAvatarForm(); // Initialize the toggleAvatarForm functionality
+      toggleAvatarFormButton.style.display = "inline-block";
+      toggleAvatarForm();
     } else {
-      toggleAvatarFormButton.style.display = "none"; // Hide the button
+      toggleAvatarFormButton.style.display = "none";
     }
 
     profileMediaButton.addEventListener("click", async function (event) {
@@ -73,8 +66,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           avatarImageNav.src = newAvatarUrl;
 
           try {
-            const response = await updateAvatar(newAvatarUrl, profileUsername);
-            console.log("Avatar updated successfully:", response);
+            await updateAvatar(newAvatarUrl, profileUsername);
             location.reload();
           } catch (error) {
             console.error("Error updating avatar:", error);
