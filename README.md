@@ -1,6 +1,7 @@
 # JS2
 
 **Live:** [Netlify](https://precious-griffin-033237.netlify.app/)
+**Trello:** [Trello Board](https://trello.com/invite/b/c1df1xWK/ATTIc8e53917b18c070fd7456fabe3b1c8d522B3FA2C/java-script-2)
 
 ## "Pack & Go"
 
