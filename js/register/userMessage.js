@@ -12,8 +12,8 @@ export function setupInputValidation() {
     nameInput.addEventListener("input", function () {
       validateInput(
         nameInput,
-        /^[\w]+$/,
-        "Name can only contain letters, numbers, and underscores."
+        /^[\w\s]{2,}$/, // Allow letters, numbers, underscores, and spaces, and at least 2 characters long
+        "Name can only contain letters, numbers, and underscores. At least 2 characters long."
       );
     });
 
