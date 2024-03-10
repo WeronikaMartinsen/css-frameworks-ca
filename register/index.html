@@ -74,21 +74,17 @@
                 type="text"
                 for="name"
                 placeholder="Name"
+                minlength="2"
                 class="form-control"
                 pattern="^[\w]+$"
                 id="registerName"
-                title="Must only contain lower/ uppercase letter, numbers and
+                title="Name can only contain lower/ uppercase letter, numbers and
                 underscore. Example: User_Name123"
                 required
               />
               <div
                 class="feedback d-flex justify-content-center align-items-center p-1"
-              >
-                <span class="very-small mx-2 text-danger"
-                  >* Name can only contain lower/ uppercase letter, numbers and
-                  underscore.</span
-                >
-              </div>
+              ></div>
             </div>
 
             <!-- Email Input -->
@@ -102,18 +98,14 @@
                 placeholder="Email address"
                 class="form-control"
                 pattern="^[\w\-.]+@(stud.)?noroff.no$"
-                title="Only for Noroff users."
+                title="Email address must contains endpoint @stud.noroff.no or
+                @noroff.no."
                 id="registerEmail"
                 required
               />
               <div
                 class="feedback d-flex justify-content-center align-items-center p-1"
-              >
-                <span class="very-small mx-2"
-                  >* Email address must contains endpoint @stud.noroff.no or
-                  @noroff.no.</span
-                >
-              </div>
+              ></div>
             </div>
 
             <!-- Password Input -->
@@ -135,9 +127,7 @@
               />
               <div
                 class="feedback d-flex justify-content-start align-items-center p-1"
-              >
-                <span class="very-small mx-2">* Min 8 characters long.</span>
-              </div>
+              ></div>
               <div
                 class="feedback d-flex justify-content-start align-items-center p-1"
               >
