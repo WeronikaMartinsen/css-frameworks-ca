@@ -19,6 +19,9 @@
     width: 9em;
     height: 9em;
   }
+  .custom-size {
+    font-size: 1.3em;
+  }
 }
 
 @media (max-width: 400px) {
