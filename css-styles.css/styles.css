@@ -23,7 +23,7 @@
 
 @media (max-width: 400px) {
   .profile-img {
-    width: 7em;
-    height: 7em;
+    width: 5em;
+    height: 5em;
   }
 }

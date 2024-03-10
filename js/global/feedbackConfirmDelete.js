@@ -3,7 +3,6 @@ import { userFeedback } from "./functions/userFeedback.js";
 import { handleError } from "./functions/handleError.js";
 
 export function confirmDelatePost(message, postId) {
-  console.log("confirm delete post called");
   const overlay = document.createElement("div");
   overlay.classList.add("overlayConfirmDelate", "border");
 

@@ -2,6 +2,11 @@ import { register } from "../api/register.js";
 import { handleError } from "../global/functions/handleError.js";
 import { userFeedback } from "../global/functions/userFeedback.js";
 
+/**
+ * Event listener for the form submission.
+ * @param {Event} event - The form submission event.
+ */
+
 export function registerUser() {
   const getForm = document.querySelector("#registerForm");
 
