@@ -1,20 +1,25 @@
-# CSS Frameworks
+# JS2
+
+**Live:** [Netlify](https://precious-griffin-033237.netlify.app/)
+**Trello:** [Trello Board](https://trello.com/invite/b/c1df1xWK/ATTIc8e53917b18c070fd7456fabe3b1c8d522B3FA2C/java-script-2)
 
 ## "Pack & Go"
 
-![Screenshot 2](images/for-readme.1.jpg)
-![Screenshot 1](images/for-readme.jpg)
-![Screenshot 2](images/for.readme2.jpg)
+![Screenshot 2](images/readme.png)
+![Screenshot 1](images/readme2.png)
 
-Pack & Go is a responsive web application built with Bootstrap and custom Sass, designed to help users plan and organize their travel itineraries efficiently.
+Welcome to my dynamic and interactive social media front-end project! 🌐📱 Built with pure JavaScript, this application provides a seamless user experience for a variety of social interactions. Register, login, and dive into a world of posts where you can view, create, edit, and delete content. The sleek and responsive design ensures an enjoyable experience, with features like content filtering and searching to make your exploration even smoother.
 
 ## Features
 
 - **User-Friendly Interface:**
+- **User Registration & Login:**
 - **Bootstrap Integration:**
 - **Custom Sass Styles:**
 - **HTML Structure:**
 - **JavaScript Functionality:**
+- **Post Feed Viewing & Filtering:**
+- **Post Creation, Editing & Deletion:**
 
 ## Getting Started
 
@@ -30,7 +35,7 @@ To get started with this project, follow these steps:
 
 ```bash
 
-   git clone https://github.com/WeronikaMartinsen/css-frameworks-ca/tree/css-frameworks
+   git clone https://github.com/WeronikaMartinsen/css-frameworks-ca/tree/js2
 
 ```
 

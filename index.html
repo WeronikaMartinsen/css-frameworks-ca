@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Embark on a journey of wanderlust with Pack & Go, your passport to a world of captivating travel tales, stunning destinations, and unforgettable experiences. Join a vibrant community of globetrotters, share your adventures, and discover inspiration for your next voyage. Let's explore the world together, one post at a time. #TravelDreams #AdventureAwaits #ExploreTheWorld"
+      content="Access the heart of JS Dialog Student Community with our Login Page. Seamlessly enter the realm of social connectivity, explore engaging content, and stay connected with the vibrant community. Login now and be part of the digital experience!"
     />
-    <title>Pack & Go | Authorization</title>
-    <link
-      rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
+    <title>JS Student Dialog | Log in</title>
+
     <link rel="stylesheet" type="text/css" href="dist/css/theme.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,7 +36,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script defer src="js/validation.js"></script>
+    <script src="js/login/index.js" defer type="module"></script>
   </head>
 
   <body
@@ -57,39 +54,32 @@
       />
     </main>
 
-    <!-----------------------------Right Container--------------------------------->
+    <!-----------------------------Right Container (LOGIN)--------------------------------->
 
     <div
       class="d-flex justify-content-center align-items-center flex-column z-3 col-sm-12 col-md-6 mt-5 w-100"
     >
       <div
-        class="custom-login-box col w-100 rounded-4 d-flex justify-content-center align-items-center flex-column p-4 bg-white rounded-4 border mt-4"
+        class="custom-login-box custom-shadow col w-100 rounded-4 d-flex justify-content-center align-items-center flex-column p-4 bg-white rounded-4 border mt-4"
       >
         <h1 class="fs-2">Log in</h1>
         <div class="mb-3 w-100">
-          <form
-            action="/profile/index.html"
-            method="GET"
-            id="loginForm"
-            class="needs-validation"
-            novalidate
-          >
-            <!-- Email Address Input -->
+          <form id="loginForm">
+            <!-- Email Input -->
+
             <div class="mb-2">
-              <label for="validationServer01" class="form-label invisible"
-                >Email</label
-              >
+              <label for="email" class="form-label invisible">Email</label>
               <input
-                type="email"
+                name="email"
+                type="text"
+                for="email"
                 placeholder="Email address"
                 class="form-control"
-                id="validationServer01"
+                pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                title="Email address must contains endpoint @stud.noroff.no or @noroff.no."
+                id="loginEmail"
                 required
               />
-              <div class="valid-feedback"><span>Looks good!</span></div>
-              <div class="invalid-feedback">
-                <span>Please enter a valid email address.</span>
-              </div>
             </div>
 
             <!-- Password Input -->
@@ -98,39 +88,24 @@
                 >Password</label
               >
               <input
+                name="password"
                 type="password"
-                class="form-control"
-                id="password"
+                id="loginPassword"
+                for="password"
                 placeholder="Password"
-                pattern=".{8,}"
+                autocomplete="current-password"
+                class="form-control"
+                minlength="8"
                 title="Password must be at least 8 characters long."
                 required
               />
-              <div class="invalid-feedback">
-                Password must be at least 8 characters long.
-              </div>
-            </div>
-
-            <!-- Save Account Checkbox -->
-            <div class="mb-3 form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-              />
-              <label
-                class="form-check-label text-black-50 very-small px-1"
-                for="flexCheckDefault"
-              >
-                Save your account.
-              </label>
             </div>
 
             <!-- Submit Button -->
             <button
               class="btn btn-block w-100 btn-secondary mt-3"
               type="submit"
+              id="loginBtn"
             >
               Log in
             </button>
@@ -156,10 +131,12 @@
       </div>
       <div class="col max-width-login">
         <div
-          class="d-flex justify-content-center align-items-center mt-3 w-100 gap-1 border bg-white rounded-4 p-3 very-small"
+          class="d-flex justify-content-center align-items-center mt-3 w-100 gap-1 border bg-white rounded-4 p-3"
         >
           <span>Don`t have an account?</span
-          ><a class="text-secondary text-decoration-underline" href="#"
+          ><a
+            class="text-secondary text-decoration-underline"
+            href="register/index.html"
             >Register here</a
           >
         </div>
@@ -175,9 +152,9 @@
             <div class="d-flex flex-column">
               <button
                 type="button"
-                class="btn btn-light btn-sm border border-secondary shadow"
+                class="btn border custom-shadow btn-sm border bg-white shadow"
               >
-                <i class="fa-brands fa-apple fa-lg"></i>
+                <i class="fa-brands fa-apple fa-lg text-primary"></i>
                 <span class="very-small">Download on the</span>
                 <span class="d-block">App Store</span>
               </button>
@@ -185,9 +162,9 @@
 
             <button
               type="button"
-              class="btn btn-light btn-sm border border-secondary shadow"
+              class="btn border custom-shadow btn-sm border bg-white shadow"
             >
-              <i class="fa-brands fa-google-play fa-lg"></i>
+              <i class="fa-brands fa-google-play fa-lg text-primary"></i>
               <span class="very-small">Download on the</span>
               <span class="d-block">Google Play</span>
             </button>
@@ -196,7 +173,9 @@
       </div>
     </div>
 
-    <footer class="container-fluid d-flex flex-column bg-light text-center z-3">
+    <footer
+      class="container-fluid d-flex flex-column bg-primary text-white text-center z-3"
+    >
       <!-- Grid container -->
       <div class="p-4">
         <!-- Section: Social media -->
@@ -310,16 +289,16 @@
 
               <ul class="list-unstyled mb-0">
                 <li>
-                  <a class="text-body" href="#">Destinations</a>
+                  <a class="text-white" href="#">Destinations</a>
                 </li>
                 <li>
-                  <a class="text-body" href="#">Travel Stories</a>
+                  <a class="text-white" href="#">Travel Stories</a>
                 </li>
                 <li>
-                  <a class="text-body" href="#">Culture</a>
+                  <a class="text-white" href="#">Culture</a>
                 </li>
                 <li>
-                  <a class="text-body" href="#">Events</a>
+                  <a class="text-white" href="#">Events</a>
                 </li>
               </ul>
             </div>
@@ -331,16 +310,16 @@
 
               <ul class="list-unstyled mb-0">
                 <li>
-                  <a class="text-body" href="#">Guides</a>
+                  <a class="text-white" href="#">Guides</a>
                 </li>
                 <li>
-                  <a class="text-body" href="#">Groups</a>
+                  <a class="text-white" href="#">Groups</a>
                 </li>
                 <li>
-                  <a class="text-body" href="#">Partners</a>
+                  <a class="text-white" href="#">Partners</a>
                 </li>
                 <li>
-                  <a class="text-body" href="#">Sponsors</a>
+                  <a class="text-white" href="#">Sponsors</a>
                 </li>
               </ul>
             </div>
@@ -352,16 +331,16 @@
 
               <ul class="list-unstyled mb-0">
                 <li>
-                  <a class="text-body" href="#">Plans</a>
+                  <a class="text-white" href="#">Plans</a>
                 </li>
                 <li>
-                  <a class="text-body" href="#">Experience</a>
+                  <a class="text-white" href="#">Experience</a>
                 </li>
                 <li>
-                  <a class="text-body" href="#">Pictures</a>
+                  <a class="text-white" href="#">Pictures</a>
                 </li>
                 <li>
-                  <a class="text-body" href="#">Opinions</a>
+                  <a class="text-white" href="#">Opinions</a>
                 </li>
               </ul>
             </div>
@@ -372,16 +351,16 @@
               <h2 class="text-uppercase fs-5">Plan</h2>
               <ul class="list-unstyled mb-0">
                 <li>
-                  <a class="text-body" href="#">Hotels</a>
+                  <a class="text-white" href="#">Hotels</a>
                 </li>
                 <li>
-                  <a class="text-body" href="#">Flights</a>
+                  <a class="text-white" href="#">Flights</a>
                 </li>
                 <li>
-                  <a class="text-body" href="#">Booking</a>
+                  <a class="text-white" href="#">Booking</a>
                 </li>
                 <li>
-                  <a class="text-body" href="#">Last Minute</a>
+                  <a class="text-white" href="#">Last Minute</a>
                 </li>
               </ul>
             </div>

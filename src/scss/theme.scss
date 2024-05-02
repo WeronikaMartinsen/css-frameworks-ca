@@ -1,9 +1,10 @@
-$primary: #87ceeb;
-$secondary: #0da6a6;
-$info: #eee0df;
+$primary: #030438;
+$secondary: #9b72f2;
+$info: #d6c8f3;
 $btn-dark: #223240;
 $dark: #333333;
-$i: #333333;
+$light: #1ffbf5;
+$i: #ffffff;
 $customHoverColor: $secondary;
 
 // Configuration
@@ -19,56 +20,8 @@ $customHoverColor: $secondary;
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "buttons";
 
-// Override Bootstrap button styles
-@font-face {
-  font-family: "Arimo";
-  src: url("path/to/arimo.woff2") format("woff2"),
-    url("path/to/arimo.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Edu TAS Beginner";
-  src: url("path/to/edu-tas-beginner.woff2") format("woff2"),
-    url("path/to/edu-tas-beginner.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url("path/to/montserrat.woff2") format("woff2"),
-    url("path/to/montserrat.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Open Sans";
-  src: url("path/to/open-sans.woff2") format("woff2"),
-    url("path/to/open-sans.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 // Override Bootstrap variables
 $font-family-base: "Arimo", sans-serif;
-
-.btn {
-  &-light {
-    &:hover {
-      background-color: darken($light, 5%);
-      border-color: $secondary;
-    }
-  }
-  &-outline-secondary {
-    &:hover {
-      color: $light;
-      background-color: $light;
-    }
-  }
-}
 
 a {
   text-decoration: none;
@@ -124,6 +77,26 @@ span {
   height: 100vh;
 }
 
+#loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid $secondary;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Profile Page */
 
 .mt-custom {
@@ -141,8 +114,10 @@ span {
 }
 
 .profile-img {
-  width: 12.5em; /* 200px / 16px */
-  height: 12.5em; /* 200px / 16px */
+  height: 13em;
+  width: 13em;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .stories-width {
@@ -155,25 +130,71 @@ span {
   width: 1.875em; /* 30px / 16px */
 }
 
-#sidebar {
-  min-width: 13.75em; /* 220px / 16px */
-  max-width: 13.75em; /* 220px / 16px */
-  transition: all 0.3s;
-}
-
 .custom-height {
   height: 3.125em; /* 50px / 16px */
 }
 
-/* CONTENT STYLE */
+/* Feed */
 
-#content {
-  width: 100%;
-  min-height: 100vh;
-  transition: all 0.3s;
+.post-image {
+  max-height: 20em;
+  border-radius: 0 0 15px 15px;
+  object-fit: cover;
 }
 
-/* Feed */
+.user-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 90em;
+}
+
+.custom-avatar-size {
+  height: 2.5em;
+  width: 2.5em;
+}
+.custom-card-width-profile {
+  min-width: 19em;
+  max-width: 25em;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  background-color: white;
+  padding: 0;
+  margin: 1em;
+  border-radius: 15px;
+  border: 1px solid $light;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  min-height: 22em;
+  max-height: 25em;
+  width: 100%;
+}
+
+.singlePost {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid $light;
+  border-radius: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  margin-bottom: 1em;
+  max-width: 50em;
+}
+
+.custom-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.custom-margin-top {
+  margin-top: 5em;
+}
 
 .img-feed {
   width: 37.5em;
@@ -191,4 +212,115 @@ span {
 .stories-width-feed {
   width: 3.125em; /* 50px / 16px */
   height: 3.125em; /* 50px / 16px */
+}
+
+.input-custom-height {
+  height: 7em;
+}
+
+.custom-width-profile-media-cont {
+  width: 100%;
+}
+.profile-card-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 15px 15px;
+  max-height: 10em;
+  object-fit: cover;
+}
+
+////////////////////////////// User Message //////////////////////////////7
+
+.messageBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-height: 10em;
+}
+
+.overlayUserFeedback,
+.overlayConfirmDelate {
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 8em;
+  text-align: center;
+  padding: 1em;
+  border-radius: 15px;
+  max-width: 35em;
+  min-width: 20em;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.custom-width-overlay-change-avatar {
+  min-height: 10em;
+  max-width: 40em;
+  min-width: 18em;
+}
+
+.overlayConfirmDelate {
+  height: 12em;
+}
+
+.buttons-confirm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  margin-top: 2em;
+}
+
+.custom-max-width {
+  max-width: 100em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/////////////Register///////////
+
+.feedback {
+  display: none;
+}
+
+input:invalid + .feedback {
+  display: block;
+}
+
+.rounded-image {
+  width: 4em;
+  height: 4em;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid $secondary;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.rounded-image:hover,
+.rounded-image:active {
+  scale: 1.02;
+}
+.profile {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 1em;
+  cursor: pointer;
+}
+
+.profile-name {
+  text-align: center;
+  margin-top: 9px;
+  font-size: 11px;
+}
+.carousel {
+  display: flex;
+  max-width: 70em;
 }

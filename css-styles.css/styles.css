@@ -1,0 +1,32 @@
+@media (max-width: 750px) {
+  .profile-img {
+    width: 10em;
+    height: 10em;
+  }
+  .custom-size {
+    text-wrap: wrap;
+    font-size: 1.5em;
+  }
+  .custom-size-font {
+    font-size: 0.8em;
+  }
+  .custom-container-size {
+    gap: 1em;
+  }
+}
+@media (max-width: 500px) {
+  .profile-img {
+    width: 9em;
+    height: 9em;
+  }
+  .custom-size {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile-img {
+    width: 5em;
+    height: 5em;
+  }
+}
